@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		033F632DFB55A338DAC0A67B /* Pods_WorldQuestApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02D0237257070B2FBE7DD0A7 /* Pods_WorldQuestApp.framework */; };
-		E74B388720A5EA2700CA12C1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E74B388620A5EA2700CA12C1 /* GoogleService-Info.plist */; };
+		E74B388920A5EE3F00CA12C1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E74B388820A5EE3F00CA12C1 /* GoogleService-Info.plist */; };
 		E7BD742020A5CBC700B3337E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BD741F20A5CBC700B3337E /* AppDelegate.swift */; };
 		E7BD742220A5CBC700B3337E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BD742120A5CBC700B3337E /* ViewController.swift */; };
 		E7BD742520A5CBC700B3337E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7BD742320A5CBC700B3337E /* Main.storyboard */; };
@@ -20,7 +20,7 @@
 		02D0237257070B2FBE7DD0A7 /* Pods_WorldQuestApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WorldQuestApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		33C07B9ED93686740204735C /* Pods-WorldQuestApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorldQuestApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-WorldQuestApp/Pods-WorldQuestApp.release.xcconfig"; sourceTree = "<group>"; };
 		E74B388520A5DF4D00CA12C1 /* WorldQuestApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "WorldQuestApp-Bridging-Header.h"; path = "../WorldQuestApp-Bridging-Header.h"; sourceTree = "<group>"; };
-		E74B388620A5EA2700CA12C1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E74B388820A5EE3F00CA12C1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E7BD741C20A5CBC700B3337E /* WorldQuestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorldQuestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7BD741F20A5CBC700B3337E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7BD742120A5CBC700B3337E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -87,7 +87,7 @@
 				E7BD742620A5CBC800B3337E /* Assets.xcassets */,
 				E7BD742820A5CBC800B3337E /* LaunchScreen.storyboard */,
 				E7BD742B20A5CBC800B3337E /* Info.plist */,
-				E74B388620A5EA2700CA12C1 /* GoogleService-Info.plist */,
+				E74B388820A5EE3F00CA12C1 /* GoogleService-Info.plist */,
 				E74B388520A5DF4D00CA12C1 /* WorldQuestApp-Bridging-Header.h */,
 			);
 			path = WorldQuestApp;
@@ -154,7 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7BD742A20A5CBC800B3337E /* LaunchScreen.storyboard in Resources */,
-				E74B388720A5EA2700CA12C1 /* GoogleService-Info.plist in Resources */,
+				E74B388920A5EE3F00CA12C1 /* GoogleService-Info.plist in Resources */,
 				E7BD742720A5CBC800B3337E /* Assets.xcassets in Resources */,
 				E7BD742520A5CBC700B3337E /* Main.storyboard in Resources */,
 			);
