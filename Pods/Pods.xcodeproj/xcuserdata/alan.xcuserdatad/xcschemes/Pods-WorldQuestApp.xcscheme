@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5B4C0BCB5EC375D64B7A93D47CBCC800"
+               BlueprintIdentifier = "206A058BB99688913F98AF68005F3551"
                BuildableName = "Pods_WorldQuestApp.framework"
                BlueprintName = "Pods-WorldQuestApp"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5B4C0BCB5EC375D64B7A93D47CBCC800"
+            BlueprintIdentifier = "206A058BB99688913F98AF68005F3551"
             BuildableName = "Pods_WorldQuestApp.framework"
             BlueprintName = "Pods-WorldQuestApp"
             ReferencedContainer = "container:Pods.xcodeproj">
