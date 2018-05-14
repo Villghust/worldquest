@@ -1,16 +1,30 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14133" systemVersion="17E199" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Abilities" representedClassName="Abilities" syncable="YES" codeGenerationType="class">
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="class_abilities" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Class" syncable="YES"/>
+    </entity>
     <entity name="Character" representedClassName="Character" syncable="YES" codeGenerationType="class">
         <attribute name="abilityPoints" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="agi" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="attributePoints" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="class_" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="int" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="str" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="vit" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
     </entity>
+    <entity name="Class" representedClassName="Class" syncable="YES" codeGenerationType="class">
+        <attribute name="agi" optional="YES" syncable="YES"/>
+        <attribute name="int" optional="YES" syncable="YES"/>
+        <attribute name="name" optional="YES" syncable="YES"/>
+        <attribute name="str" optional="YES" syncable="YES"/>
+        <attribute name="vit" optional="YES" syncable="YES"/>
+        <relationship name="class_char" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Character" syncable="YES"/>
+    </entity>
     <elements>
-        <element name="Character" positionX="-63" positionY="-18" width="128" height="165"/>
+        <element name="Character" positionX="-63" positionY="-18" width="128" height="148"/>
+        <element name="Class" positionX="-200" positionY="162" width="128" height="133"/>
+        <element name="Abilities" positionX="54" positionY="164" width="128" height="88"/>
     </elements>
 </model>
