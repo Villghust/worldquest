@@ -1,13 +1,5 @@
-//
-//  MapViewController.swift
-//  WorldQuestApp
-//
-//  Created by Fernando Locatelli Maioli on 14/05/18.
-//  Copyright © 2018 World Quest. All rights reserved.
-//
 
 import UIKit
-import Darwin
 import MapKit
 
 class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
@@ -22,8 +14,10 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         locationManager.requestWhenInUseAuthorization()
     }
     
+    
     func showCircle(coordinate: CLLocationCoordinate2D, radius: CLLocationDistance) {
         mapView.removeOverlays(mapView.overlays)
+        
         
         let circle = MKCircle(center: coordinate, radius: radius)
         mapView.add(circle)
@@ -32,21 +26,26 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         
         if status == .authorizedWhenInUse {
-            print("OK")
             if let location = locationManager.location {
                 
                 var region = MKCoordinateRegion()
                 region.center.latitude = location.coordinate.latitude
                 region.center.longitude = location.coordinate.longitude
                 region.span.longitudeDelta = 0.05
-            
-                mapView.setRegion(region, animated: true)
                 
+                self.mapView.setRegion(region, animated: true)
             }
         } else {
-            print("Ops")
-            exit(0)
+            let alert = UIAlertController(title: "Authorization Denied", message: "If you do not authorize the usage of your location the app will not work.", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Close game", style: .cancel, handler: {action in exit(0)}))
+            alert.addAction(UIAlertAction(title: "Manage Permissions", style: .default, handler: {
+                action in
+                UIApplication.shared.open(URL(string:UIApplicationOpenSettingsURLString)!)
+            }))
+            self.present(alert, animated: true)
         }
+        
     }
     
     func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
@@ -79,5 +78,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
     
     
-    
 }
+
+
+
