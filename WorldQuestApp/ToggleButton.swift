@@ -8,18 +8,17 @@
 
 import UIKit
 
-class Checkbox: UIButton {
+class ToggleButton: UIButton {
     
-    
-    let checkedImage = UIImage(named: "_CHECKBOX_CHECKED")!
-    let uncheckedImage = UIImage(named: "_CHECKBOX_UNCHECKED")!
+    let unselectedColor: UIColor = UIColor(red: 170/255, green: 170/255, blue: 170/255, alpha: 1.0)
+    let selectedColor: UIColor = UIColor(red: 21/255, green: 126/255, blue: 251/255, alpha: 1.0)
     
     var isChecked: Bool = false {
         didSet{
             if isChecked == true {
-                self.setImage(checkedImage, for: UIControlState.normal)
+                self.setTitleColor(selectedColor, for: .normal)
             } else {
-                self.setImage(uncheckedImage, for: UIControlState.normal)
+                self.setTitleColor(unselectedColor, for: .normal)
             }
         }
     }

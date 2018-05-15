@@ -11,7 +11,7 @@ import UIKit
 class CharacterCreationAttributesTableViewCell: UITableViewCell, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var atrTableView: UITableView!
-    
+        
     override func awakeFromNib() {
         super.awakeFromNib()
         self.atrTableView.delegate = self

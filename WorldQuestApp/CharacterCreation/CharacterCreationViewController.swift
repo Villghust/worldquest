@@ -8,10 +8,9 @@
 
 import UIKit
 
-class CharacterCreationViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    
+class CharacterCreationViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     //uicollectionview carousel swift
-        
+    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -39,7 +38,7 @@ class CharacterCreationViewController: UIViewController, UITableViewDataSource, 
             cell = self.tableView.dequeueReusableCell(withIdentifier: "NameCell", for: indexPath)
             break
         case 1:
-            cell = self.tableView.dequeueReusableCell(withIdentifier: "ClassCell", for: indexPath)
+            cell = self.tableView.dequeueReusableCell(withIdentifier: "ClassSelectionCell", for: indexPath)
             break
         case 2:
             cell = self.tableView.dequeueReusableCell(withIdentifier: "ClassAbilitiesCell", for: indexPath)
