@@ -25,7 +25,7 @@ class CharacterCreationAttributesTableViewCell: UITableViewCell, UITableViewDele
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return 5
     }
     
     
@@ -42,8 +42,11 @@ class CharacterCreationAttributesTableViewCell: UITableViewCell, UITableViewDele
         case 2:
             cell = tableView.dequeueReusableCell(withIdentifier: "IntCell", for: indexPath)
             break
-        default:
+        case 3:
             cell = tableView.dequeueReusableCell(withIdentifier: "VitCell", for: indexPath)
+            break
+        default:
+            cell = tableView.dequeueReusableCell(withIdentifier: "PointsCell", for: indexPath)
             break
         }
         
