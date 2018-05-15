@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		55B20E1120AB14EF00D7B96B /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B20E1020AB14EF00D7B96B /* GroupViewController.swift */; };
+		55B20E1320AB214800D7B96B /* PartyLeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B20E1220AB214800D7B96B /* PartyLeaderCell.swift */; };
 		E7BD742020A5CBC700B3337E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BD741F20A5CBC700B3337E /* AppDelegate.swift */; };
 		E7BD742220A5CBC700B3337E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BD742120A5CBC700B3337E /* ViewController.swift */; };
 		E7BD742520A5CBC700B3337E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7BD742320A5CBC700B3337E /* Main.storyboard */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		55B20E1020AB14EF00D7B96B /* GroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
+		55B20E1220AB214800D7B96B /* PartyLeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyLeaderCell.swift; sourceTree = "<group>"; };
 		E7BD741C20A5CBC700B3337E /* WorldQuestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorldQuestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7BD741F20A5CBC700B3337E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7BD742120A5CBC700B3337E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -57,9 +61,11 @@
 				E7BD741F20A5CBC700B3337E /* AppDelegate.swift */,
 				E7BD742120A5CBC700B3337E /* ViewController.swift */,
 				E7BD742320A5CBC700B3337E /* Main.storyboard */,
+				55B20E1220AB214800D7B96B /* PartyLeaderCell.swift */,
 				E7BD742620A5CBC800B3337E /* Assets.xcassets */,
 				E7BD742820A5CBC800B3337E /* LaunchScreen.storyboard */,
 				E7BD742B20A5CBC800B3337E /* Info.plist */,
+				55B20E1020AB14EF00D7B96B /* GroupViewController.swift */,
 			);
 			path = WorldQuestApp;
 			sourceTree = "<group>";
@@ -135,6 +141,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55B20E1120AB14EF00D7B96B /* GroupViewController.swift in Sources */,
+				55B20E1320AB214800D7B96B /* PartyLeaderCell.swift in Sources */,
 				E7BD742220A5CBC700B3337E /* ViewController.swift in Sources */,
 				E7BD742020A5CBC700B3337E /* AppDelegate.swift in Sources */,
 			);
