@@ -159,7 +159,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ClassAbilitiesCell" rowHeight="122" id="6Ns-Hk-qyW" userLabel="Class Abilities Table View Cell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ClassAbilitiesCell" rowHeight="122" id="6Ns-Hk-qyW" userLabel="Class Abilities Table View Cell">
                                         <rect key="frame" x="0.0" y="294" width="375" height="122"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6Ns-Hk-qyW" id="Vw2-7s-XEK">
@@ -266,7 +266,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AttributesCell" rowHeight="185" id="Lht-Dh-dRn" userLabel="Attributes Table View Cell" customClass="CharacterCreationAttributesTableViewCell" customModule="WorldQuestApp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="AttributesCell" rowHeight="185" id="Lht-Dh-dRn" userLabel="Attributes Table View Cell" customClass="CharacterCreationAttributesTableViewCell" customModule="WorldQuestApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="416" width="375" height="185"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Lht-Dh-dRn" id="3lW-fN-cpR">
@@ -530,7 +530,7 @@
                                             <outlet property="atrTableView" destination="nf1-Pf-oqZ" id="vfP-DZ-2kY"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CreateButtonCell" rowHeight="48" id="hAL-Pa-nXB" userLabel="Create Character Table View Cell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CreateButtonCell" rowHeight="48" id="hAL-Pa-nXB" userLabel="Create Character Table View Cell">
                                         <rect key="frame" x="0.0" y="601" width="375" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hAL-Pa-nXB" id="Xfr-lj-ABI">
