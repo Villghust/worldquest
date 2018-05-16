@@ -101,7 +101,7 @@
                                                                         <rect key="frame" x="16" y="20" width="176" height="275"/>
                                                                         <subviews>
                                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="AiW-cB-0Rn">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="176" height="275"/>
+                                                                                <rect key="frame" x="-0.5" y="0.0" width="176" height="275"/>
                                                                                 <subviews>
                                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="_CHAR_WARRIOR" translatesAutoresizingMaskIntoConstraints="NO" id="5r2-qc-s4o" userLabel="Image">
                                                                                         <rect key="frame" x="0.0" y="0.0" width="176" height="195.5"/>
