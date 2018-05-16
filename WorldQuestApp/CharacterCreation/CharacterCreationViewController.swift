@@ -19,6 +19,17 @@ class CharacterCreationViewController: UIViewController, UITableViewDataSource, 
         self.tableView.dataSource = self
     }
     
+    // Mark: - Class Handling
+    
+    func createClassInCoreData(_ className: String, baseStr: Int, baseAgi: Int, baseInt: Int, baseVit: Int) {
+        let new = Class(context: AppDelegate.persistentContainer.viewContext)
+        new.name = className
+        new.baseStr = Int64(baseStr)
+        new.baseAgi = Int64(baseAgi)
+        new.baseInt = Int64(baseInt)
+        new.baseVit = Int64(baseVit)
+    }
+    
     // MARK: - Table view data source
 
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -40,10 +51,10 @@ class CharacterCreationViewController: UIViewController, UITableViewDataSource, 
         case 1:
             cell = self.tableView.dequeueReusableCell(withIdentifier: "ClassSelectionCell", for: indexPath)
             break
-        case 2:
-            cell = self.tableView.dequeueReusableCell(withIdentifier: "ClassAbilitiesCell", for: indexPath)
-            break
-        case 3:
+//        case 2:
+//            cell = self.tableView.dequeueReusableCell(withIdentifier: "ClassAbilitiesCell", for: indexPath)
+//            break
+        case 3-1:
             cell = self.tableView.dequeueReusableCell(withIdentifier: "AttributesCell", for: indexPath) as! CharacterCreationAttributesTableViewCell
             break
         default:

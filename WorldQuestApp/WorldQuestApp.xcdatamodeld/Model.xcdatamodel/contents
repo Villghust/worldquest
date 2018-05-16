@@ -1,33 +1,43 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14133" systemVersion="17E202" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Abilities" representedClassName="Abilities" syncable="YES" codeGenerationType="class">
+        <attribute name="ability_id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="abilityClass" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Class" inverseName="classAbilities" inverseEntity="Class" syncable="YES"/>
     </entity>
     <entity name="Character" representedClassName="Character" syncable="YES" codeGenerationType="class">
         <attribute name="agi" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="character_id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="int" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="pointsAbility" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="pointsAttribute" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="str" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="vit" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="characterClass" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Class" inverseName="classCharacter" inverseEntity="Class" syncable="YES"/>
+        <relationship name="characterPlayer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Player" inverseName="playerCharacter" inverseEntity="Player" syncable="YES"/>
     </entity>
     <entity name="Class" representedClassName="Class" syncable="YES" codeGenerationType="class">
         <attribute name="baseAgi" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="baseInt" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="baseStr" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="baseVit" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="class_id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="classAbilities" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Abilities" inverseName="abilityClass" inverseEntity="Abilities" syncable="YES"/>
+        <relationship name="classCharacter" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Character" inverseName="characterClass" inverseEntity="Character" syncable="YES"/>
     </entity>
     <entity name="Player" representedClassName="Player" syncable="YES" codeGenerationType="class">
         <attribute name="facebook_api" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="player_id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="playerCharacter" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Character" inverseName="characterPlayer" inverseEntity="Character" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Abilities" positionX="-47" positionY="396" width="128" height="73"/>
-        <element name="Character" positionX="234" positionY="96" width="128" height="148"/>
-        <element name="Class" positionX="-200" positionY="162" width="128" height="118"/>
-        <element name="Player" positionX="232" positionY="-117" width="128" height="73"/>
+        <element name="Abilities" positionX="-47" positionY="396" width="128" height="105"/>
+        <element name="Character" positionX="234" positionY="96" width="128" height="195"/>
+        <element name="Class" positionX="-200" positionY="162" width="128" height="165"/>
+        <element name="Player" positionX="232" positionY="-117" width="128" height="105"/>
     </elements>
 </model>

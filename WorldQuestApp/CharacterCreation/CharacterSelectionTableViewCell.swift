@@ -40,10 +40,10 @@ class CharacterSelectionTableViewCell: UITableViewCell, UICollectionViewDelegate
             cell = self.classCollection.dequeueReusableCell(withReuseIdentifier: "WarriorCell", for: indexPath) as! CharacterSelectionScalingCarouselCell
             break
         case 1 :
-            cell = self.classCollection.dequeueReusableCell(withReuseIdentifier: "RogueCell", for: indexPath) as! CharacterSelectionScalingCarouselCell
+            cell = self.classCollection.dequeueReusableCell(withReuseIdentifier: "WarriorCell", for: indexPath) as! CharacterSelectionScalingCarouselCell
             break
         default :
-            cell = self.classCollection.dequeueReusableCell(withReuseIdentifier: "MageCell", for: indexPath) as! CharacterSelectionScalingCarouselCell
+            cell = self.classCollection.dequeueReusableCell(withReuseIdentifier: "WarriorCell", for: indexPath) as! CharacterSelectionScalingCarouselCell
             break
         }
         
