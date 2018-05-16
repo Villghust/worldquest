@@ -8,7 +8,6 @@
     </entity>
     <entity name="Character" representedClassName="Character" syncable="YES" codeGenerationType="class">
         <attribute name="agi" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="character_id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="int" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="pointsAbility" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
@@ -35,7 +34,7 @@
     </entity>
     <elements>
         <element name="Abilities" positionX="-2" positionY="84" width="128" height="103"/>
-        <element name="Character" positionX="234" positionY="96" width="128" height="193"/>
+        <element name="Character" positionX="234" positionY="96" width="128" height="180"/>
         <element name="Class" positionX="-200" positionY="167" width="128" height="148"/>
         <element name="Player" positionX="232" positionY="-117" width="128" height="103"/>
     </elements>
