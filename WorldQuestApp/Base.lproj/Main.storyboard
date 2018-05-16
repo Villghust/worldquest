@@ -57,16 +57,6 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BL7-s2-AjM">
-                                <rect key="frame" x="50" y="553" width="123" height="30"/>
-                                <color key="backgroundColor" red="0.25116754640021671" green="0.65736040609137059" blue="0.29045389725754694" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="123" id="X6x-FT-Gjg"/>
-                                </constraints>
-                                <state key="normal" title="Entrar em Grupo">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ziu-2U-mkY">
                                 <rect key="frame" x="16" y="76" width="343" height="200"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -140,7 +130,7 @@
                                                         <constraint firstAttribute="width" secondItem="OpE-j4-3A3" secondAttribute="height" multiplier="1:1" id="H8n-04-vZP"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="adsasdasdasdsadsadas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LXj-kB-HN0">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Josnei" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LXj-kB-HN0">
                                                     <rect key="frame" x="88" y="15" width="137" height="27"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                     <nil key="textColor"/>
@@ -198,22 +188,32 @@
                                     <constraint firstAttribute="width" secondItem="JQD-XF-ZJ8" secondAttribute="height" multiplier="1:1" id="C0m-lp-tiI"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eRX-xR-vPu">
+                                <rect key="frame" x="50" y="553" width="123" height="30"/>
+                                <color key="backgroundColor" red="0.15454160204607939" green="0.63068826512436549" blue="0.13965574144964418" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="pTc-E4-s0l"/>
+                                    <constraint firstAttribute="width" constant="123" id="y7n-Hq-Yii"/>
+                                </constraints>
+                                <state key="normal" title="Entrar em Grupo">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="qqF-la-VRh" firstAttribute="trailing" secondItem="JQD-XF-ZJ8" secondAttribute="trailing" constant="68" id="Lts-Lk-2uz"/>
-                            <constraint firstItem="BL7-s2-AjM" firstAttribute="top" secondItem="JQD-XF-ZJ8" secondAttribute="bottom" constant="20" id="MwG-fT-jNT"/>
-                            <constraint firstItem="Lh4-eS-YR7" firstAttribute="height" secondItem="BL7-s2-AjM" secondAttribute="height" id="O49-Ri-4Iq"/>
+                            <constraint firstItem="eRX-xR-vPu" firstAttribute="top" secondItem="JQD-XF-ZJ8" secondAttribute="bottom" constant="20" id="NXh-Bv-ChD"/>
                             <constraint firstItem="JQD-XF-ZJ8" firstAttribute="top" secondItem="ziu-2U-mkY" secondAttribute="bottom" constant="17" id="Oz4-CO-DxR"/>
                             <constraint firstItem="JQD-XF-ZJ8" firstAttribute="leading" secondItem="qqF-la-VRh" secondAttribute="leading" constant="67" id="SIB-gS-AQA"/>
                             <constraint firstItem="qqF-la-VRh" firstAttribute="bottom" secondItem="Lh4-eS-YR7" secondAttribute="bottom" constant="35" id="V9h-XP-UpM"/>
+                            <constraint firstItem="eRX-xR-vPu" firstAttribute="leading" secondItem="qqF-la-VRh" secondAttribute="leading" constant="50" id="XCk-Jk-4DZ"/>
                             <constraint firstItem="R3j-w0-JWF" firstAttribute="top" secondItem="qqF-la-VRh" secondAttribute="top" constant="14" id="aMM-As-oJ6"/>
+                            <constraint firstItem="qqF-la-VRh" firstAttribute="bottom" secondItem="eRX-xR-vPu" secondAttribute="bottom" constant="35" id="i8d-aF-EdU"/>
                             <constraint firstItem="ziu-2U-mkY" firstAttribute="leading" secondItem="qqF-la-VRh" secondAttribute="leading" constant="16" id="ijc-EO-uvt"/>
                             <constraint firstItem="ziu-2U-mkY" firstAttribute="top" secondItem="R3j-w0-JWF" secondAttribute="bottom" constant="10.5" id="miQ-IB-2S0"/>
                             <constraint firstItem="R3j-w0-JWF" firstAttribute="leading" secondItem="qqF-la-VRh" secondAttribute="leading" constant="145" id="pUg-ug-ebb"/>
                             <constraint firstItem="qqF-la-VRh" firstAttribute="trailing" secondItem="ziu-2U-mkY" secondAttribute="trailing" constant="16" id="raj-Cm-1b0"/>
-                            <constraint firstItem="BL7-s2-AjM" firstAttribute="leading" secondItem="qqF-la-VRh" secondAttribute="leading" constant="50" id="sp2-Ja-se6"/>
-                            <constraint firstItem="qqF-la-VRh" firstAttribute="bottom" secondItem="BL7-s2-AjM" secondAttribute="bottom" constant="35" id="tdh-mn-84H"/>
                             <constraint firstItem="qqF-la-VRh" firstAttribute="trailing" secondItem="Lh4-eS-YR7" secondAttribute="trailing" constant="50" id="xFI-XJ-iMK"/>
                             <constraint firstItem="qqF-la-VRh" firstAttribute="trailing" secondItem="R3j-w0-JWF" secondAttribute="trailing" constant="146" id="xtF-qV-cck"/>
                         </constraints>
