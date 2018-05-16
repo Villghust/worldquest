@@ -21,13 +21,20 @@ class CharacterCreationViewController: UIViewController, UITableViewDataSource, 
     
     // Mark: - Class Handling
     
-    func createClassInCoreData(_ className: String, baseStr: Int, baseAgi: Int, baseInt: Int, baseVit: Int) {
+    func createClassInCoreData(/*classId: Int64, */className: String, baseStr: Int, baseAgi: Int, baseInt: Int, baseVit: Int, classAbilities: [Abilities])
+    {
         let new = Class(context: AppDelegate.persistentContainer.viewContext)
+//        new.class_id = Int64(classId)
         new.name = className
         new.baseStr = Int64(baseStr)
         new.baseAgi = Int64(baseAgi)
         new.baseInt = Int64(baseInt)
         new.baseVit = Int64(baseVit)
+        for ability in classAbilities {
+            ability.abilityClass = new
+        }
+        let abilitiesSet = NSSet(array: classAbilities)
+        new.classAbilities = abilitiesSet
     }
     
     // MARK: - Table view data source
