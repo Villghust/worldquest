@@ -7,24 +7,14 @@
 //
 
 import UIKit
-<<<<<<< HEAD
 import CoreData // Importante
-=======
 import Firebase
->>>>>>> 4577ed1a5b723927ba431a90ae529d9039931dfe
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // --------
     var window: UIWindow?
-<<<<<<< HEAD
-    
-    
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        return true
-=======
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
         
@@ -42,9 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             application,
             open: url as URL?,
             sourceApplication: sourceApplication,
-            annotation: annotation)
->>>>>>> 4577ed1a5b723927ba431a90ae529d9039931dfe
-    }
+            annotation: annotation)    }
     
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
