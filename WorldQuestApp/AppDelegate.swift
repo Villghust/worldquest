@@ -7,18 +7,43 @@
 //
 
 import UIKit
+<<<<<<< HEAD
 import CoreData // Importante
+=======
+import Firebase
+>>>>>>> 4577ed1a5b723927ba431a90ae529d9039931dfe
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // --------
     var window: UIWindow?
+<<<<<<< HEAD
     
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         return true
+=======
+
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
+        
+        FirebaseApp.configure()
+        
+        return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+    }
+    
+    
+    private func application(application: UIApplication,
+                     openURL url: URL,
+                     sourceApplication: String?,
+                     annotation: Any?) -> Bool {
+        return FBSDKApplicationDelegate.sharedInstance().application(
+            application,
+            open: url as URL?,
+            sourceApplication: sourceApplication,
+            annotation: annotation)
+>>>>>>> 4577ed1a5b723927ba431a90ae529d9039931dfe
     }
     
     func applicationWillResignActive(_ application: UIApplication) {
