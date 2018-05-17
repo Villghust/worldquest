@@ -80,7 +80,7 @@ class CharacterCreationViewController: UIViewController, UITableViewDataSource, 
     
     @IBAction func criarPersonagem(_ sender: UIButton) {
         if Auth.auth().currentUser != nil {
-            self.ref.child("usuario/\(Auth.auth().currentUser!.uid)/personagem")
+            self.ref.child("usuarios/\(Auth.auth().currentUser!.uid)/personagem")
                 .setValue("teste")
         } else {
             // Usuário não logado (????)

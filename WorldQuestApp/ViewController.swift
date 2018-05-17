@@ -25,6 +25,8 @@ class ViewController: UIViewController {
             loginView.center = self.view.center
             loginView.readPermissions = ["public_profile", "email", "user_friends"]
             loginView.delegate = self
+        } else {
+            existePersonagem()
         }
     }
     
@@ -32,10 +34,30 @@ class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         if (FBSDKAccessToken.current() != nil){
             // Já está logado, vai para próxima tela.
-            self.performSegue(
-                withIdentifier: "LoginToCharacterCreation",
-                sender: nil)
+            
+            let usuarioId = Auth.auth().currentUser?.uid
+            ref.child("usuarios").child(usuarioId!).observeSingleEvent(of: .value, with: { (snapshot) in
+                let value = snapshot.value as? NSDictionary
+                let personagem = value?["personagem"] as? String ?? ""
+                
+                if personagem == "" {
+                    self.performSegue(
+                        withIdentifier: "LoginToCharacterCreation",
+                        sender: nil)
+                } else {
+                    self.performSegue(
+                        withIdentifier: "LoginToGame",
+                        sender: nil)
+                }
+                
+            }) { (error) in
+                print(error.localizedDescription)
+            }
         }
+    }
+    
+    func existePersonagem() {
+        
     }
 }
 
@@ -61,13 +83,9 @@ extension ViewController: FBSDKLoginButtonDelegate {
                         return
                     }
                     // Logou!
-                    self.ref.child("usuario")
+                    self.ref.child("usuarios")
                         .child((user?.user.uid)!)
-                        .setValue(["nome": user?.user.displayName, "personagem":""])
-                    
-                    self.performSegue(
-                        withIdentifier: "LoginToCharacterCreation",
-                        sender: nil)
+                        .setValue(["nome": user?.user.displayName])
                 }
             }
         }
