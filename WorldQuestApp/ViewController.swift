@@ -8,11 +8,16 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseDatabase
 
 class ViewController: UIViewController {
 
+    var ref: DatabaseReference!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        ref = Database.database().reference()
         
         if (FBSDKAccessToken.current() != nil)
         {
@@ -54,7 +59,9 @@ extension ViewController: FBSDKLoginButtonDelegate {
                         return
                     }
                     // User is signed in
-                    // ...
+                    self.ref.child("usuario")
+                        .child((user?.user.uid)!)
+                        .setValue(["username": user?.user.displayName])
                 }
             }
         }
