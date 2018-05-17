@@ -7,16 +7,21 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseDatabase
 
 class CharacterCreationViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     //uicollectionview carousel swift
     
     @IBOutlet weak var tableView: UITableView!
+    var ref: DatabaseReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        
+        ref = Database.database().reference()
     }
     
     // Mark: - Class Handling
@@ -71,6 +76,15 @@ class CharacterCreationViewController: UIViewController, UITableViewDataSource, 
         
 
         return cell
+    }
+    
+    @IBAction func criarPersonagem(_ sender: UIButton) {
+        if Auth.auth().currentUser != nil {
+            self.ref.child("usuario/\(Auth.auth().currentUser!.uid)/personagem")
+                .setValue("teste")
+        } else {
+            // Usuário não logado (????)
+        }
     }
     
     /*

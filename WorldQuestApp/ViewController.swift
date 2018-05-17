@@ -19,17 +19,22 @@ class ViewController: UIViewController {
         
         ref = Database.database().reference()
         
-        if (FBSDKAccessToken.current() != nil)
-        {
-            // User is already logged in, do work such as go to next view controller.
-        }
-        else
-        {
+        if (FBSDKAccessToken.current() == nil){
             let loginView : FBSDKLoginButton = FBSDKLoginButton()
             self.view.addSubview(loginView)
             loginView.center = self.view.center
             loginView.readPermissions = ["public_profile", "email", "user_friends"]
             loginView.delegate = self
+        }
+    }
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if (FBSDKAccessToken.current() != nil){
+            // Já está logado, vai para próxima tela.
+            self.performSegue(
+                withIdentifier: "LoginToCharacterCreation",
+                sender: nil)
         }
     }
 }
@@ -40,17 +45,14 @@ extension ViewController: FBSDKLoginButtonDelegate {
         
         if ((error) != nil)
         {
-            // Process error
+            // Erro
         }
         else if result.isCancelled {
-            // Handle cancellations
+            // Cancelado
         }
         else {
-            // If you ask for multiple permissions at once, you
-            // should check if specific permissions missing
             if result.grantedPermissions.contains("email")
             {
-                // Do work
                 let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
                 
                 Auth.auth().signInAndRetrieveData(with: credential) { (user, error) in
@@ -58,10 +60,14 @@ extension ViewController: FBSDKLoginButtonDelegate {
                         // ...
                         return
                     }
-                    // User is signed in
+                    // Logou!
                     self.ref.child("usuario")
                         .child((user?.user.uid)!)
-                        .setValue(["username": user?.user.displayName])
+                        .setValue(["nome": user?.user.displayName, "personagem":""])
+                    
+                    self.performSegue(
+                        withIdentifier: "LoginToCharacterCreation",
+                        sender: nil)
                 }
             }
         }
