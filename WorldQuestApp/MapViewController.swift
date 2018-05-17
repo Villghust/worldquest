@@ -57,27 +57,85 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         let pin = MKAnnotationView()
-        pin.image = UIImage.init(named: "apple")
-        pin.frame.size = CGSize(width: 30, height: 30)
+        if annotation.title == "shopping" {
+            pin.image = UIImage.init(named: "_TAB_QUEST")
+            pin.frame.size = CGSize(width: 30, height: 30)
+        } else if annotation.title == "squares" {
+            pin.image = UIImage.init(named: "sword")
+            pin.frame.size = CGSize(width: 30, height: 30)
+        } else {
+            pin.image = UIImage.init(named: "hp")
+            pin.frame.size = CGSize(width: 30, height: 30)
+        }
         return pin
     }
     
     func addAnnotations() {
+        // Shoppings -> Events
         let iguatemi = MKPointAnnotation()
         iguatemi.coordinate.latitude = -30.02376410917726
         iguatemi.coordinate.longitude = -51.161892400000056
-        iguatemi.title = "iguatemi"
+        iguatemi.title = "shopping"
+        iguatemi.subtitle = "iguatemi"
         mapView.addAnnotation(iguatemi)
+        
         let ipiranga = MKPointAnnotation()
         ipiranga.coordinate.latitude = -30.05507550918886
         ipiranga.coordinate.longitude = -51.18687680000005
-        ipiranga.title = "ipiranga"
+        ipiranga.title = "shopping"
+        ipiranga.subtitle = "ipiranga"
         mapView.addAnnotation(ipiranga)
+        
         let wallig = MKPointAnnotation()
         wallig.coordinate.latitude = -30.011935009172884
         wallig.coordinate.longitude = -51.160768899999994
-        wallig.title = "wallig"
+        wallig.title = "shopping"
+        wallig.subtitle = "wallig"
         mapView.addAnnotation(wallig)
+        
+        // Pubs -> Taverns
+        let barbarosPub = MKPointAnnotation()
+        barbarosPub.coordinate.latitude = -30.034759509181324
+        barbarosPub.coordinate.longitude = -51.20823429999996
+        barbarosPub.title = "pubs"
+        barbarosPub.subtitle = "barbarosPub"
+        mapView.addAnnotation(barbarosPub)
+        
+        let spoilerPub = MKPointAnnotation()
+        spoilerPub.coordinate.latitude = -30.041415209183807
+        spoilerPub.coordinate.longitude = -51.21807910000001
+        spoilerPub.title = "pubs"
+        spoilerPub.subtitle = "spoilerPub"
+        mapView.addAnnotation(spoilerPub)
+        
+        let dublinPub = MKPointAnnotation()
+        dublinPub.coordinate.latitude = -30.02409220917742
+        dublinPub.coordinate.longitude = -51.2026444
+        dublinPub.title = "pubs"
+        dublinPub.subtitle = "dublinPub"
+        mapView.addAnnotation(dublinPub)
+        
+        // Squares -> Squares (OHH YEAH!!)
+        let germaniaSquare = MKPointAnnotation()
+        germaniaSquare.coordinate.latitude = -30.022529409176798
+        germaniaSquare.coordinate.longitude = -51.158572549999974
+        germaniaSquare.title = "squares"
+        germaniaSquare.subtitle = "germaniaSquare"
+        mapView.addAnnotation(germaniaSquare)
+        
+        let redencaoSquare = MKPointAnnotation()
+        redencaoSquare.coordinate.latitude = -30.03873580918278
+        redencaoSquare.coordinate.longitude = -51.21850610000001
+        redencaoSquare.title = "squares"
+        redencaoSquare.subtitle = "redencaoSquare"
+        mapView.addAnnotation(redencaoSquare)
+        
+        let marinhaSquare = MKPointAnnotation()
+        marinhaSquare.coordinate.latitude = -30.03949890918311
+        marinhaSquare.coordinate.longitude = -51.22856200000001
+        marinhaSquare.title = "squares"
+        marinhaSquare.subtitle = "marinhaSquare"
+        mapView.addAnnotation(marinhaSquare)
     }
 }
 
