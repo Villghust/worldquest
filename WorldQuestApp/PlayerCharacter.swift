@@ -14,6 +14,5 @@ struct PlayerCharacter {
     var agi: Int
     var int: Int
     var vit: Int
-    var characterClass: Class
     var player: User
 }

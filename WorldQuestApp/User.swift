@@ -11,5 +11,4 @@ import Foundation
 struct User {
     var uid: String
     var photoUrl: String
-    var character: PlayerCharacter
 }
