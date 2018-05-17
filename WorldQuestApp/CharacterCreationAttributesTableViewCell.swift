@@ -12,12 +12,11 @@ class CharacterCreationAttributesTableViewCell: UITableViewCell {
 
     @IBOutlet weak var atrTableView: UITableView!
     lazy var attributeDatasource = CharacterCreationAttributeDatasource(characterClass: GameData.classWarrior)
-        
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         self.atrTableView.dataSource = attributeDatasource
     }
-    
     
 }
 

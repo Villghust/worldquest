@@ -8,21 +8,7 @@
 
 import UIKit
 
-class CharacterCreationClassDatasource: NSObject, UICollectionViewDelegate,  UICollectionViewDataSource, UIScrollViewDelegate {
-    
-    var characterClass: CharacterClass!
-    
-    init(characterClass: CharacterClass) {
-        self.characterClass = characterClass
-    }
-    
-    // MARK: - Scroll view delegate
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if let invisibleScrollView = scrollView as? ScalingCarouselView {
-            invisibleScrollView.didScroll()
-        }
-    }
+class CharacterCreationClassDatasource: NSObject, UICollectionViewDataSource {
     
     // MARK: - Collection view data source
     

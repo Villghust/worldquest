@@ -18,6 +18,7 @@ class ClassSelectionScalingCarouselCell: ScalingCarouselCell {
         didSet {
             self.nameLabel.text = characterClass.name
             self.imageView.image = UIImage(named: characterClass.imagePath)
+            self.descriptionLabel.text = characterClass.description
         }
     }
     

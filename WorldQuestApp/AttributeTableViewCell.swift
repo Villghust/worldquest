@@ -12,6 +12,7 @@ class AttributeTableViewCell: UITableViewCell {
 
     @IBOutlet weak var identifierLabel: UILabel!
     @IBOutlet weak var valueLabel: UILabel!
+    @IBOutlet weak var toggleButton: ToggleButton!
     
     private var value: Int = 1 {
         didSet {

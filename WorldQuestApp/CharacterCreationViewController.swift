@@ -12,7 +12,7 @@ class CharacterCreationViewController: UIViewController, UITableViewDataSource, 
     
     @IBOutlet weak var tableView: UITableView!
     
-    var character = PlayerCharacter(attrPoints: 2, player: nil)
+    var character = PlayerCharacter(attrPoints: GameData.initialAttrPoints, player: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +29,7 @@ class CharacterCreationViewController: UIViewController, UITableViewDataSource, 
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return 2
         
     }
 
@@ -38,29 +38,15 @@ class CharacterCreationViewController: UIViewController, UITableViewDataSource, 
         
         switch(indexPath.row) {
         case 0:
-            cell = self.tableView.dequeueReusableCell(withIdentifier: "NameCell", for: indexPath) as! CharacterCreationNameTableViewCell
-            break
-        case 1:
-            cell = self.tableView.dequeueReusableCell(withIdentifier: "ClassSelectionCell", for: indexPath) as! CharacterCreationClassSelectionTableViewCell
-            break
-        case 2:
-            cell = self.tableView.dequeueReusableCell(withIdentifier: "AttributesCell", for: indexPath) as! CharacterCreationAttributesTableViewCell
+            cell = self.tableView.dequeueReusableCell(withIdentifier: "CharacterCreationCell", for: indexPath) as! CharacterCreationTableViewCell
             break
         default:
             cell = self.tableView.dequeueReusableCell(withIdentifier: "CreateButtonCell", for: indexPath)
             break
+//        default:
+//            break
         }
 
         return cell
-    }
-}
-
-extension UIResponder {
-    var viewController: UIViewController? {
-        if let vc = self as? UIViewController {
-            return vc
-        }
-        
-        return next?.viewController
     }
 }
