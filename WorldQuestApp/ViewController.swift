@@ -17,8 +17,6 @@ class ViewController: UIViewController {
             loginView.center = self.view.center
             loginView.readPermissions = ["public_profile", "email", "user_friends"]
             loginView.delegate = self
-        } else {
-            existePersonagem()
         }
     }
     
@@ -32,6 +30,7 @@ class ViewController: UIViewController {
                 let value = snapshot.value as? NSDictionary
                 let personagem = value?["personagem"] as? String ?? ""
                 
+                // Se existe personagem, vai para a criação, senão vai para o mapa
                 if personagem == "" {
                     self.performSegue(
                         withIdentifier: "LoginToCharacterCreation",
@@ -46,10 +45,6 @@ class ViewController: UIViewController {
                 print(error.localizedDescription)
             }
         }
-    }
-    
-    func existePersonagem() {
-        
     }
 }
 
