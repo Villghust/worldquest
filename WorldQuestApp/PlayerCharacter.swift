@@ -8,12 +8,18 @@
 
 import Foundation
 
-struct PlayerCharacter {
-    var name: String
-    var str: Int
-    var agi: Int
-    var int: Int
-    var vit: Int
-    var characterClass: Class
-    var player: User
+class PlayerCharacter {
+    var name: String!
+    var str: Int!
+    var agi: Int!
+    var int: Int!
+    var vit: Int!
+    var attrPoints: Int
+    var characterClass: CharacterClass!
+    var player: User?
+    
+    init(attrPoints: Int, player: User?) {
+        self.attrPoints = attrPoints
+        self.player = player
+    }
 }

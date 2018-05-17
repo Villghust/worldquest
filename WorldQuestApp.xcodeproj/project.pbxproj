@@ -14,13 +14,17 @@
 		9A6C3A8720AC78CC0047F3DF /* ScalingCarouselLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6C3A7F20AC78CC0047F3DF /* ScalingCarouselLayout.swift */; };
 		9A6C3A8820AC78CC0047F3DF /* ScalingCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6C3A8020AC78CC0047F3DF /* ScalingCarouselView.swift */; };
 		9A6C3A8920AC78CC0047F3DF /* ScalingCarouselCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6C3A8120AC78CC0047F3DF /* ScalingCarouselCell.swift */; };
-		9A6C3A8A20AC78CC0047F3DF /* CharacterSelectionScalingCarouselCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6C3A8220AC78CC0047F3DF /* CharacterSelectionScalingCarouselCell.swift */; };
-		9A6C3A8B20AC78CC0047F3DF /* CharacterSelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6C3A8320AC78CC0047F3DF /* CharacterSelectionTableViewCell.swift */; };
+		9A6C3A8A20AC78CC0047F3DF /* ClassSelectionScalingCarouselCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6C3A8220AC78CC0047F3DF /* ClassSelectionScalingCarouselCell.swift */; };
 		9A6C3A9020AD9E930047F3DF /* Ability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6C3A8F20AD9E930047F3DF /* Ability.swift */; };
 		9A6C3A9420ADA5E50047F3DF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6C3A9320ADA5E50047F3DF /* User.swift */; };
 		9A6C3A9620ADA6480047F3DF /* PlayerCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6C3A9520ADA6480047F3DF /* PlayerCharacter.swift */; };
 		9A6C3A9820ADA6B10047F3DF /* CharacterClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6C3A9720ADA6B10047F3DF /* CharacterClass.swift */; };
 		9A6C3A9A20ADA7E40047F3DF /* GameData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6C3A9920ADA7E40047F3DF /* GameData.swift */; };
+		9A7C8E2520ADAF0F0075E180 /* AttributeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7C8E2420ADAF0F0075E180 /* AttributeTableViewCell.swift */; };
+		9A7C8E2F20ADBDED0075E180 /* CharacterCreationClassSelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7C8E2E20ADBDED0075E180 /* CharacterCreationClassSelectionTableViewCell.swift */; };
+		9A7C8E3420ADC8EF0075E180 /* CharacterCreationAttributeDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7C8E3220ADC8EE0075E180 /* CharacterCreationAttributeDatasource.swift */; };
+		9A7C8E3520ADC8EF0075E180 /* CharacterCreationClassDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7C8E3320ADC8EF0075E180 /* CharacterCreationClassDatasource.swift */; };
+		9A7C8E3720ADCE3C0075E180 /* CharacterCreationNameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7C8E3620ADCE3C0075E180 /* CharacterCreationNameTableViewCell.swift */; };
 		E74B388920A5EE3F00CA12C1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E74B388820A5EE3F00CA12C1 /* GoogleService-Info.plist */; };
 		E7BD742020A5CBC700B3337E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BD741F20A5CBC700B3337E /* AppDelegate.swift */; };
 		E7BD742220A5CBC700B3337E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BD742120A5CBC700B3337E /* ViewController.swift */; };
@@ -38,13 +42,17 @@
 		9A6C3A7F20AC78CC0047F3DF /* ScalingCarouselLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScalingCarouselLayout.swift; sourceTree = "<group>"; };
 		9A6C3A8020AC78CC0047F3DF /* ScalingCarouselView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScalingCarouselView.swift; sourceTree = "<group>"; };
 		9A6C3A8120AC78CC0047F3DF /* ScalingCarouselCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScalingCarouselCell.swift; sourceTree = "<group>"; };
-		9A6C3A8220AC78CC0047F3DF /* CharacterSelectionScalingCarouselCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterSelectionScalingCarouselCell.swift; sourceTree = "<group>"; };
-		9A6C3A8320AC78CC0047F3DF /* CharacterSelectionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterSelectionTableViewCell.swift; sourceTree = "<group>"; };
+		9A6C3A8220AC78CC0047F3DF /* ClassSelectionScalingCarouselCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassSelectionScalingCarouselCell.swift; sourceTree = "<group>"; };
 		9A6C3A8F20AD9E930047F3DF /* Ability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ability.swift; sourceTree = "<group>"; };
 		9A6C3A9320ADA5E50047F3DF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9A6C3A9520ADA6480047F3DF /* PlayerCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCharacter.swift; sourceTree = "<group>"; };
 		9A6C3A9720ADA6B10047F3DF /* CharacterClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterClass.swift; sourceTree = "<group>"; };
 		9A6C3A9920ADA7E40047F3DF /* GameData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameData.swift; sourceTree = "<group>"; };
+		9A7C8E2420ADAF0F0075E180 /* AttributeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributeTableViewCell.swift; sourceTree = "<group>"; };
+		9A7C8E2E20ADBDED0075E180 /* CharacterCreationClassSelectionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterCreationClassSelectionTableViewCell.swift; sourceTree = "<group>"; };
+		9A7C8E3220ADC8EE0075E180 /* CharacterCreationAttributeDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterCreationAttributeDatasource.swift; sourceTree = "<group>"; };
+		9A7C8E3320ADC8EF0075E180 /* CharacterCreationClassDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterCreationClassDatasource.swift; sourceTree = "<group>"; };
+		9A7C8E3620ADCE3C0075E180 /* CharacterCreationNameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCreationNameTableViewCell.swift; sourceTree = "<group>"; };
 		E74B388520A5DF4D00CA12C1 /* WorldQuestApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "WorldQuestApp-Bridging-Header.h"; path = "../WorldQuestApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		E74B388820A5EE3F00CA12C1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E7BD741C20A5CBC700B3337E /* WorldQuestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorldQuestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -107,15 +115,10 @@
 		E7BD741E20A5CBC700B3337E /* WorldQuestApp */ = {
 			isa = PBXGroup;
 			children = (
-				9A6C3A7E20AC78CC0047F3DF /* CharacterCreationAttributesTableViewCell.swift */,
-				9A6C3A7D20AC78CB0047F3DF /* CharacterCreationViewController.swift */,
 				9A6C3A9920ADA7E40047F3DF /* GameData.swift */,
-				9A6C3A8220AC78CC0047F3DF /* CharacterSelectionScalingCarouselCell.swift */,
-				9A6C3A8320AC78CC0047F3DF /* CharacterSelectionTableViewCell.swift */,
 				9A6C3A8120AC78CC0047F3DF /* ScalingCarouselCell.swift */,
 				9A6C3A7F20AC78CC0047F3DF /* ScalingCarouselLayout.swift */,
 				9A6C3A8020AC78CC0047F3DF /* ScalingCarouselView.swift */,
-				9A6C3A7C20AC78CB0047F3DF /* ToggleButton.swift */,
 				E7BD741F20A5CBC700B3337E /* AppDelegate.swift */,
 				E7BD742120A5CBC700B3337E /* ViewController.swift */,
 				E7BD742320A5CBC700B3337E /* Main.storyboard */,
@@ -127,7 +130,16 @@
 				E7BD742820A5CBC800B3337E /* LaunchScreen.storyboard */,
 				E7BD742B20A5CBC800B3337E /* Info.plist */,
 				E74B388820A5EE3F00CA12C1 /* GoogleService-Info.plist */,
+				9A6C3A7C20AC78CB0047F3DF /* ToggleButton.swift */,
+				9A6C3A7D20AC78CB0047F3DF /* CharacterCreationViewController.swift */,
+				9A7C8E3620ADCE3C0075E180 /* CharacterCreationNameTableViewCell.swift */,
 				E74B388520A5DF4D00CA12C1 /* WorldQuestApp-Bridging-Header.h */,
+				9A7C8E2E20ADBDED0075E180 /* CharacterCreationClassSelectionTableViewCell.swift */,
+				9A6C3A7E20AC78CC0047F3DF /* CharacterCreationAttributesTableViewCell.swift */,
+				9A7C8E3220ADC8EE0075E180 /* CharacterCreationAttributeDatasource.swift */,
+				9A7C8E3320ADC8EF0075E180 /* CharacterCreationClassDatasource.swift */,
+				9A7C8E2420ADAF0F0075E180 /* AttributeTableViewCell.swift */,
+				9A6C3A8220AC78CC0047F3DF /* ClassSelectionScalingCarouselCell.swift */,
 			);
 			path = WorldQuestApp;
 			sourceTree = "<group>";
@@ -256,19 +268,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A6C3A9420ADA5E50047F3DF /* User.swift in Sources */,
+				9A7C8E3420ADC8EF0075E180 /* CharacterCreationAttributeDatasource.swift in Sources */,
 				9A6C3A9A20ADA7E40047F3DF /* GameData.swift in Sources */,
-				9A6C3A8A20AC78CC0047F3DF /* CharacterSelectionScalingCarouselCell.swift in Sources */,
+				9A7C8E3520ADC8EF0075E180 /* CharacterCreationClassDatasource.swift in Sources */,
+				9A6C3A8A20AC78CC0047F3DF /* ClassSelectionScalingCarouselCell.swift in Sources */,
 				9A6C3A9820ADA6B10047F3DF /* CharacterClass.swift in Sources */,
 				9A6C3A8820AC78CC0047F3DF /* ScalingCarouselView.swift in Sources */,
 				E7BD742220A5CBC700B3337E /* ViewController.swift in Sources */,
 				9A6C3A8620AC78CC0047F3DF /* CharacterCreationAttributesTableViewCell.swift in Sources */,
+				9A7C8E2F20ADBDED0075E180 /* CharacterCreationClassSelectionTableViewCell.swift in Sources */,
 				9A6C3A8920AC78CC0047F3DF /* ScalingCarouselCell.swift in Sources */,
 				9A6C3A8520AC78CC0047F3DF /* CharacterCreationViewController.swift in Sources */,
 				9A6C3A8420AC78CC0047F3DF /* ToggleButton.swift in Sources */,
+				9A7C8E3720ADCE3C0075E180 /* CharacterCreationNameTableViewCell.swift in Sources */,
 				E7BD742020A5CBC700B3337E /* AppDelegate.swift in Sources */,
-				9A6C3A8B20AC78CC0047F3DF /* CharacterSelectionTableViewCell.swift in Sources */,
 				9A6C3A9620ADA6480047F3DF /* PlayerCharacter.swift in Sources */,
 				9A6C3A9020AD9E930047F3DF /* Ability.swift in Sources */,
+				9A7C8E2520ADAF0F0075E180 /* AttributeTableViewCell.swift in Sources */,
 				9A6C3A8720AC78CC0047F3DF /* ScalingCarouselLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

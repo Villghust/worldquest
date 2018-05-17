@@ -48,7 +48,7 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="NameCell" rowHeight="55" id="I2P-vs-PfT" userLabel="Name Table View Cell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="NameCell" rowHeight="55" id="I2P-vs-PfT" userLabel="Name Table View Cell" customClass="CharacterCreationNameTableViewCell" customModule="WorldQuestApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="I2P-vs-PfT" id="S6G-P0-SdG">
@@ -74,8 +74,11 @@
                                                 <constraint firstAttribute="trailing" secondItem="7jk-cR-hw9" secondAttribute="trailing" constant="15" id="wov-IA-shB"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="characterNameTextField" destination="k62-iN-HNr" id="80b-qT-t1p"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ClassSelectionCell" rowHeight="351" id="Myw-Fc-F7q" userLabel="Class Selection Table View Cell" customClass="CharacterSelectionTableViewCell" customModule="WorldQuestApp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ClassSelectionCell" rowHeight="351" id="Myw-Fc-F7q" userLabel="Class Selection Table View Cell" customClass="CharacterCreationClassSelectionTableViewCell" customModule="WorldQuestApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="83" width="375" height="351"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Myw-Fc-F7q" id="RGL-5w-lu7">
@@ -95,7 +98,7 @@
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="WarriorCell" id="d20-gq-gfL" customClass="CharacterSelectionScalingCarouselCell" customModule="WorldQuestApp" customModuleProvider="target">
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ClassCell" id="d20-gq-gfL" customClass="ClassSelectionScalingCarouselCell" customModule="WorldQuestApp" customModuleProvider="target">
                                                             <rect key="frame" x="68.5" y="0.0" width="208" height="315"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -166,7 +169,10 @@
                                                             </constraints>
                                                             <size key="customSize" width="208" height="315"/>
                                                             <connections>
-                                                                <outlet property="mainView" destination="zXa-l0-DpF" id="JVg-FO-QfE"/>
+                                                                <outlet property="descriptionLabel" destination="Sor-wk-xcV" id="boa-Kw-1YA"/>
+                                                                <outlet property="imageView" destination="5r2-qc-s4o" id="5Xh-7H-1wb"/>
+                                                                <outlet property="mainView" destination="zXa-l0-DpF" id="D6h-o5-ccW"/>
+                                                                <outlet property="nameLabel" destination="wmK-tn-D2Q" id="hWb-zk-FA2"/>
                                                             </connections>
                                                         </collectionViewCell>
                                                     </cells>
@@ -212,7 +218,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <prototypes>
-                                                        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="StrCell" rowHeight="31" id="0hT-N2-Ezw" userLabel="Str Table View Cell">
+                                                        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AttrCell" rowHeight="31" id="0hT-N2-Ezw" userLabel="Attribute Cell" customClass="AttributeTableViewCell" customModule="WorldQuestApp" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="56" width="305" height="31"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0hT-N2-Ezw" id="cvz-NI-iwl">
@@ -230,6 +236,9 @@
                                                                         <state key="normal" title="Level Up">
                                                                             <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         </state>
+                                                                        <connections>
+                                                                            <action selector="levelupAttribute_Touch:" destination="0hT-N2-Ezw" eventType="touchUpInside" id="8l3-Wf-Iei"/>
+                                                                        </connections>
                                                                     </button>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="HlZ-AP-MeQ" userLabel="Attribute Amount">
                                                                         <rect key="frame" x="147" y="0.0" width="11" height="31"/>
@@ -258,169 +267,10 @@
                                                                     <constraint firstAttribute="bottom" secondItem="HlZ-AP-MeQ" secondAttribute="bottom" id="vwv-nr-vq2"/>
                                                                 </constraints>
                                                             </tableViewCellContentView>
-                                                        </tableViewCell>
-                                                        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AgiCell" rowHeight="31" id="GGy-gv-3St" userLabel="Agi Table View Cell">
-                                                            <rect key="frame" x="0.0" y="87" width="305" height="31"/>
-                                                            <autoresizingMask key="autoresizingMask"/>
-                                                            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GGy-gv-3St" id="5NL-mN-sqH">
-                                                                <rect key="frame" x="0.0" y="0.0" width="305" height="30.5"/>
-                                                                <autoresizingMask key="autoresizingMask"/>
-                                                                <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Agilidade" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="1" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tOJ-rh-nir" userLabel="Attribute">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="137" height="31"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                        <nil key="textColor"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aOy-7C-NtN" userLabel="LevelUpAttribute" customClass="ToggleButton" customModule="WorldQuestApp" customModuleProvider="target">
-                                                                        <rect key="frame" x="158" y="0.0" width="147" height="31"/>
-                                                                        <state key="normal" title="Level Up">
-                                                                            <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        </state>
-                                                                    </button>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="toP-ZQ-HlY" userLabel="Attribute Amount">
-                                                                        <rect key="frame" x="147" y="0.0" width="11" height="31"/>
-                                                                        <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="MHE-UC-Xz1" userLabel="Value">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="11" height="31"/>
-                                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                                <nil key="textColor"/>
-                                                                                <nil key="highlightedColor"/>
-                                                                            </label>
-                                                                        </subviews>
-                                                                    </stackView>
-                                                                </subviews>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="bottom" secondItem="aOy-7C-NtN" secondAttribute="bottom" id="3U0-ys-w5V"/>
-                                                                    <constraint firstAttribute="trailing" secondItem="aOy-7C-NtN" secondAttribute="trailing" id="3e6-6B-XxI"/>
-                                                                    <constraint firstItem="aOy-7C-NtN" firstAttribute="leading" secondItem="toP-ZQ-HlY" secondAttribute="trailing" id="Dj2-xp-Uuw"/>
-                                                                    <constraint firstItem="aOy-7C-NtN" firstAttribute="top" secondItem="5NL-mN-sqH" secondAttribute="top" id="Od6-Sg-QPL"/>
-                                                                    <constraint firstItem="toP-ZQ-HlY" firstAttribute="centerY" secondItem="5NL-mN-sqH" secondAttribute="centerY" id="XiU-lY-qgy"/>
-                                                                    <constraint firstAttribute="bottom" secondItem="tOJ-rh-nir" secondAttribute="bottom" id="bnD-le-k8P"/>
-                                                                    <constraint firstItem="toP-ZQ-HlY" firstAttribute="leading" secondItem="tOJ-rh-nir" secondAttribute="trailing" constant="10" id="bs2-az-1pZ"/>
-                                                                    <constraint firstItem="toP-ZQ-HlY" firstAttribute="centerX" secondItem="5NL-mN-sqH" secondAttribute="centerX" id="e5E-Ea-V2Z"/>
-                                                                    <constraint firstAttribute="bottom" secondItem="toP-ZQ-HlY" secondAttribute="bottom" id="hYg-qx-kIs"/>
-                                                                    <constraint firstItem="tOJ-rh-nir" firstAttribute="top" secondItem="5NL-mN-sqH" secondAttribute="top" id="lDw-GD-IQc"/>
-                                                                    <constraint firstItem="tOJ-rh-nir" firstAttribute="leading" secondItem="5NL-mN-sqH" secondAttribute="leading" id="rcV-VN-jTe"/>
-                                                                    <constraint firstItem="toP-ZQ-HlY" firstAttribute="top" secondItem="5NL-mN-sqH" secondAttribute="top" id="xkV-3B-fDI"/>
-                                                                </constraints>
-                                                            </tableViewCellContentView>
-                                                        </tableViewCell>
-                                                        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="IntCell" rowHeight="31" id="PPy-LM-d5l" userLabel="Int Table View Cell">
-                                                            <rect key="frame" x="0.0" y="118" width="305" height="31"/>
-                                                            <autoresizingMask key="autoresizingMask"/>
-                                                            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PPy-LM-d5l" id="CAr-hJ-e5Z">
-                                                                <rect key="frame" x="0.0" y="0.0" width="305" height="30.5"/>
-                                                                <autoresizingMask key="autoresizingMask"/>
-                                                                <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Inteligência" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="1" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EZ1-jK-5wC" userLabel="Attribute">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="137" height="31"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                        <nil key="textColor"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xfx-wV-86F" userLabel="LevelUpAttribute" customClass="ToggleButton" customModule="WorldQuestApp" customModuleProvider="target">
-                                                                        <rect key="frame" x="158" y="0.0" width="147" height="31"/>
-                                                                        <state key="normal" title="Level Up">
-                                                                            <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                        </state>
-                                                                    </button>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="UX4-Os-lvm" userLabel="Attribute Amount">
-                                                                        <rect key="frame" x="147" y="0.0" width="11" height="31"/>
-                                                                        <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="RrX-kj-uFR" userLabel="Value">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="11" height="31"/>
-                                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                                <nil key="textColor"/>
-                                                                                <nil key="highlightedColor"/>
-                                                                            </label>
-                                                                        </subviews>
-                                                                    </stackView>
-                                                                </subviews>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="bottom" secondItem="UX4-Os-lvm" secondAttribute="bottom" id="696-Bs-w0E"/>
-                                                                    <constraint firstItem="EZ1-jK-5wC" firstAttribute="top" secondItem="CAr-hJ-e5Z" secondAttribute="top" id="ImR-Vy-9e8"/>
-                                                                    <constraint firstItem="xfx-wV-86F" firstAttribute="leading" secondItem="UX4-Os-lvm" secondAttribute="trailing" id="Ix1-gJ-5BO"/>
-                                                                    <constraint firstAttribute="bottom" secondItem="xfx-wV-86F" secondAttribute="bottom" id="Ixx-0r-vEg"/>
-                                                                    <constraint firstItem="UX4-Os-lvm" firstAttribute="centerY" secondItem="CAr-hJ-e5Z" secondAttribute="centerY" id="M3H-Dh-Xl7"/>
-                                                                    <constraint firstItem="UX4-Os-lvm" firstAttribute="top" secondItem="CAr-hJ-e5Z" secondAttribute="top" id="QZh-RE-YvI"/>
-                                                                    <constraint firstItem="xfx-wV-86F" firstAttribute="top" secondItem="CAr-hJ-e5Z" secondAttribute="top" id="dmQ-I1-0dA"/>
-                                                                    <constraint firstAttribute="bottom" secondItem="EZ1-jK-5wC" secondAttribute="bottom" id="hQc-gh-Qv4"/>
-                                                                    <constraint firstItem="EZ1-jK-5wC" firstAttribute="leading" secondItem="CAr-hJ-e5Z" secondAttribute="leading" id="mNd-if-QNR"/>
-                                                                    <constraint firstAttribute="trailing" secondItem="xfx-wV-86F" secondAttribute="trailing" id="ohN-Hi-cNm"/>
-                                                                    <constraint firstItem="UX4-Os-lvm" firstAttribute="leading" secondItem="EZ1-jK-5wC" secondAttribute="trailing" constant="10" id="pFL-pK-fjp"/>
-                                                                    <constraint firstItem="UX4-Os-lvm" firstAttribute="centerX" secondItem="CAr-hJ-e5Z" secondAttribute="centerX" id="tv3-fV-e8V"/>
-                                                                </constraints>
-                                                            </tableViewCellContentView>
-                                                        </tableViewCell>
-                                                        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="VitCell" rowHeight="31" id="2NM-r1-4oB" userLabel="Vit Table View Cell">
-                                                            <rect key="frame" x="0.0" y="149" width="305" height="31"/>
-                                                            <autoresizingMask key="autoresizingMask"/>
-                                                            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2NM-r1-4oB" id="fQD-We-VAg">
-                                                                <rect key="frame" x="0.0" y="0.0" width="305" height="30.5"/>
-                                                                <autoresizingMask key="autoresizingMask"/>
-                                                                <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vitalidade" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="1" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HKn-nl-dPe" userLabel="Attribute">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="137" height="31"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                        <nil key="textColor"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qVY-NN-r4c" userLabel="LevelUpAttribute" customClass="ToggleButton" customModule="WorldQuestApp" customModuleProvider="target">
-                                                                        <rect key="frame" x="158" y="0.0" width="147" height="31"/>
-                                                                        <state key="normal" title="Level Up">
-                                                                            <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                        </state>
-                                                                    </button>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="6GT-3f-UsS" userLabel="Attribute Amount">
-                                                                        <rect key="frame" x="147" y="0.0" width="11" height="31"/>
-                                                                        <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="CU3-G6-Z5m" userLabel="Value">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="11" height="31"/>
-                                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                                <nil key="textColor"/>
-                                                                                <nil key="highlightedColor"/>
-                                                                            </label>
-                                                                        </subviews>
-                                                                    </stackView>
-                                                                </subviews>
-                                                                <constraints>
-                                                                    <constraint firstItem="6GT-3f-UsS" firstAttribute="leading" secondItem="HKn-nl-dPe" secondAttribute="trailing" constant="10" id="3b7-sv-75S"/>
-                                                                    <constraint firstAttribute="bottom" secondItem="qVY-NN-r4c" secondAttribute="bottom" id="4tl-L1-4LS"/>
-                                                                    <constraint firstItem="6GT-3f-UsS" firstAttribute="centerY" secondItem="fQD-We-VAg" secondAttribute="centerY" id="6Dl-Ma-8RS"/>
-                                                                    <constraint firstAttribute="trailing" secondItem="qVY-NN-r4c" secondAttribute="trailing" id="7iH-F7-MUo"/>
-                                                                    <constraint firstAttribute="bottom" secondItem="6GT-3f-UsS" secondAttribute="bottom" id="AEm-Ol-dRK"/>
-                                                                    <constraint firstItem="qVY-NN-r4c" firstAttribute="top" secondItem="fQD-We-VAg" secondAttribute="top" id="EzG-l9-AOD"/>
-                                                                    <constraint firstItem="6GT-3f-UsS" firstAttribute="top" secondItem="fQD-We-VAg" secondAttribute="top" id="OQu-ks-s3S"/>
-                                                                    <constraint firstItem="HKn-nl-dPe" firstAttribute="leading" secondItem="fQD-We-VAg" secondAttribute="leading" id="RJr-6k-mvP"/>
-                                                                    <constraint firstAttribute="bottom" secondItem="HKn-nl-dPe" secondAttribute="bottom" id="Z34-lx-ped"/>
-                                                                    <constraint firstItem="6GT-3f-UsS" firstAttribute="centerX" secondItem="fQD-We-VAg" secondAttribute="centerX" id="b3G-eY-hVW"/>
-                                                                    <constraint firstItem="qVY-NN-r4c" firstAttribute="leading" secondItem="6GT-3f-UsS" secondAttribute="trailing" id="gst-2B-m9G"/>
-                                                                    <constraint firstItem="HKn-nl-dPe" firstAttribute="top" secondItem="fQD-We-VAg" secondAttribute="top" id="nf8-i5-BsS"/>
-                                                                </constraints>
-                                                            </tableViewCellContentView>
-                                                        </tableViewCell>
-                                                        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PointsCell" rowHeight="31" id="ex4-zm-ejx" userLabel="Points Remaining Table View Cell">
-                                                            <rect key="frame" x="0.0" y="180" width="305" height="31"/>
-                                                            <autoresizingMask key="autoresizingMask"/>
-                                                            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ex4-zm-ejx" id="zln-ZP-OAW">
-                                                                <rect key="frame" x="0.0" y="0.0" width="305" height="30.5"/>
-                                                                <autoresizingMask key="autoresizingMask"/>
-                                                                <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distribuia mais 2 pontos de atributos." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FdF-qK-m3u">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="305" height="30.5"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                        <nil key="textColor"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                </subviews>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="trailing" secondItem="FdF-qK-m3u" secondAttribute="trailing" id="8Ma-gI-5Tb"/>
-                                                                    <constraint firstItem="FdF-qK-m3u" firstAttribute="leading" secondItem="zln-ZP-OAW" secondAttribute="leading" id="Pqj-t2-40T"/>
-                                                                    <constraint firstAttribute="bottom" secondItem="FdF-qK-m3u" secondAttribute="bottom" id="mG5-Km-R1Q"/>
-                                                                    <constraint firstItem="FdF-qK-m3u" firstAttribute="top" secondItem="zln-ZP-OAW" secondAttribute="top" id="o9N-vO-6Uo"/>
-                                                                </constraints>
-                                                            </tableViewCellContentView>
+                                                            <connections>
+                                                                <outlet property="identifierLabel" destination="eVa-gA-pkT" id="Gew-Db-YR4"/>
+                                                                <outlet property="valueLabel" destination="4cA-4E-cZ1" id="RVx-ch-oFX"/>
+                                                            </connections>
                                                         </tableViewCell>
                                                     </prototypes>
                                                     <sections/>

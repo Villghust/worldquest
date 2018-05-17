@@ -8,10 +8,11 @@
 
 import UIKit
 
-class CharacterCreationViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
-    //uicollectionview carousel swift
+class CharacterCreationViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
+    
+    var character = PlayerCharacter(attrPoints: 2, player: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,14 +38,11 @@ class CharacterCreationViewController: UIViewController, UITableViewDataSource, 
         
         switch(indexPath.row) {
         case 0:
-            cell = self.tableView.dequeueReusableCell(withIdentifier: "NameCell", for: indexPath)
+            cell = self.tableView.dequeueReusableCell(withIdentifier: "NameCell", for: indexPath) as! CharacterCreationNameTableViewCell
             break
         case 1:
-            cell = self.tableView.dequeueReusableCell(withIdentifier: "ClassSelectionCell", for: indexPath)
+            cell = self.tableView.dequeueReusableCell(withIdentifier: "ClassSelectionCell", for: indexPath) as! CharacterCreationClassSelectionTableViewCell
             break
-//        case 2:
-//            cell = self.tableView.dequeueReusableCell(withIdentifier: "ClassAbilitiesCell", for: indexPath)
-//            break
         case 2:
             cell = self.tableView.dequeueReusableCell(withIdentifier: "AttributesCell", for: indexPath) as! CharacterCreationAttributesTableViewCell
             break
@@ -52,19 +50,17 @@ class CharacterCreationViewController: UIViewController, UITableViewDataSource, 
             cell = self.tableView.dequeueReusableCell(withIdentifier: "CreateButtonCell", for: indexPath)
             break
         }
-        
 
         return cell
     }
-    
-    /*
-    // MARK: - Navigation
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+extension UIResponder {
+    var viewController: UIViewController? {
+        if let vc = self as? UIViewController {
+            return vc
+        }
+        
+        return next?.viewController
     }
-    */
-
 }
