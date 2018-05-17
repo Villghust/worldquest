@@ -56,6 +56,9 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        if annotation is MKUserLocation {
+            return nil
+        }
         let pin = MKAnnotationView()
         if annotation.title == "shopping" {
             pin.image = UIImage.init(named: "_TAB_QUEST")
