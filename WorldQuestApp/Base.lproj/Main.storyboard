@@ -686,18 +686,54 @@
         <!--Item-->
         <scene sceneID="ruz-gG-vJb">
             <objects>
-                <viewController id="p20-qC-k6u" sceneMemberID="viewController">
+                <viewController id="p20-qC-k6u" customClass="MapViewController" customModule="WorldQuestApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4Ea-bB-nJ2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xYG-Qe-FDk" userLabel="Background ImageView">
+                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cSE-yP-xEi">
+                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                                <subviews>
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h3Y-DV-Jnd">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="598"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="p20-qC-k6u" id="Lhv-vC-ocn"/>
+                                        </connections>
+                                    </mapView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="h3Y-DV-Jnd" secondAttribute="bottom" id="Lcp-28-G2q"/>
+                                    <constraint firstAttribute="trailing" secondItem="h3Y-DV-Jnd" secondAttribute="trailing" id="g6E-d5-QGY"/>
+                                    <constraint firstItem="h3Y-DV-Jnd" firstAttribute="top" secondItem="cSE-yP-xEi" secondAttribute="top" id="gcZ-4U-LD1"/>
+                                    <constraint firstItem="h3Y-DV-Jnd" firstAttribute="leading" secondItem="cSE-yP-xEi" secondAttribute="leading" id="i51-Ex-uWc"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="cSE-yP-xEi" firstAttribute="leading" secondItem="deg-s6-2xD" secondAttribute="leading" id="Ddn-QU-35o"/>
+                            <constraint firstItem="cSE-yP-xEi" firstAttribute="top" secondItem="deg-s6-2xD" secondAttribute="top" id="DlX-WT-MCp"/>
+                            <constraint firstItem="deg-s6-2xD" firstAttribute="trailing" secondItem="cSE-yP-xEi" secondAttribute="trailing" id="ggZ-Tf-mA3"/>
+                            <constraint firstItem="deg-s6-2xD" firstAttribute="trailing" secondItem="xYG-Qe-FDk" secondAttribute="trailing" id="kKQ-4y-kAb"/>
+                            <constraint firstItem="xYG-Qe-FDk" firstAttribute="top" secondItem="deg-s6-2xD" secondAttribute="top" id="mCV-5q-qSs"/>
+                            <constraint firstItem="deg-s6-2xD" firstAttribute="bottom" secondItem="cSE-yP-xEi" secondAttribute="bottom" id="nDV-nY-S1O"/>
+                            <constraint firstItem="xYG-Qe-FDk" firstAttribute="leading" secondItem="deg-s6-2xD" secondAttribute="leading" id="tk6-Fh-MYA"/>
+                            <constraint firstItem="deg-s6-2xD" firstAttribute="bottom" secondItem="xYG-Qe-FDk" secondAttribute="bottom" id="wFe-hg-fgo"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="deg-s6-2xD"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="H57-zg-tuL"/>
+                    <connections>
+                        <outlet property="mapView" destination="h3Y-DV-Jnd" id="dEz-hj-tZa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ocu-oo-jNU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2680.8000000000002" y="133.5832083958021"/>
+            <point key="canvasLocation" x="2697" y="134"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="llM-un-HRR">
