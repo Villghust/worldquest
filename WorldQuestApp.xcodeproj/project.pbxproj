@@ -8,6 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		033F632DFB55A338DAC0A67B /* Pods_WorldQuestApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02D0237257070B2FBE7DD0A7 /* Pods_WorldQuestApp.framework */; };
+		9A5E6C2720AF158600D98CF3 /* Enemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5E6C2320AF158500D98CF3 /* Enemy.swift */; };
+		9A5E6C2820AF158600D98CF3 /* CharacterCreationAttributesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5E6C2420AF158500D98CF3 /* CharacterCreationAttributesTableViewCell.swift */; };
+		9A5E6C2C20AF1B7E00D98CF3 /* EnemyAI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5E6C2B20AF1B7E00D98CF3 /* EnemyAI.swift */; };
+		9A5E6C2E20AF1C0C00D98CF3 /* UseAbilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5E6C2D20AF1C0C00D98CF3 /* UseAbilities.swift */; };
+		9A5E6C3020AF1C2F00D98CF3 /* InitiativeMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5E6C2F20AF1C2F00D98CF3 /* InitiativeMember.swift */; };
+		9A5E6C3320AF282500D98CF3 /* Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5E6C3220AF282500D98CF3 /* Random.swift */; };
+		9A5E6C3620AF2A8600D98CF3 /* EnemyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5E6C3520AF2A8600D98CF3 /* EnemyData.swift */; };
+		9A5E6C3B20AF329F00D98CF3 /* InitiativeSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5E6C3A20AF329F00D98CF3 /* InitiativeSystem.swift */; };
+		9A5E6C3E20AF348100D98CF3 /* Debuff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5E6C3D20AF348100D98CF3 /* Debuff.swift */; };
+		9A5E6C4020AF34A400D98CF3 /* Target.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5E6C3F20AF34A400D98CF3 /* Target.swift */; };
 		9A6C3A8420AC78CC0047F3DF /* ToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6C3A7C20AC78CB0047F3DF /* ToggleButton.swift */; };
 		9A6C3A8520AC78CC0047F3DF /* CharacterCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6C3A7D20AC78CB0047F3DF /* CharacterCreationViewController.swift */; };
 		9A6C3A8720AC78CC0047F3DF /* ScalingCarouselLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6C3A7F20AC78CC0047F3DF /* ScalingCarouselLayout.swift */; };
@@ -34,6 +44,16 @@
 /* Begin PBXFileReference section */
 		02D0237257070B2FBE7DD0A7 /* Pods_WorldQuestApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WorldQuestApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		33C07B9ED93686740204735C /* Pods-WorldQuestApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorldQuestApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-WorldQuestApp/Pods-WorldQuestApp.release.xcconfig"; sourceTree = "<group>"; };
+		9A5E6C2320AF158500D98CF3 /* Enemy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enemy.swift; sourceTree = "<group>"; };
+		9A5E6C2420AF158500D98CF3 /* CharacterCreationAttributesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterCreationAttributesTableViewCell.swift; sourceTree = "<group>"; };
+		9A5E6C2B20AF1B7E00D98CF3 /* EnemyAI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnemyAI.swift; sourceTree = "<group>"; };
+		9A5E6C2D20AF1C0C00D98CF3 /* UseAbilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseAbilities.swift; sourceTree = "<group>"; };
+		9A5E6C2F20AF1C2F00D98CF3 /* InitiativeMember.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitiativeMember.swift; sourceTree = "<group>"; };
+		9A5E6C3220AF282500D98CF3 /* Random.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Random.swift; sourceTree = "<group>"; };
+		9A5E6C3520AF2A8600D98CF3 /* EnemyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnemyData.swift; sourceTree = "<group>"; };
+		9A5E6C3A20AF329F00D98CF3 /* InitiativeSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitiativeSystem.swift; sourceTree = "<group>"; };
+		9A5E6C3D20AF348100D98CF3 /* Debuff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debuff.swift; sourceTree = "<group>"; };
+		9A5E6C3F20AF34A400D98CF3 /* Target.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Target.swift; sourceTree = "<group>"; };
 		9A6C3A7C20AC78CB0047F3DF /* ToggleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToggleButton.swift; sourceTree = "<group>"; };
 		9A6C3A7D20AC78CB0047F3DF /* CharacterCreationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterCreationViewController.swift; sourceTree = "<group>"; };
 		9A6C3A7F20AC78CC0047F3DF /* ScalingCarouselLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScalingCarouselLayout.swift; sourceTree = "<group>"; };
@@ -81,6 +101,71 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		9A5E6C2A20AF1B6900D98CF3 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				9A5E6C2B20AF1B7E00D98CF3 /* EnemyAI.swift */,
+				9A5E6C2D20AF1C0C00D98CF3 /* UseAbilities.swift */,
+				9A5E6C2F20AF1C2F00D98CF3 /* InitiativeMember.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		9A5E6C3120AF25DA00D98CF3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9A5E6C3220AF282500D98CF3 /* Random.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		9A5E6C3420AF2A7800D98CF3 /* Structs */ = {
+			isa = PBXGroup;
+			children = (
+				9A6C3A9720ADA6B10047F3DF /* CharacterClass.swift */,
+				9A5E6C3520AF2A8600D98CF3 /* EnemyData.swift */,
+				9A6C3A9320ADA5E50047F3DF /* User.swift */,
+				9A6C3A8F20AD9E930047F3DF /* Ability.swift */,
+			);
+			path = Structs;
+			sourceTree = "<group>";
+		};
+		9A5E6C3720AF2ABB00D98CF3 /* Custom UI */ = {
+			isa = PBXGroup;
+			children = (
+				9A5E6C3820AF2ACC00D98CF3 /* ScalingCarousel */,
+				9A6C3A7C20AC78CB0047F3DF /* ToggleButton.swift */,
+			);
+			path = "Custom UI";
+			sourceTree = "<group>";
+		};
+		9A5E6C3820AF2ACC00D98CF3 /* ScalingCarousel */ = {
+			isa = PBXGroup;
+			children = (
+				9A6C3A8120AC78CC0047F3DF /* ScalingCarouselCell.swift */,
+				9A6C3A7F20AC78CC0047F3DF /* ScalingCarouselLayout.swift */,
+				9A6C3A8020AC78CC0047F3DF /* ScalingCarouselView.swift */,
+			);
+			path = ScalingCarousel;
+			sourceTree = "<group>";
+		};
+		9A5E6C3920AF326100D98CF3 /* Singletons */ = {
+			isa = PBXGroup;
+			children = (
+				9A5E6C3A20AF329F00D98CF3 /* InitiativeSystem.swift */,
+			);
+			path = Singletons;
+			sourceTree = "<group>";
+		};
+		9A5E6C3C20AF346E00D98CF3 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				9A5E6C3D20AF348100D98CF3 /* Debuff.swift */,
+				9A5E6C3F20AF34A400D98CF3 /* Target.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
 		C932423CE292BBDC1FD278E1 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -111,23 +196,23 @@
 		E7BD741E20A5CBC700B3337E /* WorldQuestApp */ = {
 			isa = PBXGroup;
 			children = (
-				E7CED29B20ADCBE800C8054B /* MapViewController.swift */,
-				9A6C3A7E20AC78CC0047F3DF /* CharacterCreationAttributesTableViewCell.swift */,
-				9A6C3A9920ADA7E40047F3DF /* GameData.swift */,
-				9A6C3A8120AC78CC0047F3DF /* ScalingCarouselCell.swift */,
-				9A6C3A7F20AC78CC0047F3DF /* ScalingCarouselLayout.swift */,
-				9A6C3A8020AC78CC0047F3DF /* ScalingCarouselView.swift */,
 				E7BD741F20A5CBC700B3337E /* AppDelegate.swift */,
-				E7BD742120A5CBC700B3337E /* ViewController.swift */,
+				9A6C3A9920ADA7E40047F3DF /* GameData.swift */,
 				E7BD742320A5CBC700B3337E /* Main.storyboard */,
-				9A6C3A9320ADA5E50047F3DF /* User.swift */,
+				9A5E6C3C20AF346E00D98CF3 /* Enums */,
+				9A5E6C3920AF326100D98CF3 /* Singletons */,
+				9A5E6C3720AF2ABB00D98CF3 /* Custom UI */,
+				9A5E6C3420AF2A7800D98CF3 /* Structs */,
+				9A5E6C3120AF25DA00D98CF3 /* Extensions */,
+				9A5E6C2A20AF1B6900D98CF3 /* Protocols */,
+				E7BD742120A5CBC700B3337E /* ViewController.swift */,
+				E7CED29B20ADCBE800C8054B /* MapViewController.swift */,
+				9A5E6C2420AF158500D98CF3 /* CharacterCreationAttributesTableViewCell.swift */,
 				9A6C3A9520ADA6480047F3DF /* PlayerCharacter.swift */,
-				9A6C3A9720ADA6B10047F3DF /* CharacterClass.swift */,
-				9A6C3A8F20AD9E930047F3DF /* Ability.swift */,
+				9A5E6C2320AF158500D98CF3 /* Enemy.swift */,
 				E7BD742620A5CBC800B3337E /* Assets.xcassets */,
 				E7BD742B20A5CBC800B3337E /* Info.plist */,
 				E74B388820A5EE3F00CA12C1 /* GoogleService-Info.plist */,
-				9A6C3A7C20AC78CB0047F3DF /* ToggleButton.swift */,
 				9A6C3A7D20AC78CB0047F3DF /* CharacterCreationViewController.swift */,
 				E74B388520A5DF4D00CA12C1 /* WorldQuestApp-Bridging-Header.h */,
 				9A7C8E3820ADE26B0075E180 /* CharacterCreationTableViewCell.swift */,
@@ -262,20 +347,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A6C3A9420ADA5E50047F3DF /* User.swift in Sources */,
+				9A5E6C2820AF158600D98CF3 /* CharacterCreationAttributesTableViewCell.swift in Sources */,
+				9A5E6C4020AF34A400D98CF3 /* Target.swift in Sources */,
 				9A7C8E3420ADC8EF0075E180 /* CharacterCreationAttributeDatasource.swift in Sources */,
 				9A6C3A9A20ADA7E40047F3DF /* GameData.swift in Sources */,
 				9A7C8E3520ADC8EF0075E180 /* CharacterCreationClassDatasource.swift in Sources */,
 				9A6C3A8A20AC78CC0047F3DF /* ClassSelectionScalingCarouselCell.swift in Sources */,
+				9A5E6C3B20AF329F00D98CF3 /* InitiativeSystem.swift in Sources */,
+				9A5E6C2C20AF1B7E00D98CF3 /* EnemyAI.swift in Sources */,
 				9A6C3A9820ADA6B10047F3DF /* CharacterClass.swift in Sources */,
+				9A5E6C3320AF282500D98CF3 /* Random.swift in Sources */,
 				9A7C8E3920ADE26C0075E180 /* CharacterCreationTableViewCell.swift in Sources */,
 				9A6C3A8820AC78CC0047F3DF /* ScalingCarouselView.swift in Sources */,
 				E7BD742220A5CBC700B3337E /* ViewController.swift in Sources */,
+				9A5E6C3620AF2A8600D98CF3 /* EnemyData.swift in Sources */,
+				9A5E6C2720AF158600D98CF3 /* Enemy.swift in Sources */,
 				9A6C3A8920AC78CC0047F3DF /* ScalingCarouselCell.swift in Sources */,
 				9A6C3A8520AC78CC0047F3DF /* CharacterCreationViewController.swift in Sources */,
 				9A6C3A8420AC78CC0047F3DF /* ToggleButton.swift in Sources */,
 				E7BD742020A5CBC700B3337E /* AppDelegate.swift in Sources */,
 				9A6C3A9620ADA6480047F3DF /* PlayerCharacter.swift in Sources */,
 				9A6C3A9020AD9E930047F3DF /* Ability.swift in Sources */,
+				9A5E6C2E20AF1C0C00D98CF3 /* UseAbilities.swift in Sources */,
+				9A5E6C3020AF1C2F00D98CF3 /* InitiativeMember.swift in Sources */,
+				9A5E6C3E20AF348100D98CF3 /* Debuff.swift in Sources */,
 				9A7C8E2520ADAF0F0075E180 /* AttributeTableViewCell.swift in Sources */,
 				9A6C3A8720AC78CC0047F3DF /* ScalingCarouselLayout.swift in Sources */,
 				E7CED29C20ADCBE800C8054B /* MapViewController.swift in Sources */,

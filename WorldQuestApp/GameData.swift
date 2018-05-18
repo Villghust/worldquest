@@ -16,4 +16,6 @@ class GameData {
     static let classRogue: CharacterClass = CharacterClass(name: "Rogue", description: "An agile and dexterous combatant.", imagePath: "_CHAR_ROGUE", str: 4, agi: 8, int: 6, vit: 6, abilities: [Ability]())
     static let classMage: CharacterClass = CharacterClass(name: "Mage", description: "An cunning and flexible spellcaster", imagePath: "_CHAR_MAGE", str: 4, agi: 6, int: 8, vit: 6, abilities: [Ability]())
     static let allClasses: [CharacterClass] = [GameData.classWarrior, GameData.classRogue, GameData.classMage]
+    
+    
 }
