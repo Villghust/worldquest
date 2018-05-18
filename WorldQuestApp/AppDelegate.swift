@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  StorageExample
-//
-//  Created by Leonardo Marcelino Vieira  on 07/05/2018.
-//  Copyright © 2018 Leonardo Marcelino Vieira . All rights reserved.
-//
-
 import UIKit
 import CoreData // Importante
 import Firebase

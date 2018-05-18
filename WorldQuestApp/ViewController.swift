@@ -1,11 +1,3 @@
-//
-//  ViewController.swift
-//  WorldQuestApp
-//
-//  Created by Alan Quadros on 11/05/2018.
-//  Copyright © 2018 World Quest. All rights reserved.
-//
-
 import UIKit
 import FirebaseAuth
 
@@ -69,6 +61,4 @@ extension ViewController: FBSDKLoginButtonDelegate {
             print ("Error signing out: %@", signOutError)
         }
     }
-    
-    
 }

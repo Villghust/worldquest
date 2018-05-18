@@ -28,7 +28,7 @@
 		E7BD742220A5CBC700B3337E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BD742120A5CBC700B3337E /* ViewController.swift */; };
 		E7BD742520A5CBC700B3337E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7BD742320A5CBC700B3337E /* Main.storyboard */; };
 		E7BD742720A5CBC800B3337E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7BD742620A5CBC800B3337E /* Assets.xcassets */; };
-		E7BD742A20A5CBC800B3337E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7BD742820A5CBC800B3337E /* LaunchScreen.storyboard */; };
+		E7CED29C20ADCBE800C8054B /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CED29B20ADCBE800C8054B /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,8 +56,8 @@
 		E7BD742120A5CBC700B3337E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E7BD742420A5CBC700B3337E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E7BD742620A5CBC800B3337E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E7BD742920A5CBC800B3337E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E7BD742B20A5CBC800B3337E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E7CED29B20ADCBE800C8054B /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		ECBBDF8DCA644BA0A1EC4B00 /* Pods-WorldQuestApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorldQuestApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WorldQuestApp/Pods-WorldQuestApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -111,6 +111,8 @@
 		E7BD741E20A5CBC700B3337E /* WorldQuestApp */ = {
 			isa = PBXGroup;
 			children = (
+				E7CED29B20ADCBE800C8054B /* MapViewController.swift */,
+				9A6C3A7E20AC78CC0047F3DF /* CharacterCreationAttributesTableViewCell.swift */,
 				9A6C3A9920ADA7E40047F3DF /* GameData.swift */,
 				9A6C3A8120AC78CC0047F3DF /* ScalingCarouselCell.swift */,
 				9A6C3A7F20AC78CC0047F3DF /* ScalingCarouselLayout.swift */,
@@ -123,7 +125,6 @@
 				9A6C3A9720ADA6B10047F3DF /* CharacterClass.swift */,
 				9A6C3A8F20AD9E930047F3DF /* Ability.swift */,
 				E7BD742620A5CBC800B3337E /* Assets.xcassets */,
-				E7BD742820A5CBC800B3337E /* LaunchScreen.storyboard */,
 				E7BD742B20A5CBC800B3337E /* Info.plist */,
 				E74B388820A5EE3F00CA12C1 /* GoogleService-Info.plist */,
 				9A6C3A7C20AC78CB0047F3DF /* ToggleButton.swift */,
@@ -198,7 +199,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E7BD742A20A5CBC800B3337E /* LaunchScreen.storyboard in Resources */,
 				E74B388920A5EE3F00CA12C1 /* GoogleService-Info.plist in Resources */,
 				E7BD742720A5CBC800B3337E /* Assets.xcassets in Resources */,
 				E7BD742520A5CBC700B3337E /* Main.storyboard in Resources */,
@@ -278,6 +278,7 @@
 				9A6C3A9020AD9E930047F3DF /* Ability.swift in Sources */,
 				9A7C8E2520ADAF0F0075E180 /* AttributeTableViewCell.swift in Sources */,
 				9A6C3A8720AC78CC0047F3DF /* ScalingCarouselLayout.swift in Sources */,
+				E7CED29C20ADCBE800C8054B /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,14 +291,6 @@
 				E7BD742420A5CBC700B3337E /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		E7BD742820A5CBC800B3337E /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E7BD742920A5CBC800B3337E /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
