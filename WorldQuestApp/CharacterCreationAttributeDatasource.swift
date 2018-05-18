@@ -23,12 +23,12 @@ class CharacterCreationAttributeDatasource: NSObject, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return 5
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCell(withIdentifier: "AttrCell", for: indexPath) as! AttributeTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "AttrCell", for: indexPath) as! AttributeTableViewCell
         
         switch(indexPath.row) {
         case 0:
@@ -40,9 +40,11 @@ class CharacterCreationAttributeDatasource: NSObject, UITableViewDataSource {
         case 2:
             cell.attribute = ("Intelligence", characterClass.int)
             break
-        default:
+        case 3:
             cell.attribute = ("Vitality", characterClass.vit)
             break
+        default:
+            return tableView.dequeueReusableCell(withIdentifier: "PointsCell")!
         }
         
         return cell

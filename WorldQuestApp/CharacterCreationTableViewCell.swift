@@ -40,16 +40,19 @@ class CharacterCreationTableViewCell: UITableViewCell, UICollectionViewDelegate,
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if let invisibleScrollView = scrollView as? ScalingCarouselView {
             invisibleScrollView.didScroll()
+            
             if let currentSelectedClass = classCollection.currentCenterCell as? ClassSelectionScalingCarouselCell {
                 if let vc = viewController as? CharacterCreationViewController {
                     attributeDatasource.characterClass = currentSelectedClass.characterClass
-                    vc.character.attrPoints = GameData.initialAttrPoints
-                    let cells = self.atrTableView.visibleCells as! Array<UITableViewCell>
+                    let cells = self.atrTableView.visibleCells
                     for cell in cells {
                         if let c = cell as? AttributeTableViewCell {
-                            c.toggleButton.isChecked = false
+                            if c.toggleButton.isChecked {
+                                c.toggleButton.buttonClicked(sender: c.toggleButton)
+                            }
                         }
                     }
+                    vc.character.attrPoints = GameData.initialAttrPoints
                     atrTableView.reloadData()
                     print ("Selected: \(currentSelectedClass.characterClass.name)");
                 }
