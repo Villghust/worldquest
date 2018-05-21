@@ -17,5 +17,11 @@ class GameData {
     static let classMage: CharacterClass = CharacterClass(name: "Mage", description: "An cunning and flexible spellcaster", imagePath: "_CHAR_MAGE", str: 4, agi: 6, int: 8, vit: 6, abilities: [Ability]())
     static let allClasses: [CharacterClass] = [GameData.classWarrior, GameData.classRogue, GameData.classMage]
     
+    // Abilities
     
+    static let fireWave: Ability = Ability(name: "Fire Wave", descricao: "You wave your hand in the direction of the enemies and watch, as they are hurt by the flames.", cooldown: 2, targets: Target.singleEnemy, debuffs: nil)
+    
+    static let shieldBash: Ability = Ability(name: "Shield Bash", descricao: "You bash your shield with great force at the target", cooldown: 0, targets: Target.singleEnemy, debuffs: nil)
+    
+    static let abilities: [String : Ability] = ["Shield Bash": shieldBash, "Fire Wave" : fireWave]
 }

@@ -15,8 +15,7 @@ struct Ability {
     var cooldown: Int
     
     // MARK: - Effects
-    var targets: [User]
-    var debuffs: [Debuff]
-    
+    var targets: Target
+    var debuffs: [Debuff]?
 }
 

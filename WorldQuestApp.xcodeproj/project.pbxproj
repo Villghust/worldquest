@@ -18,6 +18,9 @@
 		9A5E6C3B20AF329F00D98CF3 /* InitiativeSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5E6C3A20AF329F00D98CF3 /* InitiativeSystem.swift */; };
 		9A5E6C3E20AF348100D98CF3 /* Debuff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5E6C3D20AF348100D98CF3 /* Debuff.swift */; };
 		9A5E6C4020AF34A400D98CF3 /* Target.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5E6C3F20AF34A400D98CF3 /* Target.swift */; };
+		9A5E6C4420B301EB00D98CF3 /* Damageable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5E6C4320B301EB00D98CF3 /* Damageable.swift */; };
+		9A5E6C4620B306DE00D98CF3 /* CombatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5E6C4520B306DE00D98CF3 /* CombatViewController.swift */; };
+		9A5E6C4820B30CFC00D98CF3 /* Side.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5E6C4720B30CFC00D98CF3 /* Side.swift */; };
 		9A6C3A8420AC78CC0047F3DF /* ToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6C3A7C20AC78CB0047F3DF /* ToggleButton.swift */; };
 		9A6C3A8520AC78CC0047F3DF /* CharacterCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6C3A7D20AC78CB0047F3DF /* CharacterCreationViewController.swift */; };
 		9A6C3A8720AC78CC0047F3DF /* ScalingCarouselLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6C3A7F20AC78CC0047F3DF /* ScalingCarouselLayout.swift */; };
@@ -54,6 +57,9 @@
 		9A5E6C3A20AF329F00D98CF3 /* InitiativeSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitiativeSystem.swift; sourceTree = "<group>"; };
 		9A5E6C3D20AF348100D98CF3 /* Debuff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debuff.swift; sourceTree = "<group>"; };
 		9A5E6C3F20AF34A400D98CF3 /* Target.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Target.swift; sourceTree = "<group>"; };
+		9A5E6C4320B301EB00D98CF3 /* Damageable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Damageable.swift; sourceTree = "<group>"; };
+		9A5E6C4520B306DE00D98CF3 /* CombatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombatViewController.swift; sourceTree = "<group>"; };
+		9A5E6C4720B30CFC00D98CF3 /* Side.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Side.swift; sourceTree = "<group>"; };
 		9A6C3A7C20AC78CB0047F3DF /* ToggleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToggleButton.swift; sourceTree = "<group>"; };
 		9A6C3A7D20AC78CB0047F3DF /* CharacterCreationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterCreationViewController.swift; sourceTree = "<group>"; };
 		9A6C3A7F20AC78CC0047F3DF /* ScalingCarouselLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScalingCarouselLayout.swift; sourceTree = "<group>"; };
@@ -107,6 +113,7 @@
 				9A5E6C2B20AF1B7E00D98CF3 /* EnemyAI.swift */,
 				9A5E6C2D20AF1C0C00D98CF3 /* UseAbilities.swift */,
 				9A5E6C2F20AF1C2F00D98CF3 /* InitiativeMember.swift */,
+				9A5E6C4320B301EB00D98CF3 /* Damageable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -162,6 +169,7 @@
 			children = (
 				9A5E6C3D20AF348100D98CF3 /* Debuff.swift */,
 				9A5E6C3F20AF34A400D98CF3 /* Target.swift */,
+				9A5E6C4720B30CFC00D98CF3 /* Side.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -207,14 +215,15 @@
 				9A5E6C2A20AF1B6900D98CF3 /* Protocols */,
 				E7BD742120A5CBC700B3337E /* ViewController.swift */,
 				E7CED29B20ADCBE800C8054B /* MapViewController.swift */,
-				9A5E6C2420AF158500D98CF3 /* CharacterCreationAttributesTableViewCell.swift */,
+				9A5E6C4520B306DE00D98CF3 /* CombatViewController.swift */,
+				9A6C3A7D20AC78CB0047F3DF /* CharacterCreationViewController.swift */,
 				9A6C3A9520ADA6480047F3DF /* PlayerCharacter.swift */,
 				9A5E6C2320AF158500D98CF3 /* Enemy.swift */,
 				E7BD742620A5CBC800B3337E /* Assets.xcassets */,
 				E7BD742B20A5CBC800B3337E /* Info.plist */,
 				E74B388820A5EE3F00CA12C1 /* GoogleService-Info.plist */,
-				9A6C3A7D20AC78CB0047F3DF /* CharacterCreationViewController.swift */,
 				E74B388520A5DF4D00CA12C1 /* WorldQuestApp-Bridging-Header.h */,
+				9A5E6C2420AF158500D98CF3 /* CharacterCreationAttributesTableViewCell.swift */,
 				9A7C8E3820ADE26B0075E180 /* CharacterCreationTableViewCell.swift */,
 				9A7C8E3220ADC8EE0075E180 /* CharacterCreationAttributeDatasource.swift */,
 				9A7C8E3320ADC8EF0075E180 /* CharacterCreationClassDatasource.swift */,
@@ -350,6 +359,7 @@
 				9A5E6C2820AF158600D98CF3 /* CharacterCreationAttributesTableViewCell.swift in Sources */,
 				9A5E6C4020AF34A400D98CF3 /* Target.swift in Sources */,
 				9A7C8E3420ADC8EF0075E180 /* CharacterCreationAttributeDatasource.swift in Sources */,
+				9A5E6C4620B306DE00D98CF3 /* CombatViewController.swift in Sources */,
 				9A6C3A9A20ADA7E40047F3DF /* GameData.swift in Sources */,
 				9A7C8E3520ADC8EF0075E180 /* CharacterCreationClassDatasource.swift in Sources */,
 				9A6C3A8A20AC78CC0047F3DF /* ClassSelectionScalingCarouselCell.swift in Sources */,
@@ -360,6 +370,7 @@
 				9A7C8E3920ADE26C0075E180 /* CharacterCreationTableViewCell.swift in Sources */,
 				9A6C3A8820AC78CC0047F3DF /* ScalingCarouselView.swift in Sources */,
 				E7BD742220A5CBC700B3337E /* ViewController.swift in Sources */,
+				9A5E6C4420B301EB00D98CF3 /* Damageable.swift in Sources */,
 				9A5E6C3620AF2A8600D98CF3 /* EnemyData.swift in Sources */,
 				9A5E6C2720AF158600D98CF3 /* Enemy.swift in Sources */,
 				9A6C3A8920AC78CC0047F3DF /* ScalingCarouselCell.swift in Sources */,
@@ -371,6 +382,7 @@
 				9A5E6C2E20AF1C0C00D98CF3 /* UseAbilities.swift in Sources */,
 				9A5E6C3020AF1C2F00D98CF3 /* InitiativeMember.swift in Sources */,
 				9A5E6C3E20AF348100D98CF3 /* Debuff.swift in Sources */,
+				9A5E6C4820B30CFC00D98CF3 /* Side.swift in Sources */,
 				9A7C8E2520ADAF0F0075E180 /* AttributeTableViewCell.swift in Sources */,
 				9A6C3A8720AC78CC0047F3DF /* ScalingCarouselLayout.swift in Sources */,
 				E7CED29C20ADCBE800C8054B /* MapViewController.swift in Sources */,

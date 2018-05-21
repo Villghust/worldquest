@@ -8,10 +8,23 @@
 
 import Foundation
 
-protocol InitiativeMember {
+protocol InitiativeMember: Damageable {
+    
+    // Mark: - Combat Stats
+    var initiative: Int { get set }
+    var side: Side? { get set }
+    
+    // Mark: - Combat Funcs
+    func startTurn()
     func onStartOfEachTurn()
-    func onEndOfEachTurn()
+    func act()
     func endTurn()
+    func onEndOfEachTurn()
+    
+    // Mark: - Checking
     func isMyTurn() -> Bool
     func turnActivator() -> User?
+    
+    // Mark: - Redirection
+    func endCombat()
 }
