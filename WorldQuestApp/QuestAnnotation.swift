@@ -11,10 +11,12 @@ import MapKit
 class QuestAnnotation: NSObject, MKAnnotation {
     
     var coordinate: CLLocationCoordinate2D
-    //var description: String
-    //var image: UIImage
+    var desc: String!
+    var image: UIImage!
     
     init(coordinate: CLLocationCoordinate2D) {
         self.coordinate = coordinate
+        
+        
     }
 }

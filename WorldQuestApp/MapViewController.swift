@@ -10,6 +10,10 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         super.viewDidLoad()
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
+        
+        let region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: -30.05507550918886, longitude: -51.18687680000005), span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
+        self.mapView.setRegion(region, animated: true)
+        
         addAnnotations()
     }
     
@@ -28,7 +32,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                 region.span.longitudeDelta = 0.05
                 self.mapView.setRegion(region, animated: true)
             }
-        } else {
+        } else if status == .denied{
             let alert = UIAlertController(title: "Authorization Denied", message: "If you do not authorize the usage of your location the app will not work.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Close game", style: .cancel, handler: {action in exit(0)}))
             alert.addAction(UIAlertAction(title: "Manage Permissions", style: .default, handler: {
@@ -68,8 +72,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             pin?.annotation = annotation
         }
         
-        
-        
         //let pin = MKAnnotationView()
         if annotation.title == "shopping" {
             pin?.image = UIImage.init(named: "_TAB_QUEST")
@@ -85,6 +87,34 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     }
     
     
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        if view.annotation is MKUserLocation{
+            return
+        }
+        
+        //let questAnnotation = view.annotation as! QuestAnnotation
+        
+        guard let views = Bundle.main.loadNibNamed("QuestCallout", owner: nil, options: nil) as? [UIView] else { return }
+        
+        let calloutView = views[0] as! QuestCalloutView
+        calloutView.descLabel.text = "aqui tem um texto"
+        
+        calloutView.center = CGPoint(x: view.bounds.size.width / 2, y: -calloutView.bounds.size.height*0.52)
+        view.addSubview(calloutView)
+        mapView.setCenter((view.annotation?.coordinate)!, animated: true)
+        
+    }
+    
+    func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
+        if view.isKind(of: QuestAnnotationView.self)
+        {
+            for subview in view.subviews
+            {
+                subview.removeFromSuperview()
+            }
+        }
+    }
     
     
     
@@ -155,6 +185,9 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         marinhaSquare.subtitle = "marinhaSquare"
         mapView.addAnnotation(marinhaSquare)
     }
+    
+    
+    
 }
 
 

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		033F632DFB55A338DAC0A67B /* Pods_WorldQuestApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02D0237257070B2FBE7DD0A7 /* Pods_WorldQuestApp.framework */; };
+		550F4A4520B2EC5100918872 /* QuestCallout.xib in Resources */ = {isa = PBXBuildFile; fileRef = 550F4A4420B2EC5100918872 /* QuestCallout.xib */; };
+		550F4A4720B2ED8300918872 /* QuestCalloutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550F4A4620B2ED8300918872 /* QuestCalloutView.swift */; };
 		833CD86E20AF325B0067EF95 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833CD86D20AF325B0067EF95 /* MapViewController.swift */; };
 		833CD87020AF32860067EF95 /* QuestAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833CD86F20AF32860067EF95 /* QuestAnnotation.swift */; };
 		833CD87220AF33A10067EF95 /* QuestAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833CD87120AF33A10067EF95 /* QuestAnnotationView.swift */; };
@@ -35,6 +37,8 @@
 /* Begin PBXFileReference section */
 		02D0237257070B2FBE7DD0A7 /* Pods_WorldQuestApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WorldQuestApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		33C07B9ED93686740204735C /* Pods-WorldQuestApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorldQuestApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-WorldQuestApp/Pods-WorldQuestApp.release.xcconfig"; sourceTree = "<group>"; };
+		550F4A4420B2EC5100918872 /* QuestCallout.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuestCallout.xib; sourceTree = "<group>"; };
+		550F4A4620B2ED8300918872 /* QuestCalloutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestCalloutView.swift; sourceTree = "<group>"; };
 		833CD86D20AF325B0067EF95 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		833CD86F20AF32860067EF95 /* QuestAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestAnnotation.swift; sourceTree = "<group>"; };
 		833CD87120AF33A10067EF95 /* QuestAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestAnnotationView.swift; sourceTree = "<group>"; };
@@ -128,6 +132,8 @@
 				E7BD742320A5CBC700B3337E /* Main.storyboard */,
 				833CD87120AF33A10067EF95 /* QuestAnnotationView.swift */,
 				833CD86F20AF32860067EF95 /* QuestAnnotation.swift */,
+				550F4A4420B2EC5100918872 /* QuestCallout.xib */,
+				550F4A4620B2ED8300918872 /* QuestCalloutView.swift */,
 				9A6C3A9320ADA5E50047F3DF /* User.swift */,
 				9A6C3A9520ADA6480047F3DF /* PlayerCharacter.swift */,
 				9A6C3A9720ADA6B10047F3DF /* CharacterClass.swift */,
@@ -205,6 +211,7 @@
 				E74B388920A5EE3F00CA12C1 /* GoogleService-Info.plist in Resources */,
 				E7BD742720A5CBC800B3337E /* Assets.xcassets in Resources */,
 				E7BD742520A5CBC700B3337E /* Main.storyboard in Resources */,
+				550F4A4520B2EC5100918872 /* QuestCallout.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,6 +272,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				833CD87220AF33A10067EF95 /* QuestAnnotationView.swift in Sources */,
+				550F4A4720B2ED8300918872 /* QuestCalloutView.swift in Sources */,
 				9A6C3A9420ADA5E50047F3DF /* User.swift in Sources */,
 				9A6C3A9A20ADA7E40047F3DF /* GameData.swift in Sources */,
 				9A6C3A8A20AC78CC0047F3DF /* CharacterSelectionScalingCarouselCell.swift in Sources */,
