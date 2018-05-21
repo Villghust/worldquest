@@ -59,19 +59,34 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         if annotation is MKUserLocation {
             return nil
         }
-        let pin = MKAnnotationView()
+        
+        var pin = self.mapView.dequeueReusableAnnotationView(withIdentifier: "Pin")
+        if pin == nil{
+            pin = QuestAnnotationView(annotation: annotation, reuseIdentifier: "Pin")
+            pin?.canShowCallout = false
+        }else{
+            pin?.annotation = annotation
+        }
+        
+        
+        
+        //let pin = MKAnnotationView()
         if annotation.title == "shopping" {
-            pin.image = UIImage.init(named: "_TAB_QUEST")
-            pin.frame.size = CGSize(width: 30, height: 30)
+            pin?.image = UIImage.init(named: "_TAB_QUEST")
+            pin?.frame.size = CGSize(width: 30, height: 30)
         } else if annotation.title == "squares" {
-            pin.image = UIImage.init(named: "sword")
-            pin.frame.size = CGSize(width: 30, height: 30)
+            pin?.image = UIImage.init(named: "sword")
+            pin?.frame.size = CGSize(width: 30, height: 30)
         } else {
-            pin.image = UIImage.init(named: "hp")
-            pin.frame.size = CGSize(width: 30, height: 30)
+            pin?.image = UIImage.init(named: "hp")
+            pin?.frame.size = CGSize(width: 30, height: 30)
         }
         return pin
     }
+    
+    
+    
+    
     
     func addAnnotations() {
         // Shoppings -> Events

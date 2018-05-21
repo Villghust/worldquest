@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		033F632DFB55A338DAC0A67B /* Pods_WorldQuestApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02D0237257070B2FBE7DD0A7 /* Pods_WorldQuestApp.framework */; };
+		833CD86E20AF325B0067EF95 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833CD86D20AF325B0067EF95 /* MapViewController.swift */; };
+		833CD87020AF32860067EF95 /* QuestAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833CD86F20AF32860067EF95 /* QuestAnnotation.swift */; };
+		833CD87220AF33A10067EF95 /* QuestAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833CD87120AF33A10067EF95 /* QuestAnnotationView.swift */; };
 		9A6C3A8420AC78CC0047F3DF /* ToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6C3A7C20AC78CB0047F3DF /* ToggleButton.swift */; };
 		9A6C3A8520AC78CC0047F3DF /* CharacterCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6C3A7D20AC78CB0047F3DF /* CharacterCreationViewController.swift */; };
 		9A6C3A8620AC78CC0047F3DF /* CharacterCreationAttributesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6C3A7E20AC78CC0047F3DF /* CharacterCreationAttributesTableViewCell.swift */; };
@@ -32,6 +35,9 @@
 /* Begin PBXFileReference section */
 		02D0237257070B2FBE7DD0A7 /* Pods_WorldQuestApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WorldQuestApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		33C07B9ED93686740204735C /* Pods-WorldQuestApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorldQuestApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-WorldQuestApp/Pods-WorldQuestApp.release.xcconfig"; sourceTree = "<group>"; };
+		833CD86D20AF325B0067EF95 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		833CD86F20AF32860067EF95 /* QuestAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestAnnotation.swift; sourceTree = "<group>"; };
+		833CD87120AF33A10067EF95 /* QuestAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestAnnotationView.swift; sourceTree = "<group>"; };
 		9A6C3A7C20AC78CB0047F3DF /* ToggleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToggleButton.swift; sourceTree = "<group>"; };
 		9A6C3A7D20AC78CB0047F3DF /* CharacterCreationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterCreationViewController.swift; sourceTree = "<group>"; };
 		9A6C3A7E20AC78CC0047F3DF /* CharacterCreationAttributesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterCreationAttributesTableViewCell.swift; sourceTree = "<group>"; };
@@ -115,10 +121,13 @@
 				9A6C3A8120AC78CC0047F3DF /* ScalingCarouselCell.swift */,
 				9A6C3A7F20AC78CC0047F3DF /* ScalingCarouselLayout.swift */,
 				9A6C3A8020AC78CC0047F3DF /* ScalingCarouselView.swift */,
+				833CD86D20AF325B0067EF95 /* MapViewController.swift */,
 				9A6C3A7C20AC78CB0047F3DF /* ToggleButton.swift */,
 				E7BD741F20A5CBC700B3337E /* AppDelegate.swift */,
 				E7BD742120A5CBC700B3337E /* ViewController.swift */,
 				E7BD742320A5CBC700B3337E /* Main.storyboard */,
+				833CD87120AF33A10067EF95 /* QuestAnnotationView.swift */,
+				833CD86F20AF32860067EF95 /* QuestAnnotation.swift */,
 				9A6C3A9320ADA5E50047F3DF /* User.swift */,
 				9A6C3A9520ADA6480047F3DF /* PlayerCharacter.swift */,
 				9A6C3A9720ADA6B10047F3DF /* CharacterClass.swift */,
@@ -255,6 +264,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				833CD87220AF33A10067EF95 /* QuestAnnotationView.swift in Sources */,
 				9A6C3A9420ADA5E50047F3DF /* User.swift in Sources */,
 				9A6C3A9A20ADA7E40047F3DF /* GameData.swift in Sources */,
 				9A6C3A8A20AC78CC0047F3DF /* CharacterSelectionScalingCarouselCell.swift in Sources */,
@@ -262,6 +272,7 @@
 				9A6C3A8820AC78CC0047F3DF /* ScalingCarouselView.swift in Sources */,
 				E7BD742220A5CBC700B3337E /* ViewController.swift in Sources */,
 				9A6C3A8620AC78CC0047F3DF /* CharacterCreationAttributesTableViewCell.swift in Sources */,
+				833CD87020AF32860067EF95 /* QuestAnnotation.swift in Sources */,
 				9A6C3A8920AC78CC0047F3DF /* ScalingCarouselCell.swift in Sources */,
 				9A6C3A8520AC78CC0047F3DF /* CharacterCreationViewController.swift in Sources */,
 				9A6C3A8420AC78CC0047F3DF /* ToggleButton.swift in Sources */,
@@ -270,6 +281,7 @@
 				9A6C3A9620ADA6480047F3DF /* PlayerCharacter.swift in Sources */,
 				9A6C3A9020AD9E930047F3DF /* Ability.swift in Sources */,
 				9A6C3A8720AC78CC0047F3DF /* ScalingCarouselLayout.swift in Sources */,
+				833CD86E20AF325B0067EF95 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

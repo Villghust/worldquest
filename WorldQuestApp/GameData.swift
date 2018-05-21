@@ -9,5 +9,5 @@
 import Foundation
 
 class GameData {
-    static let classWarrior: CharacterClass = CharacterClass(name: "Warrior", baseStr: 6, baseAgi: 6, baseInt: 4, baseVit: 8, abilities: nil)
+    
 }
