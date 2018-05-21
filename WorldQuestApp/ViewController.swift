@@ -15,35 +15,39 @@ class ViewController: UIViewController {
             let loginView : FBSDKLoginButton = FBSDKLoginButton()
             self.view.addSubview(loginView)
             loginView.center = self.view.center
-            loginView.readPermissions = ["public_profile", "email", "user_friends"]
+            loginView.readPermissions = ["public_profile", "email"]
             loginView.delegate = self
         }
     }
     
     
     override func viewDidAppear(_ animated: Bool) {
-        if (FBSDKAccessToken.current() != nil){
+        if (Auth.auth().currentUser != nil){
             // Já está logado, vai para próxima tela.
-            
+
             let usuarioId = Auth.auth().currentUser?.uid
-            ref.child("usuarios").child(usuarioId!).observeSingleEvent(of: .value, with: { (snapshot) in
-                let value = snapshot.value as? NSDictionary
-                let personagem = value?["personagem"] as? String ?? ""
-                
-                // Se existe personagem, vai para a criação, senão vai para o mapa
-                if personagem == "" {
-                    self.performSegue(
-                        withIdentifier: "LoginToCharacterCreation",
-                        sender: nil)
-                } else {
-                    self.performSegue(
-                        withIdentifier: "LoginToGame",
-                        sender: nil)
-                }
-                
-            }) { (error) in
-                print(error.localizedDescription)
+            navegar(uid: usuarioId!)
+        }
+    }
+    
+    func navegar(uid: String) {
+        ref.child("usuarios").child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
+            let value = snapshot.value as? NSDictionary
+            let personagem = value?["personagem"] as? String ?? ""
+            
+            // Se existe personagem, vai para a criação, senão vai para o mapa
+            if personagem == "" {
+                self.performSegue(
+                    withIdentifier: "LoginToCharacterCreation",
+                    sender: nil)
+            } else {
+                self.performSegue(
+                    withIdentifier: "LoginToGame",
+                    sender: nil)
             }
+            
+        }) { (error) in
+            print(error.localizedDescription)
         }
     }
 }
@@ -73,6 +77,8 @@ extension ViewController: FBSDKLoginButtonDelegate {
                     self.ref.child("usuarios")
                         .child((user?.user.uid)!)
                         .setValue(["nome": user?.user.displayName])
+                    
+                    self.navegar(uid: (user?.user.uid)!)
                 }
             }
         }
