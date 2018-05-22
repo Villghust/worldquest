@@ -15,7 +15,9 @@ class QuestCalloutView: UIView {
     @IBOutlet weak var descLabel: UILabel!
     @IBOutlet weak var imgBack: UIImageView!
     @IBOutlet weak var rewarddescLabel: UILabel!
+    var isWithinRadius: Bool = true
     
+    @IBOutlet weak var btn: UIButton!
     
     @IBAction func btnAccept(_ sender: UIButton) {
         

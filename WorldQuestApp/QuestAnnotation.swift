@@ -12,7 +12,9 @@ class QuestAnnotation: NSObject, MKAnnotation {
     
     var coordinate: CLLocationCoordinate2D
     var desc: String!
-    var image: UIImage!
+    var reward: String!
+    var name: String!
+    
     
     init(coordinate: CLLocationCoordinate2D) {
         self.coordinate = coordinate
