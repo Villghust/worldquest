@@ -98,8 +98,11 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         guard let views = Bundle.main.loadNibNamed("QuestCallout", owner: nil, options: nil) as? [UIView] else { return }
         
         let calloutView = views[0] as! QuestCalloutView
-        calloutView.descLabel.text = "aqui tem um texto"
-        
+        calloutView.layer.cornerRadius = 12
+        calloutView.clipsToBounds = true
+        calloutView.imgBack.image = UIImage(named: "QuestCallout")
+        calloutView.descLabel.text = "Mate 5 Goblins em 2 dias"
+        calloutView.rewarddescLabel.text = "5 XP"
         calloutView.center = CGPoint(x: view.bounds.size.width / 2, y: -calloutView.bounds.size.height*0.52)
         view.addSubview(calloutView)
         mapView.setCenter((view.annotation?.coordinate)!, animated: true)

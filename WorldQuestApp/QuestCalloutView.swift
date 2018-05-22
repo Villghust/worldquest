@@ -13,7 +13,12 @@ class QuestCalloutView: UIView {
     @IBOutlet weak var img: UIImageView!
     @IBOutlet weak var questLabel: UILabel!
     @IBOutlet weak var descLabel: UILabel!
+    @IBOutlet weak var imgBack: UIImageView!
+    @IBOutlet weak var rewarddescLabel: UILabel!
     
     
-
+    @IBAction func btnAccept(_ sender: UIButton) {
+        
+    }
+    
 }
