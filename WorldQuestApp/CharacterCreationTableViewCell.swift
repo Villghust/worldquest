@@ -44,6 +44,7 @@ class CharacterCreationTableViewCell: UITableViewCell, UICollectionViewDelegate,
             if let currentSelectedClass = classCollection.currentCenterCell as? ClassSelectionScalingCarouselCell {
                 if let vc = viewController as? CharacterCreationViewController {
                     attributeDatasource.characterClass = currentSelectedClass.characterClass
+                    vc.character.characterClass = currentSelectedClass.characterClass
                     let cells = self.atrTableView.visibleCells
                     for cell in cells {
                         if let c = cell as? AttributeTableViewCell {

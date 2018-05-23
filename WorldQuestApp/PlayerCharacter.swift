@@ -18,8 +18,9 @@ class PlayerCharacter {
     var characterClass: CharacterClass!
     var player: User?
     
-    init(attrPoints: Int, player: User?) {
+    init(attrPoints: Int, player: User?, characterClass: CharacterClass) {
         self.attrPoints = attrPoints
         self.player = player
+        self.characterClass = characterClass
     }
 }

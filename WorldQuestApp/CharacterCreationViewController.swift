@@ -15,7 +15,7 @@ class CharacterCreationViewController: UIViewController, UITableViewDataSource, 
     @IBOutlet weak var tableView: UITableView!
     var ref: DatabaseReference!
     
-    var character = PlayerCharacter(attrPoints: GameData.initialAttrPoints, player: nil)
+    var character = PlayerCharacter(attrPoints: GameData.initialAttrPoints, player: nil, characterClass: GameData.classWarrior)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,9 +56,16 @@ class CharacterCreationViewController: UIViewController, UITableViewDataSource, 
     }
 
     @IBAction func criarPersonagem(_ sender: UIButton) {
+        
+        print(character)
+        
+//        let personagem = [
+//            
+//        ]
+        
         if Auth.auth().currentUser != nil {
             self.ref.child("usuarios/\(Auth.auth().currentUser!.uid)/personagem")
-                .setValue("teste")
+                .setValue(character)
         } else {
             // Usuário não logado (????)
         }
