@@ -22,8 +22,8 @@ class EnemyCollectionViewDatasource: NSObject, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "EnemyCell", for: indexPath) as! AbilityCollectionViewCell
-        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "EnemyCell", for: indexPath) as! EnemyCollectionViewCell
+        cell.enemy = enemies[indexPath.row]
         return cell
     }
     

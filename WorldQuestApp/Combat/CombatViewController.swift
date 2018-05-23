@@ -12,8 +12,10 @@ class CombatViewController: UIViewController, UICollectionViewDelegate, UIScroll
     
     @IBOutlet weak var enemyCollectionView: ScalingCarouselView!
     @IBOutlet weak var abilityCollectionView: ScalingCarouselView!
+    @IBOutlet weak var playerCharacterNameLabel: UILabel!
+    @IBOutlet weak var playerCharacterHealthLabel: UILabel!
     
-    var playerCharacter: PlayerCharacter! = nil // no prepare tem que setar
+    var playerCharacter: PlayerCharacter! = GameData.debugWarriorChar // no prepare tem que setar
     var allies: [InitiativeMember]! = [InitiativeMember]()
     var enemies: [InitiativeMember]! = [InitiativeMember]() // no prepare tem que setar
     
@@ -28,11 +30,22 @@ class CombatViewController: UIViewController, UICollectionViewDelegate, UIScroll
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        allies.append(playerCharacter) // temporario
+        allies.append(playerCharacter)
         enemies.append(goblin) // temporario
+        playerCharacterNameLabel.text = playerCharacter.name
+        
+        enemyCollectionView.delegate = self
+        abilityCollectionView.delegate = self
         
         enemyCollectionView.dataSource = enemyDatasource
         abilityCollectionView.dataSource = abilityDatasource
+        
+        print ("Loading Combat")
+        print ("Selected Ability: \(String(describing: selectedAbility))")
+        print ("Selected Enemy: \(String(describing: selectedEnemy))")
+        
+        InitiativeSystem.singleton.startCombat(sideA: allies, sideB: enemies, viewController: self)
+        InitiativeSystem.singleton.reloadCharacterHealth()
     }
     
     // MARK: - Scroll View delegate
@@ -40,8 +53,16 @@ class CombatViewController: UIViewController, UICollectionViewDelegate, UIScroll
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if let invisibleScrollView = scrollView as? ScalingCarouselView {
             invisibleScrollView.didScroll()
-            if let selectedAbilityCell = abilityCollectionView.currentCenterCell as? AbilityCollectionViewCell {
-                
+            if invisibleScrollView == abilityCollectionView {
+                if let selectedAbilityCell =  abilityCollectionView.currentCenterCell as? AbilityCollectionViewCell {
+                    selectedAbility = selectedAbilityCell.ability
+                    print ("Selected Ability: \(String(describing: selectedAbility))")
+                }
+            } else {
+                if let selectedEnemyCell = enemyCollectionView.currentCenterCell as? EnemyCollectionViewCell {
+                    selectedEnemy = selectedEnemyCell.enemy
+                    print ("Selected Enemy: \(String(describing: selectedEnemy))")
+                }
             }
         }
     }

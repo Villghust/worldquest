@@ -17,7 +17,7 @@ struct Ability {
     
     // MARK: - Effects
     var targets: Target
-    var debuffs: [Debuff]?
+    var debuffs: [Debuff]
     
     // Mark: - Damage
     var dmgAttr: Attribute = Attribute.None

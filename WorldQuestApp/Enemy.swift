@@ -61,15 +61,19 @@ class Enemy: InitiativeMember, EnemyAI, UseAbilities {
     
     func act() {
         if isMyTurn() {
-            let ability = chooseAbility()
-            if ability != nil {
-                useAbility (ability: ability!)
-                print ("\(stats.name) is using \(ability!.name)")
+            if let ability = chooseAbility() {
+                if let targets = chooseTarget(ability: ability) {
+                    useAbility(ability: ability, targets: targets)
+                    print ("\(stats.name) is using \(ability.name) at \(targets)")
+                } else {
+                    print ("\(stats.name) ended his turn without choosing a target, therefore not using an ability")
+                    endTurn()
+                }
             } else {
+                print ("\(stats.name) ended his turn without using an ability")
                 endTurn()
             }
         }
-        self.canUseAbilities = false
     }
     
     func isMyTurn() -> Bool {
@@ -120,8 +124,8 @@ class Enemy: InitiativeMember, EnemyAI, UseAbilities {
         return availableAbilities
     }
     
-    func useAbility(ability: Ability) {
-        InitiativeSystem.singleton.usedAbility(caster: self, ability: ability) 
+    func useAbility(ability: Ability, targets: [InitiativeMember]) {
+        InitiativeSystem.singleton.usedAbility(caster: self, ability: ability, targets: targets)
         endTurn();
     }
     
@@ -135,5 +139,20 @@ class Enemy: InitiativeMember, EnemyAI, UseAbilities {
         }
         
         return chosen
+    }
+    
+    func chooseTarget(ability: Ability) -> [InitiativeMember]? {
+        if ability.targets == .allEnemies {
+            return InitiativeSystem.singleton.getOpposingSide(side: self.side!)
+        } else if ability.targets == .allAllies {
+            return InitiativeSystem.singleton.getSide(side: self.side!)
+        } else if ability.targets == .singleEnemy {
+            let os = InitiativeSystem.singleton.getOpposingSide(side: self.side!)
+            let target = os[Int.randomBetween(min: 0, max: os.count - 1)]
+            return [target]
+        } else {
+            print ("Choose target for mode is not implemented")
+        }
+        return nil
     }
 }

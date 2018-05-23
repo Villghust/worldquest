@@ -18,25 +18,14 @@ class AbilityCollectionViewDatasource: NSObject, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return playerCharacter.characterClass.abilities.count
+        return playerCharacter.availableAbilities().count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AbilityCell", for: indexPath) as! AbilityCollectionViewCell
+        cell.ability = playerCharacter.availableAbilities()[indexPath.row]
         
         return cell
-    }
-    
-    // MARK: - Scroll view delegate
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if let invisibleScrollView = scrollView as? ScalingCarouselView {
-            invisibleScrollView.didScroll() //
-            
-//            if let vc = viewController as? CombatViewController {
-//
-//            }
-        }
     }
 }
 
