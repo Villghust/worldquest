@@ -40,11 +40,11 @@
 		9A85FCB120B5A3EE005FA3A8 /* QuestAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A85FCAD20B5A3ED005FA3A8 /* QuestAnnotation.swift */; };
 		9A85FCB220B5A3EE005FA3A8 /* QuestCalloutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A85FCAE20B5A3EE005FA3A8 /* QuestCalloutView.swift */; };
 		9A85FCB320B5A3EE005FA3A8 /* QuestCallout.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A85FCAF20B5A3EE005FA3A8 /* QuestCallout.xib */; };
+		E70115C720B5B07F007846A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E70115C520B5B07F007846A0 /* Main.storyboard */; };
 		E72E4D4020ADCAE800604A61 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72E4D3F20ADCAE800604A61 /* MapViewController.swift */; };
 		E74B388920A5EE3F00CA12C1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E74B388820A5EE3F00CA12C1 /* GoogleService-Info.plist */; };
 		E7BD742020A5CBC700B3337E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BD741F20A5CBC700B3337E /* AppDelegate.swift */; };
 		E7BD742220A5CBC700B3337E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BD742120A5CBC700B3337E /* ViewController.swift */; };
-		E7BD742520A5CBC700B3337E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7BD742320A5CBC700B3337E /* Main.storyboard */; };
 		E7BD742720A5CBC800B3337E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7BD742620A5CBC800B3337E /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -83,13 +83,13 @@
 		9A85FCAD20B5A3ED005FA3A8 /* QuestAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestAnnotation.swift; sourceTree = "<group>"; };
 		9A85FCAE20B5A3EE005FA3A8 /* QuestCalloutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestCalloutView.swift; sourceTree = "<group>"; };
 		9A85FCAF20B5A3EE005FA3A8 /* QuestCallout.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestCallout.xib; sourceTree = "<group>"; };
+		E70115C620B5B07F007846A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E72E4D3F20ADCAE800604A61 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		E74B388520A5DF4D00CA12C1 /* WorldQuestApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "WorldQuestApp-Bridging-Header.h"; path = "../WorldQuestApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		E74B388820A5EE3F00CA12C1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E7BD741C20A5CBC700B3337E /* WorldQuestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorldQuestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7BD741F20A5CBC700B3337E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7BD742120A5CBC700B3337E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		E7BD742420A5CBC700B3337E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E7BD742620A5CBC800B3337E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E7BD742B20A5CBC800B3337E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ECBBDF8DCA644BA0A1EC4B00 /* Pods-WorldQuestApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorldQuestApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WorldQuestApp/Pods-WorldQuestApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -220,6 +220,7 @@
 		E7BD741E20A5CBC700B3337E /* WorldQuestApp */ = {
 			isa = PBXGroup;
 			children = (
+				E70115C520B5B07F007846A0 /* Main.storyboard */,
 				9A85FCAD20B5A3ED005FA3A8 /* QuestAnnotation.swift */,
 				9A85FCAC20B5A3ED005FA3A8 /* QuestAnnotationView.swift */,
 				9A85FCAF20B5A3EE005FA3A8 /* QuestCallout.xib */,
@@ -232,7 +233,6 @@
 				9A5E6C5420B598D000D98CF3 /* ClassSelectionScalingCarouselCell.swift */,
 				E72E4D3F20ADCAE800604A61 /* MapViewController.swift */,
 				E7BD741F20A5CBC700B3337E /* AppDelegate.swift */,
-				E7BD742320A5CBC700B3337E /* Main.storyboard */,
 				9A6C3A9920ADA7E40047F3DF /* GameData.swift */,
 				9A5E6C3C20AF346E00D98CF3 /* Enums */,
 				9A5E6C3920AF326100D98CF3 /* Singletons */,
@@ -315,8 +315,8 @@
 			files = (
 				E74B388920A5EE3F00CA12C1 /* GoogleService-Info.plist in Resources */,
 				E7BD742720A5CBC800B3337E /* Assets.xcassets in Resources */,
-				E7BD742520A5CBC700B3337E /* Main.storyboard in Resources */,
 				9A85FCB320B5A3EE005FA3A8 /* QuestCallout.xib in Resources */,
+				E70115C720B5B07F007846A0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,10 +418,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		E7BD742320A5CBC700B3337E /* Main.storyboard */ = {
+		E70115C520B5B07F007846A0 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				E7BD742420A5CBC700B3337E /* Base */,
+				E70115C620B5B07F007846A0 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
