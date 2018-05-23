@@ -9,4 +9,5 @@ target 'WorldQuestApp' do
   pod 'Firebase/Auth'
   pod 'Firebase/Core'
   pod 'FBSDKLoginKit'
+  pod 'Firebase/Database'
 end
