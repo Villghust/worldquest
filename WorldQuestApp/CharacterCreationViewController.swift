@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseDatabase
 
 class CharacterCreationViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
+    var ref: DatabaseReference!
     
     var character = PlayerCharacter(attrPoints: GameData.initialAttrPoints, player: nil)
     
@@ -18,6 +21,8 @@ class CharacterCreationViewController: UIViewController, UITableViewDataSource, 
         super.viewDidLoad()
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        
+        ref = Database.database().reference()
     }
     
     // Mark: - Class Handling
@@ -49,4 +54,23 @@ class CharacterCreationViewController: UIViewController, UITableViewDataSource, 
 
         return cell
     }
+
+    @IBAction func criarPersonagem(_ sender: UIButton) {
+        if Auth.auth().currentUser != nil {
+            self.ref.child("usuarios/\(Auth.auth().currentUser!.uid)/personagem")
+                .setValue("teste")
+        } else {
+            // Usuário não logado (????)
+        }
+    }
+    
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
 }
