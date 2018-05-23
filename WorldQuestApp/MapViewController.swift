@@ -9,6 +9,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     @IBOutlet weak var mapView: MKMapView!
     var ref: DatabaseReference!
     var quests = [Quest]()
+    var questsJaEscolhidas = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,8 +18,14 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         
         ref = Database.database().reference()
         
-        let region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: -30.05507550918886, longitude: -51.18687680000005), span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
+        let region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: -30.05507550918886, longitude: -51.18687680000005), span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
         self.mapView.setRegion(region, animated: true)
+        
+        self.ref.child("usuarios").child((Auth.auth().currentUser?.uid)!).observeSingleEvent(of: .value, with: {snapshot in
+            let value = snapshot.value as? NSDictionary
+            guard let quests = value?["quests"] as? [String] else {return}
+            self.questsJaEscolhidas = quests
+        })
         
         addAnnotations()
     }
@@ -174,6 +181,10 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             
             let quest = Quest()
             quest.id = snapshot.key
+            
+            if self.questsJaEscolhidas.contains(quest.id) {
+                return
+            }
             
             for child in snapshot.children.allObjects as? [DataSnapshot] ?? [] {
                 switch child.key {
