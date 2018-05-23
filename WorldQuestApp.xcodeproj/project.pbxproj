@@ -8,53 +8,58 @@
 
 /* Begin PBXBuildFile section */
 		033F632DFB55A338DAC0A67B /* Pods_WorldQuestApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02D0237257070B2FBE7DD0A7 /* Pods_WorldQuestApp.framework */; };
-		550F4A4520B2EC5100918872 /* QuestCallout.xib in Resources */ = {isa = PBXBuildFile; fileRef = 550F4A4420B2EC5100918872 /* QuestCallout.xib */; };
-		550F4A4720B2ED8300918872 /* QuestCalloutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550F4A4620B2ED8300918872 /* QuestCalloutView.swift */; };
-		833CD86E20AF325B0067EF95 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833CD86D20AF325B0067EF95 /* MapViewController.swift */; };
-		833CD87020AF32860067EF95 /* QuestAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833CD86F20AF32860067EF95 /* QuestAnnotation.swift */; };
-		833CD87220AF33A10067EF95 /* QuestAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833CD87120AF33A10067EF95 /* QuestAnnotationView.swift */; };
+		55242FA820B599B9004B3A5F /* QuestAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55242FA420B599B8004B3A5F /* QuestAnnotationView.swift */; };
+		55242FA920B599B9004B3A5F /* QuestCalloutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55242FA520B599B8004B3A5F /* QuestCalloutView.swift */; };
+		55242FAA20B599B9004B3A5F /* QuestAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55242FA620B599B8004B3A5F /* QuestAnnotation.swift */; };
+		55242FAB20B599B9004B3A5F /* QuestCallout.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55242FA720B599B8004B3A5F /* QuestCallout.xib */; };
+		9A5E6C4E20B58EF600D98CF3 /* ClassSelectionScalingCarouselCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5E6C4920B58EF400D98CF3 /* ClassSelectionScalingCarouselCell.swift */; };
+		9A5E6C4F20B58EF600D98CF3 /* CharacterCreationClassDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5E6C4A20B58EF400D98CF3 /* CharacterCreationClassDatasource.swift */; };
+		9A5E6C5020B58EF600D98CF3 /* CharacterCreationAttributeDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5E6C4B20B58EF500D98CF3 /* CharacterCreationAttributeDatasource.swift */; };
+		9A5E6C5120B58EF600D98CF3 /* AttributeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5E6C4C20B58EF500D98CF3 /* AttributeTableViewCell.swift */; };
+		9A5E6C5220B58EF600D98CF3 /* CharacterCreationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5E6C4D20B58EF500D98CF3 /* CharacterCreationTableViewCell.swift */; };
 		9A6C3A8420AC78CC0047F3DF /* ToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6C3A7C20AC78CB0047F3DF /* ToggleButton.swift */; };
 		9A6C3A8520AC78CC0047F3DF /* CharacterCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6C3A7D20AC78CB0047F3DF /* CharacterCreationViewController.swift */; };
 		9A6C3A8620AC78CC0047F3DF /* CharacterCreationAttributesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6C3A7E20AC78CC0047F3DF /* CharacterCreationAttributesTableViewCell.swift */; };
 		9A6C3A8720AC78CC0047F3DF /* ScalingCarouselLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6C3A7F20AC78CC0047F3DF /* ScalingCarouselLayout.swift */; };
 		9A6C3A8820AC78CC0047F3DF /* ScalingCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6C3A8020AC78CC0047F3DF /* ScalingCarouselView.swift */; };
 		9A6C3A8920AC78CC0047F3DF /* ScalingCarouselCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6C3A8120AC78CC0047F3DF /* ScalingCarouselCell.swift */; };
-		9A6C3A8A20AC78CC0047F3DF /* CharacterSelectionScalingCarouselCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6C3A8220AC78CC0047F3DF /* CharacterSelectionScalingCarouselCell.swift */; };
-		9A6C3A8B20AC78CC0047F3DF /* CharacterSelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6C3A8320AC78CC0047F3DF /* CharacterSelectionTableViewCell.swift */; };
 		9A6C3A9020AD9E930047F3DF /* Ability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6C3A8F20AD9E930047F3DF /* Ability.swift */; };
 		9A6C3A9420ADA5E50047F3DF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6C3A9320ADA5E50047F3DF /* User.swift */; };
 		9A6C3A9620ADA6480047F3DF /* PlayerCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6C3A9520ADA6480047F3DF /* PlayerCharacter.swift */; };
 		9A6C3A9820ADA6B10047F3DF /* CharacterClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6C3A9720ADA6B10047F3DF /* CharacterClass.swift */; };
 		9A6C3A9A20ADA7E40047F3DF /* GameData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6C3A9920ADA7E40047F3DF /* GameData.swift */; };
+		E72E4D4020ADCAE800604A61 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72E4D3F20ADCAE800604A61 /* MapViewController.swift */; };
 		E74B388920A5EE3F00CA12C1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E74B388820A5EE3F00CA12C1 /* GoogleService-Info.plist */; };
 		E7BD742020A5CBC700B3337E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BD741F20A5CBC700B3337E /* AppDelegate.swift */; };
 		E7BD742220A5CBC700B3337E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BD742120A5CBC700B3337E /* ViewController.swift */; };
 		E7BD742520A5CBC700B3337E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7BD742320A5CBC700B3337E /* Main.storyboard */; };
 		E7BD742720A5CBC800B3337E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7BD742620A5CBC800B3337E /* Assets.xcassets */; };
-		E7BD742A20A5CBC800B3337E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7BD742820A5CBC800B3337E /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		02D0237257070B2FBE7DD0A7 /* Pods_WorldQuestApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WorldQuestApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		33C07B9ED93686740204735C /* Pods-WorldQuestApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorldQuestApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-WorldQuestApp/Pods-WorldQuestApp.release.xcconfig"; sourceTree = "<group>"; };
-		550F4A4420B2EC5100918872 /* QuestCallout.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuestCallout.xib; sourceTree = "<group>"; };
-		550F4A4620B2ED8300918872 /* QuestCalloutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestCalloutView.swift; sourceTree = "<group>"; };
-		833CD86D20AF325B0067EF95 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		833CD86F20AF32860067EF95 /* QuestAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestAnnotation.swift; sourceTree = "<group>"; };
-		833CD87120AF33A10067EF95 /* QuestAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestAnnotationView.swift; sourceTree = "<group>"; };
+		55242FA420B599B8004B3A5F /* QuestAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestAnnotationView.swift; sourceTree = "<group>"; };
+		55242FA520B599B8004B3A5F /* QuestCalloutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestCalloutView.swift; sourceTree = "<group>"; };
+		55242FA620B599B8004B3A5F /* QuestAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestAnnotation.swift; sourceTree = "<group>"; };
+		55242FA720B599B8004B3A5F /* QuestCallout.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestCallout.xib; sourceTree = "<group>"; };
+		9A5E6C4920B58EF400D98CF3 /* ClassSelectionScalingCarouselCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassSelectionScalingCarouselCell.swift; sourceTree = "<group>"; };
+		9A5E6C4A20B58EF400D98CF3 /* CharacterCreationClassDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterCreationClassDatasource.swift; sourceTree = "<group>"; };
+		9A5E6C4B20B58EF500D98CF3 /* CharacterCreationAttributeDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterCreationAttributeDatasource.swift; sourceTree = "<group>"; };
+		9A5E6C4C20B58EF500D98CF3 /* AttributeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributeTableViewCell.swift; sourceTree = "<group>"; };
+		9A5E6C4D20B58EF500D98CF3 /* CharacterCreationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterCreationTableViewCell.swift; sourceTree = "<group>"; };
 		9A6C3A7C20AC78CB0047F3DF /* ToggleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToggleButton.swift; sourceTree = "<group>"; };
 		9A6C3A7D20AC78CB0047F3DF /* CharacterCreationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterCreationViewController.swift; sourceTree = "<group>"; };
 		9A6C3A7E20AC78CC0047F3DF /* CharacterCreationAttributesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterCreationAttributesTableViewCell.swift; sourceTree = "<group>"; };
 		9A6C3A7F20AC78CC0047F3DF /* ScalingCarouselLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScalingCarouselLayout.swift; sourceTree = "<group>"; };
 		9A6C3A8020AC78CC0047F3DF /* ScalingCarouselView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScalingCarouselView.swift; sourceTree = "<group>"; };
 		9A6C3A8120AC78CC0047F3DF /* ScalingCarouselCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScalingCarouselCell.swift; sourceTree = "<group>"; };
-		9A6C3A8220AC78CC0047F3DF /* CharacterSelectionScalingCarouselCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterSelectionScalingCarouselCell.swift; sourceTree = "<group>"; };
-		9A6C3A8320AC78CC0047F3DF /* CharacterSelectionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterSelectionTableViewCell.swift; sourceTree = "<group>"; };
 		9A6C3A8F20AD9E930047F3DF /* Ability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ability.swift; sourceTree = "<group>"; };
 		9A6C3A9320ADA5E50047F3DF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9A6C3A9520ADA6480047F3DF /* PlayerCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCharacter.swift; sourceTree = "<group>"; };
 		9A6C3A9720ADA6B10047F3DF /* CharacterClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterClass.swift; sourceTree = "<group>"; };
 		9A6C3A9920ADA7E40047F3DF /* GameData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameData.swift; sourceTree = "<group>"; };
+		E72E4D3F20ADCAE800604A61 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		E74B388520A5DF4D00CA12C1 /* WorldQuestApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "WorldQuestApp-Bridging-Header.h"; path = "../WorldQuestApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		E74B388820A5EE3F00CA12C1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E7BD741C20A5CBC700B3337E /* WorldQuestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorldQuestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,7 +67,6 @@
 		E7BD742120A5CBC700B3337E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E7BD742420A5CBC700B3337E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E7BD742620A5CBC800B3337E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E7BD742920A5CBC800B3337E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E7BD742B20A5CBC800B3337E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ECBBDF8DCA644BA0A1EC4B00 /* Pods-WorldQuestApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorldQuestApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WorldQuestApp/Pods-WorldQuestApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -117,29 +121,31 @@
 		E7BD741E20A5CBC700B3337E /* WorldQuestApp */ = {
 			isa = PBXGroup;
 			children = (
+				55242FA620B599B8004B3A5F /* QuestAnnotation.swift */,
+				55242FA420B599B8004B3A5F /* QuestAnnotationView.swift */,
+				55242FA720B599B8004B3A5F /* QuestCallout.xib */,
+				55242FA520B599B8004B3A5F /* QuestCalloutView.swift */,
+				9A5E6C4C20B58EF500D98CF3 /* AttributeTableViewCell.swift */,
+				9A5E6C4B20B58EF500D98CF3 /* CharacterCreationAttributeDatasource.swift */,
+				9A5E6C4A20B58EF400D98CF3 /* CharacterCreationClassDatasource.swift */,
+				9A5E6C4D20B58EF500D98CF3 /* CharacterCreationTableViewCell.swift */,
+				9A5E6C4920B58EF400D98CF3 /* ClassSelectionScalingCarouselCell.swift */,
+				E72E4D3F20ADCAE800604A61 /* MapViewController.swift */,
 				9A6C3A7E20AC78CC0047F3DF /* CharacterCreationAttributesTableViewCell.swift */,
 				9A6C3A7D20AC78CB0047F3DF /* CharacterCreationViewController.swift */,
 				9A6C3A9920ADA7E40047F3DF /* GameData.swift */,
-				9A6C3A8220AC78CC0047F3DF /* CharacterSelectionScalingCarouselCell.swift */,
-				9A6C3A8320AC78CC0047F3DF /* CharacterSelectionTableViewCell.swift */,
 				9A6C3A8120AC78CC0047F3DF /* ScalingCarouselCell.swift */,
 				9A6C3A7F20AC78CC0047F3DF /* ScalingCarouselLayout.swift */,
 				9A6C3A8020AC78CC0047F3DF /* ScalingCarouselView.swift */,
-				833CD86D20AF325B0067EF95 /* MapViewController.swift */,
 				9A6C3A7C20AC78CB0047F3DF /* ToggleButton.swift */,
 				E7BD741F20A5CBC700B3337E /* AppDelegate.swift */,
 				E7BD742120A5CBC700B3337E /* ViewController.swift */,
 				E7BD742320A5CBC700B3337E /* Main.storyboard */,
-				833CD87120AF33A10067EF95 /* QuestAnnotationView.swift */,
-				833CD86F20AF32860067EF95 /* QuestAnnotation.swift */,
-				550F4A4420B2EC5100918872 /* QuestCallout.xib */,
-				550F4A4620B2ED8300918872 /* QuestCalloutView.swift */,
 				9A6C3A9320ADA5E50047F3DF /* User.swift */,
 				9A6C3A9520ADA6480047F3DF /* PlayerCharacter.swift */,
 				9A6C3A9720ADA6B10047F3DF /* CharacterClass.swift */,
 				9A6C3A8F20AD9E930047F3DF /* Ability.swift */,
 				E7BD742620A5CBC800B3337E /* Assets.xcassets */,
-				E7BD742820A5CBC800B3337E /* LaunchScreen.storyboard */,
 				E7BD742B20A5CBC800B3337E /* Info.plist */,
 				E74B388820A5EE3F00CA12C1 /* GoogleService-Info.plist */,
 				E74B388520A5DF4D00CA12C1 /* WorldQuestApp-Bridging-Header.h */,
@@ -207,11 +213,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E7BD742A20A5CBC800B3337E /* LaunchScreen.storyboard in Resources */,
 				E74B388920A5EE3F00CA12C1 /* GoogleService-Info.plist in Resources */,
 				E7BD742720A5CBC800B3337E /* Assets.xcassets in Resources */,
 				E7BD742520A5CBC700B3337E /* Main.storyboard in Resources */,
-				550F4A4520B2EC5100918872 /* QuestCallout.xib in Resources */,
+				55242FAB20B599B9004B3A5F /* QuestCallout.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,6 +253,7 @@
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -257,6 +263,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -271,25 +278,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				833CD87220AF33A10067EF95 /* QuestAnnotationView.swift in Sources */,
-				550F4A4720B2ED8300918872 /* QuestCalloutView.swift in Sources */,
 				9A6C3A9420ADA5E50047F3DF /* User.swift in Sources */,
 				9A6C3A9A20ADA7E40047F3DF /* GameData.swift in Sources */,
-				9A6C3A8A20AC78CC0047F3DF /* CharacterSelectionScalingCarouselCell.swift in Sources */,
+				9A5E6C5120B58EF600D98CF3 /* AttributeTableViewCell.swift in Sources */,
 				9A6C3A9820ADA6B10047F3DF /* CharacterClass.swift in Sources */,
 				9A6C3A8820AC78CC0047F3DF /* ScalingCarouselView.swift in Sources */,
+				9A5E6C4F20B58EF600D98CF3 /* CharacterCreationClassDatasource.swift in Sources */,
 				E7BD742220A5CBC700B3337E /* ViewController.swift in Sources */,
 				9A6C3A8620AC78CC0047F3DF /* CharacterCreationAttributesTableViewCell.swift in Sources */,
-				833CD87020AF32860067EF95 /* QuestAnnotation.swift in Sources */,
+				9A5E6C5020B58EF600D98CF3 /* CharacterCreationAttributeDatasource.swift in Sources */,
 				9A6C3A8920AC78CC0047F3DF /* ScalingCarouselCell.swift in Sources */,
 				9A6C3A8520AC78CC0047F3DF /* CharacterCreationViewController.swift in Sources */,
+				55242FAA20B599B9004B3A5F /* QuestAnnotation.swift in Sources */,
 				9A6C3A8420AC78CC0047F3DF /* ToggleButton.swift in Sources */,
+				9A5E6C5220B58EF600D98CF3 /* CharacterCreationTableViewCell.swift in Sources */,
 				E7BD742020A5CBC700B3337E /* AppDelegate.swift in Sources */,
-				9A6C3A8B20AC78CC0047F3DF /* CharacterSelectionTableViewCell.swift in Sources */,
 				9A6C3A9620ADA6480047F3DF /* PlayerCharacter.swift in Sources */,
 				9A6C3A9020AD9E930047F3DF /* Ability.swift in Sources */,
+				55242FA820B599B9004B3A5F /* QuestAnnotationView.swift in Sources */,
 				9A6C3A8720AC78CC0047F3DF /* ScalingCarouselLayout.swift in Sources */,
-				833CD86E20AF325B0067EF95 /* MapViewController.swift in Sources */,
+				9A5E6C4E20B58EF600D98CF3 /* ClassSelectionScalingCarouselCell.swift in Sources */,
+				55242FA920B599B9004B3A5F /* QuestCalloutView.swift in Sources */,
+				E72E4D4020ADCAE800604A61 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,14 +312,6 @@
 				E7BD742420A5CBC700B3337E /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		E7BD742820A5CBC800B3337E /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E7BD742920A5CBC800B3337E /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -435,8 +437,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Z675N66P22;
+				DEVELOPMENT_TEAM = G4HQ2PTT64;
 				INFOPLIST_FILE = WorldQuestApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -455,8 +458,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Z675N66P22;
+				DEVELOPMENT_TEAM = G4HQ2PTT64;
 				INFOPLIST_FILE = WorldQuestApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

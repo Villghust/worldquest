@@ -10,6 +10,8 @@ import Foundation
 
 struct CharacterClass {
     var name: String
+    var description: String
+    var imagePath: String
     var str: Int
     var agi: Int
     var int: Int
