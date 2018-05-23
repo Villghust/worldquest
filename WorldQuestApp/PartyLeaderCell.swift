@@ -23,6 +23,7 @@ class PartyLeaderCell: UITableViewCell {
 //            self.characaterLabel.text = "Guerreiro Nível 4"
 //            self.imgCharacter.image = UIImage.init(named: "_CHAR_MAGE")
 //        }
+    
 //    }
 
 }

@@ -42,5 +42,4 @@ class GroupViewController: UIViewController, UITableViewDataSource, UITableViewD
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-
 }
