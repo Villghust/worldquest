@@ -21,6 +21,7 @@ class Enemy: InitiativeMember, EnemyAI, UseAbilities {
     var aggroedOn: PlayerCharacter?
     
     var canUseAbilities: Bool
+    var debuffs: [Debuff]
     
     init (stats: EnemyData, initiative: Int, maxHealth: Int) {
         self.stats = stats
@@ -28,7 +29,8 @@ class Enemy: InitiativeMember, EnemyAI, UseAbilities {
         self.initiative = initiative
         self.maxHealth = maxHealth
         self.health = maxHealth
-        canUseAbilities = false
+        self.canUseAbilities = false
+        self.debuffs = [Debuff]()
     }
     
     // Mark: - InitiativeMember Protocol
@@ -54,7 +56,7 @@ class Enemy: InitiativeMember, EnemyAI, UseAbilities {
     
     func endTurn() {
         canUseAbilities = false
-        InitiativeSystem.singleton.onEndOfEachTurn()
+    InitiativeSystem.singleton.onEndOfEachTurn()
     }
     
     func act() {
@@ -80,6 +82,7 @@ class Enemy: InitiativeMember, EnemyAI, UseAbilities {
     
     func endCombat() {
         side = nil
+        self.debuffs = [Debuff]()
     }
     
     // MARK: - Damageable Protocol
