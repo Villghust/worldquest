@@ -9,6 +9,9 @@
 import UIKit
 
 class QuestCalloutView: UIView {
+    
+    var delegate: MyProtocol?
+    var quest: Quest?
 
     @IBOutlet weak var img: UIImageView!
     @IBOutlet weak var questLabel: UILabel!
@@ -20,7 +23,13 @@ class QuestCalloutView: UIView {
     @IBOutlet weak var btn: UIButton!
     
     @IBAction func btnAccept(_ sender: UIButton) {
-        
+        if let delegate = delegate {
+            delegate.sendData(quest: self.quest!)
+        }
     }
     
+}
+
+protocol MyProtocol {
+    func sendData(quest: Quest)
 }

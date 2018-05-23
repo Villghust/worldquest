@@ -1,12 +1,14 @@
 import UIKit
 import MapKit
 import FirebaseDatabase
+import FirebaseAuth
 
-class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, MyProtocol {
     
     var locationManager = CLLocationManager()
     @IBOutlet weak var mapView: MKMapView!
     var ref: DatabaseReference!
+    var quests = [Quest]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -98,10 +100,10 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         
         let questAnnotation: QuestAnnotation = QuestAnnotation.init(coordinate: (view.annotation?.coordinate)!)
         
-        
         guard let views = Bundle.main.loadNibNamed("QuestCallout", owner: nil, options: nil) as? [UIView] else { return }
         
         let calloutView = views[0] as! QuestCalloutView
+        calloutView.delegate = self
         
         let point = CLLocation(latitude: (questAnnotation.coordinate.latitude), longitude: (questAnnotation.coordinate.longitude))
         
@@ -127,11 +129,31 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             calloutView.rewarddescLabel.text = "2 XP e 1 gold"
         }
         
+        let quest = quests.first { (quest) -> Bool in
+            CLLocationDegrees(truncating: quest.latitude) == questAnnotation.coordinate.latitude &&
+                CLLocationDegrees(truncating: quest.longitude) == questAnnotation.coordinate.longitude
+        }
+        calloutView.quest = quest
         
         calloutView.center = CGPoint(x: view.bounds.size.width / 2, y: -calloutView.bounds.size.height*0.52)
         view.addSubview(calloutView)
         mapView.setCenter((view.annotation?.coordinate)!, animated: true)
         
+    }
+    
+    func sendData(quest: Quest) {
+        ref.child("usuarios").child((Auth.auth().currentUser?.uid)!).observeSingleEvent(of: .value, with: {snapshot in
+            let value = snapshot.value as? NSDictionary
+            guard var quests = value?["quests"] as? [AnyObject] else {
+                return self.ref.child("usuarios/\(Auth.auth().currentUser!.uid)/quests")
+                    .setValue(["0": quest.id])
+            }
+            
+            quests.append(quest.id as AnyObject)
+            self.ref.child("usuarios/\(Auth.auth().currentUser!.uid)/quests")
+                .setValue(quests)
+            
+        })
     }
     
     func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
@@ -149,7 +171,10 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     func addAnnotations() {
         
         ref.child("quests").observe(.childAdded, with: { (snapshot) -> Void in
+            
             let quest = Quest()
+            quest.id = snapshot.key
+            
             for child in snapshot.children.allObjects as? [DataSnapshot] ?? [] {
                 switch child.key {
                     case "latitude":
@@ -165,6 +190,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                     
                 }
             }
+            
+            self.quests.append(quest)
             
             let annotation = MKPointAnnotation()
             annotation.coordinate.latitude = CLLocationDegrees(truncating: quest.latitude)

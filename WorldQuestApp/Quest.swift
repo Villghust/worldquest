@@ -9,8 +9,9 @@
 import Foundation
 
 class Quest {
-    @objc var latitude: NSNumber = 0
-    @objc var longitude: NSNumber = 0
-    @objc var titulo: String = ""
-    @objc var subtitulo: String = ""
+    var id: String = ""
+    var latitude: NSNumber = 0
+    var longitude: NSNumber = 0
+    var titulo: String = ""
+    var subtitulo: String = ""
 }
