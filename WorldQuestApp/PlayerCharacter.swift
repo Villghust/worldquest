@@ -19,10 +19,14 @@ class PlayerCharacter: UseAbilities, InitiativeMember {
     var characterClass: CharacterClass!
     var player: User?
     
-    init(attrPoints: Int, player: User?) {
+    init(attrPoints: Int, player: User?, characterClass: CharacterClass) {
         self.attrPoints = attrPoints
         self.player = player
-        
+        self.characterClass = characterClass
+        self.agi = characterClass.agi
+        self.str = characterClass.str
+        self.int = characterClass.int
+        self.vit = characterClass.vit
         self.maxHealth = self.vit * 3
         self.health = maxHealth
         self.initiative = self.agi * 3

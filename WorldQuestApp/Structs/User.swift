@@ -10,5 +10,6 @@ import Foundation
 
 struct User {
     var uid: String
+    var nome: String
     var photoUrl: String
 }

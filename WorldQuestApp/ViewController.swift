@@ -33,10 +33,10 @@ class ViewController: UIViewController {
     func navegar(uid: String) {
         ref.child("usuarios").child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
             let value = snapshot.value as? NSDictionary
-            let personagem = value?["personagem"] as? String ?? ""
+            let personagem = value?["personagem"] as? NSObject
             
             // Se existe personagem, vai para a criação, senão vai para o mapa
-            if personagem == "" {
+            if personagem == nil {
                 self.performSegue(
                     withIdentifier: "LoginToCharacterCreation",
                     sender: nil)
@@ -74,9 +74,14 @@ extension ViewController: FBSDKLoginButtonDelegate {
                         return
                     }
                     // Logou!
+                    
+                    let usuario = [
+                        "nome": user?.user.displayName,
+                        "foto": user?.user.photoURL?.absoluteString]
+                    
                     self.ref.child("usuarios")
                         .child((user?.user.uid)!)
-                        .setValue(["nome": user?.user.displayName])
+                        .setValue(usuario)
                     
                     self.navegar(uid: (user?.user.uid)!)
                 }
