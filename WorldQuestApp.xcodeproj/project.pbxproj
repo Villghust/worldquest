@@ -41,6 +41,7 @@
 		9A85FCB220B5A3EE005FA3A8 /* QuestCalloutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A85FCAE20B5A3EE005FA3A8 /* QuestCalloutView.swift */; };
 		9A85FCB320B5A3EE005FA3A8 /* QuestCallout.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A85FCAF20B5A3EE005FA3A8 /* QuestCallout.xib */; };
 		E70115C720B5B07F007846A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E70115C520B5B07F007846A0 /* Main.storyboard */; };
+		E70115CB20B5C371007846A0 /* Quest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70115CA20B5C371007846A0 /* Quest.swift */; };
 		E72E4D4020ADCAE800604A61 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72E4D3F20ADCAE800604A61 /* MapViewController.swift */; };
 		E74B388920A5EE3F00CA12C1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E74B388820A5EE3F00CA12C1 /* GoogleService-Info.plist */; };
 		E7BD742020A5CBC700B3337E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BD741F20A5CBC700B3337E /* AppDelegate.swift */; };
@@ -84,6 +85,7 @@
 		9A85FCAE20B5A3EE005FA3A8 /* QuestCalloutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestCalloutView.swift; sourceTree = "<group>"; };
 		9A85FCAF20B5A3EE005FA3A8 /* QuestCallout.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestCallout.xib; sourceTree = "<group>"; };
 		E70115C620B5B07F007846A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E70115CA20B5C371007846A0 /* Quest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quest.swift; sourceTree = "<group>"; };
 		E72E4D3F20ADCAE800604A61 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		E74B388520A5DF4D00CA12C1 /* WorldQuestApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "WorldQuestApp-Bridging-Header.h"; path = "../WorldQuestApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		E74B388820A5EE3F00CA12C1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 				E7BD742B20A5CBC800B3337E /* Info.plist */,
 				E74B388820A5EE3F00CA12C1 /* GoogleService-Info.plist */,
 				E74B388520A5DF4D00CA12C1 /* WorldQuestApp-Bridging-Header.h */,
+				E70115CA20B5C371007846A0 /* Quest.swift */,
 			);
 			path = WorldQuestApp;
 			sourceTree = "<group>";
@@ -378,6 +381,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E70115CB20B5C371007846A0 /* Quest.swift in Sources */,
 				9A6C3A9420ADA5E50047F3DF /* User.swift in Sources */,
 				9A5E6C4020AF34A400D98CF3 /* Target.swift in Sources */,
 				9A5E6C4620B306DE00D98CF3 /* CombatViewController.swift in Sources */,
