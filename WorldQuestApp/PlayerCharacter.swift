@@ -22,5 +22,9 @@ class PlayerCharacter {
         self.attrPoints = attrPoints
         self.player = player
         self.characterClass = characterClass
+        self.agi = characterClass.agi
+        self.str = characterClass.str
+        self.int = characterClass.int
+        self.vit = characterClass.vit
     }
 }

@@ -56,16 +56,25 @@ class CharacterCreationViewController: UIViewController, UITableViewDataSource, 
     }
 
     @IBAction func criarPersonagem(_ sender: UIButton) {
+    
+        let personagem = [
+            "nome": character.name,
+            "classe": character.characterClass.name,
+            "forca": character.str,
+            "agilidade": character.agi,
+            "inteligencia": character.int,
+            "vitalidade": character.vit
+            ] as [String : Any]
         
-        print(character)
-        
-//        let personagem = [
-//            
-//        ]
+        print(personagem)
         
         if Auth.auth().currentUser != nil {
             self.ref.child("usuarios/\(Auth.auth().currentUser!.uid)/personagem")
-                .setValue(character)
+                .setValue(personagem)
+            
+            self.performSegue(
+                withIdentifier: "CharacterCreationToGame",
+                sender: nil)
         } else {
             // Usuário não logado (????)
         }
