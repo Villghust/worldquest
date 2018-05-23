@@ -36,6 +36,10 @@
 		9A6C3A9620ADA6480047F3DF /* PlayerCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6C3A9520ADA6480047F3DF /* PlayerCharacter.swift */; };
 		9A6C3A9820ADA6B10047F3DF /* CharacterClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6C3A9720ADA6B10047F3DF /* CharacterClass.swift */; };
 		9A6C3A9A20ADA7E40047F3DF /* GameData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6C3A9920ADA7E40047F3DF /* GameData.swift */; };
+		9A85FCB020B5A3EE005FA3A8 /* QuestAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A85FCAC20B5A3ED005FA3A8 /* QuestAnnotationView.swift */; };
+		9A85FCB120B5A3EE005FA3A8 /* QuestAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A85FCAD20B5A3ED005FA3A8 /* QuestAnnotation.swift */; };
+		9A85FCB220B5A3EE005FA3A8 /* QuestCalloutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A85FCAE20B5A3EE005FA3A8 /* QuestCalloutView.swift */; };
+		9A85FCB320B5A3EE005FA3A8 /* QuestCallout.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A85FCAF20B5A3EE005FA3A8 /* QuestCallout.xib */; };
 		E72E4D4020ADCAE800604A61 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72E4D3F20ADCAE800604A61 /* MapViewController.swift */; };
 		E74B388920A5EE3F00CA12C1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E74B388820A5EE3F00CA12C1 /* GoogleService-Info.plist */; };
 		E7BD742020A5CBC700B3337E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BD741F20A5CBC700B3337E /* AppDelegate.swift */; };
@@ -75,6 +79,10 @@
 		9A6C3A9520ADA6480047F3DF /* PlayerCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCharacter.swift; sourceTree = "<group>"; };
 		9A6C3A9720ADA6B10047F3DF /* CharacterClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterClass.swift; sourceTree = "<group>"; };
 		9A6C3A9920ADA7E40047F3DF /* GameData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameData.swift; sourceTree = "<group>"; };
+		9A85FCAC20B5A3ED005FA3A8 /* QuestAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestAnnotationView.swift; sourceTree = "<group>"; };
+		9A85FCAD20B5A3ED005FA3A8 /* QuestAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestAnnotation.swift; sourceTree = "<group>"; };
+		9A85FCAE20B5A3EE005FA3A8 /* QuestCalloutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestCalloutView.swift; sourceTree = "<group>"; };
+		9A85FCAF20B5A3EE005FA3A8 /* QuestCallout.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestCallout.xib; sourceTree = "<group>"; };
 		E72E4D3F20ADCAE800604A61 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		E74B388520A5DF4D00CA12C1 /* WorldQuestApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "WorldQuestApp-Bridging-Header.h"; path = "../WorldQuestApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		E74B388820A5EE3F00CA12C1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -212,6 +220,10 @@
 		E7BD741E20A5CBC700B3337E /* WorldQuestApp */ = {
 			isa = PBXGroup;
 			children = (
+				9A85FCAD20B5A3ED005FA3A8 /* QuestAnnotation.swift */,
+				9A85FCAC20B5A3ED005FA3A8 /* QuestAnnotationView.swift */,
+				9A85FCAF20B5A3EE005FA3A8 /* QuestCallout.xib */,
+				9A85FCAE20B5A3EE005FA3A8 /* QuestCalloutView.swift */,
 				9A5E6C6720B59A6000D98CF3 /* CharacterCreationAttributesTableViewCell.swift */,
 				9A5E6C5720B598D000D98CF3 /* AttributeTableViewCell.swift */,
 				9A5E6C5620B598D000D98CF3 /* CharacterCreationAttributeDatasource.swift */,
@@ -304,6 +316,7 @@
 				E74B388920A5EE3F00CA12C1 /* GoogleService-Info.plist in Resources */,
 				E7BD742720A5CBC800B3337E /* Assets.xcassets in Resources */,
 				E7BD742520A5CBC700B3337E /* Main.storyboard in Resources */,
+				9A85FCB320B5A3EE005FA3A8 /* QuestCallout.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,7 +388,9 @@
 				9A5E6C3B20AF329F00D98CF3 /* InitiativeSystem.swift in Sources */,
 				9A5E6C5F20B5996600D98CF3 /* ToggleButton.swift in Sources */,
 				9A5E6C2C20AF1B7E00D98CF3 /* EnemyAI.swift in Sources */,
+				9A85FCB220B5A3EE005FA3A8 /* QuestCalloutView.swift in Sources */,
 				9A6C3A9820ADA6B10047F3DF /* CharacterClass.swift in Sources */,
+				9A85FCB120B5A3EE005FA3A8 /* QuestAnnotation.swift in Sources */,
 				9A5E6C3320AF282500D98CF3 /* Random.swift in Sources */,
 				E7BD742220A5CBC700B3337E /* ViewController.swift in Sources */,
 				9A5E6C4420B301EB00D98CF3 /* Damageable.swift in Sources */,
@@ -393,6 +408,7 @@
 				9A5E6C3020AF1C2F00D98CF3 /* InitiativeMember.swift in Sources */,
 				9A5E6C5A20B598D000D98CF3 /* CharacterCreationClassDatasource.swift in Sources */,
 				9A5E6C3E20AF348100D98CF3 /* Debuff.swift in Sources */,
+				9A85FCB020B5A3EE005FA3A8 /* QuestAnnotationView.swift in Sources */,
 				9A5E6C4820B30CFC00D98CF3 /* Side.swift in Sources */,
 				9A5E6C5C20B598D000D98CF3 /* AttributeTableViewCell.swift in Sources */,
 				E72E4D4020ADCAE800604A61 /* MapViewController.swift in Sources */,
@@ -533,8 +549,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Z675N66P22;
+				DEVELOPMENT_TEAM = G4HQ2PTT64;
 				INFOPLIST_FILE = WorldQuestApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -553,8 +570,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Z675N66P22;
+				DEVELOPMENT_TEAM = G4HQ2PTT64;
 				INFOPLIST_FILE = WorldQuestApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

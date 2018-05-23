@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="QuestCalloutView" customModule="WorldQuestApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="222" height="106"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QfT-hb-3f0">
+                    <rect key="frame" x="0.0" y="0.0" width="222" height="106"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wDg-2S-mZH">
+                            <rect key="frame" x="0.0" y="0.0" width="222" height="106"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Quest" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nkH-J4-968">
+                            <rect key="frame" x="8" y="8" width="48" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="desc" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5aJ-cm-cx4">
+                            <rect key="frame" x="8" y="32" width="132" height="42"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K1i-xR-xXh">
+                            <rect key="frame" x="8" y="78" width="132" height="18"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                            <state key="normal" title="Accept">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="btnAccept:" destination="iN0-l3-epB" eventType="touchUpInside" id="mOK-Cb-Nrf"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j2V-uI-HtX">
+                            <rect key="frame" x="148" y="41" width="66" height="57"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Reward" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GkO-ci-0di">
+                            <rect key="frame" x="148" y="21" width="66" height="20"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="wDg-2S-mZH" secondAttribute="bottom" id="4G9-BI-I74"/>
+                        <constraint firstItem="wDg-2S-mZH" firstAttribute="top" secondItem="QfT-hb-3f0" secondAttribute="top" id="OAr-rs-mYh"/>
+                        <constraint firstAttribute="trailing" secondItem="wDg-2S-mZH" secondAttribute="trailing" id="gEA-yG-1Ye"/>
+                        <constraint firstItem="wDg-2S-mZH" firstAttribute="leading" secondItem="QfT-hb-3f0" secondAttribute="leading" id="wPR-4D-VXm"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="QfT-hb-3f0" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="1NF-Hj-Kg6"/>
+                <constraint firstItem="QfT-hb-3f0" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="A7b-Kj-8ta"/>
+                <constraint firstItem="QfT-hb-3f0" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="Fzi-AY-Z0E"/>
+                <constraint firstItem="QfT-hb-3f0" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="f7V-As-j4T"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="btn" destination="K1i-xR-xXh" id="ukF-DM-fuK"/>
+                <outlet property="descLabel" destination="5aJ-cm-cx4" id="DmB-1o-aNK"/>
+                <outlet property="imgBack" destination="wDg-2S-mZH" id="GWr-bt-sdp"/>
+                <outlet property="questLabel" destination="nkH-J4-968" id="7GV-Yj-h1E"/>
+                <outlet property="rewarddescLabel" destination="j2V-uI-HtX" id="F2X-pp-Ihh"/>
+            </connections>
+            <point key="canvasLocation" x="34" y="-366"/>
+        </view>
+    </objects>
+</document>
