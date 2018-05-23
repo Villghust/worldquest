@@ -74,9 +74,14 @@ extension ViewController: FBSDKLoginButtonDelegate {
                         return
                     }
                     // Logou!
+                    
+                    let usuario = [
+                        "nome": user?.user.displayName,
+                        "foto": user?.user.photoURL?.absoluteString]
+                    
                     self.ref.child("usuarios")
                         .child((user?.user.uid)!)
-                        .setValue(["nome": user?.user.displayName])
+                        .setValue(usuario)
                     
                     self.navegar(uid: (user?.user.uid)!)
                 }
