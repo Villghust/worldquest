@@ -1,22 +1,53 @@
 import UIKit
 import FirebaseAuth
+import FirebaseDatabase
 
 class ViewController: UIViewController {
 
+    var ref: DatabaseReference!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if (FBSDKAccessToken.current() != nil)
-        {
-            // User is already logged in, do work such as go to next view controller.
-        }
-        else
-        {
+        ref = Database.database().reference()
+        
+        if (FBSDKAccessToken.current() == nil){
             let loginView : FBSDKLoginButton = FBSDKLoginButton()
             self.view.addSubview(loginView)
             loginView.center = self.view.center
-            loginView.readPermissions = ["public_profile", "email", "user_friends"]
+            loginView.readPermissions = ["public_profile", "email"]
             loginView.delegate = self
+        }
+    }
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if (Auth.auth().currentUser != nil){
+            // Já está logado, vai para próxima tela.
+
+            let usuarioId = Auth.auth().currentUser?.uid
+            navegar(uid: usuarioId!)
+        }
+    }
+    
+    func navegar(uid: String) {
+        ref.child("usuarios").child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
+            let value = snapshot.value as? NSDictionary
+            let personagem = value?["personagem"] as? NSObject
+            
+            // Se existe personagem, vai para a criação, senão vai para o mapa
+            if personagem == nil {
+                self.performSegue(
+                    withIdentifier: "LoginToCharacterCreation",
+                    sender: nil)
+            } else {
+                self.performSegue(
+                    withIdentifier: "LoginToGame",
+                    sender: nil)
+            }
+            
+        }) { (error) in
+            print(error.localizedDescription)
         }
     }
 }
@@ -27,17 +58,14 @@ extension ViewController: FBSDKLoginButtonDelegate {
         
         if ((error) != nil)
         {
-            // Process error
+            // Erro
         }
         else if result.isCancelled {
-            // Handle cancellations
+            // Cancelado
         }
         else {
-            // If you ask for multiple permissions at once, you
-            // should check if specific permissions missing
             if result.grantedPermissions.contains("email")
             {
-                // Do work
                 let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
                 
                 Auth.auth().signInAndRetrieveData(with: credential) { (user, error) in
@@ -45,8 +73,17 @@ extension ViewController: FBSDKLoginButtonDelegate {
                         // ...
                         return
                     }
-                    // User is signed in
-                    // ...
+                    // Logou!
+                    
+                    let usuario = [
+                        "nome": user?.user.displayName,
+                        "foto": user?.user.photoURL?.absoluteString]
+                    
+                    self.ref.child("usuarios")
+                        .child((user?.user.uid)!)
+                        .setValue(usuario)
+                    
+                    self.navegar(uid: (user?.user.uid)!)
                 }
             }
         }

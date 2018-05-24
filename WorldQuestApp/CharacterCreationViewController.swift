@@ -7,16 +7,22 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseDatabase
 
-class CharacterCreationViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
-    //uicollectionview carousel swift
+class CharacterCreationViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
+    var ref: DatabaseReference!
+    
+    var character = PlayerCharacter(attrPoints: GameData.initialAttrPoints, player: nil, characterClass: GameData.classWarrior)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        
+        ref = Database.database().reference()
     }
     
     // Mark: - Class Handling
@@ -28,7 +34,7 @@ class CharacterCreationViewController: UIViewController, UITableViewDataSource, 
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return 2
         
     }
 
@@ -37,34 +43,42 @@ class CharacterCreationViewController: UIViewController, UITableViewDataSource, 
         
         switch(indexPath.row) {
         case 0:
-            cell = self.tableView.dequeueReusableCell(withIdentifier: "NameCell", for: indexPath)
-            break
-        case 1:
-            cell = self.tableView.dequeueReusableCell(withIdentifier: "ClassSelectionCell", for: indexPath)
-            break
-//        case 2:
-//            cell = self.tableView.dequeueReusableCell(withIdentifier: "ClassAbilitiesCell", for: indexPath)
-//            break
-        case 2:
-            cell = self.tableView.dequeueReusableCell(withIdentifier: "AttributesCell", for: indexPath) as! CharacterCreationAttributesTableViewCell
+            cell = self.tableView.dequeueReusableCell(withIdentifier: "CharacterCreationCell", for: indexPath) as! CharacterCreationTableViewCell
             break
         default:
             cell = self.tableView.dequeueReusableCell(withIdentifier: "CreateButtonCell", for: indexPath)
             break
+//        default:
+//            break
         }
-        
 
         return cell
     }
+
+    @IBAction func criarPersonagem(_ sender: UIButton) {
     
-    /*
-    // MARK: - Navigation
+        if character.name == nil {
+            character.name = "Não definido"
+        }
+        
+        let personagem = [
+            "nome": character.name,
+            "classe": character.characterClass.name,
+            "forca": character.str,
+            "agilidade": character.agi,
+            "inteligencia": character.int,
+            "vitalidade": character.vit
+            ] as [String : Any]
+        
+        if Auth.auth().currentUser != nil {
+            self.ref.child("usuarios/\(Auth.auth().currentUser!.uid)/personagem")
+                .setValue(personagem)
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+            self.performSegue(
+                withIdentifier: "CharacterCreationToGame",
+                sender: nil)
+        } else {
+            // Usuário não logado (????)
+        }
     }
-    */
-
 }
