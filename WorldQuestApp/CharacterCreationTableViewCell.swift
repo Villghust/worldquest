@@ -35,6 +35,12 @@ class CharacterCreationTableViewCell: UITableViewCell, UICollectionViewDelegate,
         }
     }
     
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
     // MARK: - Scroll view delegate
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -59,17 +65,5 @@ class CharacterCreationTableViewCell: UITableViewCell, UICollectionViewDelegate,
                 }
             }
         }
-    }
-}
-    
-    // MARK: - Collection view delegate
-
-extension UIResponder {
-    var viewController: UIViewController? {
-        if let vc = self as? UIViewController {
-            return vc
-        }
-        
-        return next?.viewController
     }
 }

@@ -30,6 +30,11 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         addAnnotations()
     }
     
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        tabBarItem = UITabBarItem(title: "Map", image: UIImage(named: "_TAB_MAP"), tag: 2)
+    }
+    
     func showCircle(coordinate: CLLocationCoordinate2D, radius: CLLocationDistance) {
         mapView.removeOverlays(mapView.overlays)
         let circle = MKCircle(center: coordinate, radius: radius)
@@ -133,7 +138,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             calloutView.questLabel.text = "Battle"
             calloutView.imgBack.image = UIImage(named: "QuestCallout")
             calloutView.descLabel.text = "Inimigos: 1 goblin"
-            calloutView.rewarddescLabel.text = "2 XP e 1 gold"
+            calloutView.rewarddescLabel.text = "2 XP"
         }
         
         let quest = quests.first { (quest) -> Bool in
@@ -149,24 +154,28 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     }
     
     func sendData(quest: Quest) {
-        ref.child("usuarios").child((Auth.auth().currentUser?.uid)!).observeSingleEvent(of: .value, with: {snapshot in
-            let value = snapshot.value as? NSDictionary
-            guard var quests = value?["quests"] as? [AnyObject] else {
-                return self.ref.child("usuarios/\(Auth.auth().currentUser!.uid)/quests")
-                    .setValue(["0": quest.id])
-            }
+        if quest.subtitulo == "quest" {
+            ref.child("usuarios").child((Auth.auth().currentUser?.uid)!).observeSingleEvent(of: .value, with: {snapshot in
+                let value = snapshot.value as? NSDictionary
+                guard var quests = value?["quests"] as? [AnyObject] else {
+                    return self.ref.child("usuarios/\(Auth.auth().currentUser!.uid)/quests")
+                        .setValue(["0": quest.id])
+                }
+                
+                quests.append(quest.id as AnyObject)
+                self.ref.child("usuarios/\(Auth.auth().currentUser!.uid)/quests")
+                    .setValue(quests)
+                
+            })
             
-            quests.append(quest.id as AnyObject)
-            self.ref.child("usuarios/\(Auth.auth().currentUser!.uid)/quests")
-                .setValue(quests)
-            
-        })
-        
-        for annotation in mapView.annotations{
-            if annotation.coordinate.latitude == CLLocationDegrees(truncating: quest.latitude) &&
-                annotation.coordinate.longitude == CLLocationDegrees(truncating: quest.longitude) {
-                mapView.removeAnnotation(annotation)
+            for annotation in mapView.annotations{
+                if annotation.coordinate.latitude == CLLocationDegrees(truncating: quest.latitude) &&
+                    annotation.coordinate.longitude == CLLocationDegrees(truncating: quest.longitude) {
+                    mapView.removeAnnotation(annotation)
+                }
             }
+        } else {
+            self.performSegue(withIdentifier: "MapToBattle", sender: nil)
         }
     }
     

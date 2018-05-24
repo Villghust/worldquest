@@ -18,6 +18,12 @@ class GroupViewController: UIViewController, UITableViewDataSource, UITableViewD
         self.tableView.delegate = self
         self.tableView.dataSource = self
     }
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+    tabBarItem = UITabBarItem(title: "Group", image: UIImage(named:"_TAB_GROUP"), tag: 2)
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 3

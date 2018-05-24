@@ -49,6 +49,12 @@ class CharacterInGameViewController: UIViewController {
         
     }
    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        tabBarItem = UITabBarItem(title: "Character", image: UIImage(named:"_TAB_CHAR_MAGE"), tag: 2)
+    }
+    
     @IBAction func btnMinusAttribute(_ sender: UIButton) {
         
         if sender.tag == 0 {

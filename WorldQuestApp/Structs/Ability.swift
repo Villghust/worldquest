@@ -12,10 +12,17 @@ struct Ability {
     // MARK: - Base
     var name: String
     var descricao: String
+    var imagePath: String
     var cooldown: Int
     
     // MARK: - Effects
     var targets: Target
-    var debuffs: [Debuff]?
+    var debuffs: [Debuff]
+    
+    // Mark: - Damage
+    var dmgAttr: Attribute = Attribute.None
+    var dmgScaling: Float = 1.0
+    var dmgFlat: Int = 0
+    
 }
 
