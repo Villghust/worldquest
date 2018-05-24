@@ -21,10 +21,10 @@ class CharacterInGameViewController: UIViewController {
     @IBOutlet weak var agilityLabel: UILabel!
     @IBOutlet weak var intelligenceLabel: UILabel!
     @IBOutlet weak var distributionLabel: UILabel!
-    var initialSTR: String!
-    var initialVIT: String!
-    var initialAGI: String!
-    var initialINT: String!
+    var initialSTR: Int!
+    var initialVIT: Int!
+    var initialAGI: Int!
+    var initialINT: Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,14 +35,14 @@ class CharacterInGameViewController: UIViewController {
             
             self.nameLabel.text = char?.value(forKey: "nome") as? String
             self.classLabel.text = char?.value(forKey: "classe") as? String
-            self.initialSTR = char?.value(forKey: "forca") as! String
-            self.strengthLabel.text = char?.value(forKey: "forca") as? String
-            self.initialVIT = char?.value(forKey: "vitalidade") as! String
-            self.vitalityLabel.text = char?.value(forKey: "vitalidade") as? String
-            self.initialAGI = char?.value(forKey: "agilidade") as! String
-            self.agilityLabel.text = char?.value(forKey: "agilidade") as? String
-            self.initialINT = char?.value(forKey: "inteligencia") as! String
-            self.intelligenceLabel.text = char?.value(forKey: "inteligencia") as? String
+            self.initialSTR = char?.value(forKey: "forca") as! Int
+            self.strengthLabel.text = String(char?.value(forKey: "forca") as! Int)
+            self.initialVIT = char?.value(forKey: "vitalidade") as! Int
+            self.vitalityLabel.text = String(char?.value(forKey: "vitalidade") as! Int)
+            self.initialAGI = char?.value(forKey: "agilidade") as! Int
+            self.agilityLabel.text = String(char?.value(forKey: "agilidade") as! Int)
+            self.initialINT = char?.value(forKey: "inteligencia") as! Int
+            self.intelligenceLabel.text = String(char?.value(forKey: "inteligencia") as! Int)
             self.distributionLabel.text = "5"
             self.loadImages()
         })
@@ -52,25 +52,25 @@ class CharacterInGameViewController: UIViewController {
     @IBAction func btnMinusAttribute(_ sender: UIButton) {
         
         if sender.tag == 0 {
-            if Int(initialSTR)! < Int(strengthLabel.text!)! {
+            if initialSTR < Int(strengthLabel.text!)! {
                 strengthLabel.text = "\(Int(strengthLabel.text!)! -  1)"
                 distributionLabel.text = "\(Int(distributionLabel.text!)! + 1)"
             }
         }
         else if sender.tag == 1 {
-            if Int(initialVIT)! < Int(vitalityLabel.text!)! {
+            if initialVIT < Int(vitalityLabel.text!)! {
                 vitalityLabel.text = "\(Int(vitalityLabel.text!)! -  1)"
                 distributionLabel.text = "\(Int(distributionLabel.text!)! + 1)"
             }
         }
         else if sender.tag == 2 {
-            if Int(initialAGI)! < Int(agilityLabel.text!)! {
+            if initialAGI < Int(agilityLabel.text!)! {
                 agilityLabel.text = "\(Int(agilityLabel.text!)! -  1)"
                 distributionLabel.text = "\(Int(distributionLabel.text!)! + 1)"
             }
         }
         else if sender.tag == 3 {
-            if Int(initialINT)! < Int(intelligenceLabel.text!)! {
+            if initialINT < Int(intelligenceLabel.text!)! {
                 intelligenceLabel.text = "\(Int(intelligenceLabel.text!)! -  1)"
                 distributionLabel.text = "\(Int(distributionLabel.text!)! + 1)"
             }
@@ -100,10 +100,10 @@ class CharacterInGameViewController: UIViewController {
     }
     
     @IBAction func saveAttributes(_ sender: UIButton) {
-        initialSTR = strengthLabel.text!
-        initialVIT = vitalityLabel.text!
-        initialAGI = agilityLabel.text!
-        initialINT = intelligenceLabel.text!
+        initialSTR = Int(strengthLabel.text!)
+        initialVIT = Int(vitalityLabel.text!)
+        initialAGI = Int(agilityLabel.text!)
+        initialINT = Int(intelligenceLabel.text!)
         
         let personagem = [
             "nome": nameLabel.text,
