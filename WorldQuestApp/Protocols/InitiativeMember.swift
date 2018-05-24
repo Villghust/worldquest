@@ -13,6 +13,8 @@ protocol InitiativeMember: Damageable {
     // Mark: - Combat Stats
     var initiative: Int { get set }
     var side: Side? { get set }
+    var canUseAbilities: Bool { get set }
+    var debuffs: [Debuff] { get set }
     
     // Mark: - Combat Funcs
     func startTurn()
