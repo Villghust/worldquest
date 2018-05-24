@@ -609,14 +609,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = G4HQ2PTT64;
+				DEVELOPMENT_TEAM = Z675N66P22;
 				INFOPLIST_FILE = WorldQuestApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.worldquest.WorldQuestApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alanquadros.WorldQuestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "WorldQuestApp-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
@@ -630,14 +630,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = G4HQ2PTT64;
+				DEVELOPMENT_TEAM = Z675N66P22;
 				INFOPLIST_FILE = WorldQuestApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.worldquest.WorldQuestApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alanquadros.WorldQuestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "WorldQuestApp-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
