@@ -30,7 +30,7 @@ class CombatViewController: UIViewController, UICollectionViewDelegate, UIScroll
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        allies.append(playerCharacter)
+        allies.append(playerCharacter) // temporario
         enemies.append(goblin) // temporario
         playerCharacterNameLabel.text = playerCharacter.name
         
