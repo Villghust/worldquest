@@ -6,57 +6,66 @@
 //
 
 import UIKit
+import FirebaseDatabase
+import FirebaseAuth
 
 class QuestViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
-    let sections = ["In progress", "Done"]
-    let progress = ["quest1", "quest2"]
-    let done = ["quest3", "quest4"]
+    var ref: DatabaseReference!
+    var questsTotais: [Quest] = [Quest]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.delegate = self
         self.tableView.dataSource = self
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+        
     
-
+        ref = Database.database().reference()
+        
+        self.ref.child("usuarios").child((Auth.auth().currentUser?.uid)!).observeSingleEvent(of: .value, with: {snapshot in
+            let value = snapshot.value as? NSDictionary
+            guard let quests = value?["quests"] as? [String] else {return}
+        
+            for nome in quests {
+                self.ref.child("quests").child(nome).observeSingleEvent(of: .value, with: {snap in
+                    let value = snap.value as? NSDictionary
+                    let q = Quest()
+                    q.id = nome
+                    q.subtitulo = value?["subtitulo"] as! String
+                    self.questsTotais.append(q)
+                    
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+                })
+            }
+        })
+        
+//        let q = Quest()
+//        q.id = "iguatemi"
+//        q.subtitulo = "quest"
+//        self.quests.append(q)
+//        let q1 = Quest()
+//        q1.id = "museu"
+//        q1.subtitulo = "battle"
+//        self.quests.append(q1)
+    }
    
     //MARK: - DataSource
    
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
-    }
-    
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return self.sections[section]
+        return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
-            return progress.count
-        } else {
-            return done.count
-        }
-        
+        return questsTotais.count
     }
    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell : UITableViewCell
-        
-        if indexPath.section == 0 {
-            cell = tableView.dequeueReusableCell(withIdentifier: "quests", for: indexPath)
-        }
-        else {
-            cell = tableView.dequeueReusableCell(withIdentifier: "completeQuests", for: indexPath)
-        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: "quests", for: indexPath) as! QuestCell
+        cell.quest = questsTotais[indexPath.row]
         
         return cell
     }

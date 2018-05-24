@@ -14,12 +14,18 @@ class ViewController: UIViewController {
         if (FBSDKAccessToken.current() == nil){
             let loginView : FBSDKLoginButton = FBSDKLoginButton()
             self.view.addSubview(loginView)
-            loginView.center = self.view.center
+            
+            let screenSize:CGRect = UIScreen.main.bounds
+            let screenHeight = screenSize.height //real screen height
+            //let's suppose we want to have 10 points bottom margin
+            let newCenterY = screenHeight - loginView.frame.height - 50
+            let newCenter = CGPoint(x: view.center.x, y: newCenterY)
+            loginView.center = newCenter
+            
             loginView.readPermissions = ["public_profile", "email"]
             loginView.delegate = self
         }
     }
-    
     
     override func viewDidAppear(_ animated: Bool) {
         if (Auth.auth().currentUser != nil){

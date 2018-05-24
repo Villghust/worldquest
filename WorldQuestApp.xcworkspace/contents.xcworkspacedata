@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:WorldQuestApp/default.gpx">
+   </FileRef>
+   <FileRef
       location = "group:WorldQuestApp/../WorldQuestApp-Bridging-Header.h">
    </FileRef>
    <FileRef

@@ -1,18 +1,31 @@
 import UIKit
 import MapKit
+import FirebaseDatabase
+import FirebaseAuth
 
-class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, MyProtocol {
     
     var locationManager = CLLocationManager()
     @IBOutlet weak var mapView: MKMapView!
+    var ref: DatabaseReference!
+    var quests = [Quest]()
+    var questsJaEscolhidas = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         
-        let region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: -30.05507550918886, longitude: -51.18687680000005), span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
+        ref = Database.database().reference()
+        
+        let region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: -30.05507550918886, longitude: -51.18687680000005), span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
         self.mapView.setRegion(region, animated: true)
+        
+        self.ref.child("usuarios").child((Auth.auth().currentUser?.uid)!).observeSingleEvent(of: .value, with: {snapshot in
+            let value = snapshot.value as? NSDictionary
+            guard let quests = value?["quests"] as? [String] else {return}
+            self.questsJaEscolhidas = quests
+        })
         
         addAnnotations()
     }
@@ -94,10 +107,10 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         
         let questAnnotation: QuestAnnotation = QuestAnnotation.init(coordinate: (view.annotation?.coordinate)!)
         
-        
         guard let views = Bundle.main.loadNibNamed("QuestCallout", owner: nil, options: nil) as? [UIView] else { return }
         
         let calloutView = views[0] as! QuestCalloutView
+        calloutView.delegate = self
         
         let point = CLLocation(latitude: (questAnnotation.coordinate.latitude), longitude: (questAnnotation.coordinate.longitude))
         
@@ -112,7 +125,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         
         if(view.annotation?.subtitle == "quest"){
             calloutView.imgBack.image = UIImage(named: "QuestCallout")
-            calloutView.descLabel.text = "Mate 5 Goblins em 2 dias"
+            calloutView.descLabel.text = "Mate 5 Goblins"
             calloutView.rewarddescLabel.text = "5 XP"
         }
         
@@ -123,11 +136,38 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             calloutView.rewarddescLabel.text = "2 XP e 1 gold"
         }
         
+        let quest = quests.first { (quest) -> Bool in
+            CLLocationDegrees(truncating: quest.latitude) == questAnnotation.coordinate.latitude &&
+                CLLocationDegrees(truncating: quest.longitude) == questAnnotation.coordinate.longitude
+        }
+        calloutView.quest = quest
         
         calloutView.center = CGPoint(x: view.bounds.size.width / 2, y: -calloutView.bounds.size.height*0.52)
         view.addSubview(calloutView)
         mapView.setCenter((view.annotation?.coordinate)!, animated: true)
         
+    }
+    
+    func sendData(quest: Quest) {
+        ref.child("usuarios").child((Auth.auth().currentUser?.uid)!).observeSingleEvent(of: .value, with: {snapshot in
+            let value = snapshot.value as? NSDictionary
+            guard var quests = value?["quests"] as? [AnyObject] else {
+                return self.ref.child("usuarios/\(Auth.auth().currentUser!.uid)/quests")
+                    .setValue(["0": quest.id])
+            }
+            
+            quests.append(quest.id as AnyObject)
+            self.ref.child("usuarios/\(Auth.auth().currentUser!.uid)/quests")
+                .setValue(quests)
+            
+        })
+        
+        for annotation in mapView.annotations{
+            if annotation.coordinate.latitude == CLLocationDegrees(truncating: quest.latitude) &&
+                annotation.coordinate.longitude == CLLocationDegrees(truncating: quest.longitude) {
+                mapView.removeAnnotation(annotation)
+            }
+        }
     }
     
     func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
@@ -143,71 +183,63 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
     
     func addAnnotations() {
-        // Shoppings -> Events
-        let iguatemi = MKPointAnnotation()
-        iguatemi.coordinate.latitude = -30.02376410917726
-        iguatemi.coordinate.longitude = -51.161892400000056
-        iguatemi.title = "shopping"
-        iguatemi.subtitle = "quest"
-        mapView.addAnnotation(iguatemi)
         
-        let ipiranga = MKPointAnnotation()
-        ipiranga.coordinate.latitude = -30.05507550918886
-        ipiranga.coordinate.longitude = -51.18687680000005
-        ipiranga.title = "shopping"
-        ipiranga.subtitle = "quest"
-        mapView.addAnnotation(ipiranga)
+        ref.child("quests").observe(.childAdded, with: { (snapshot) -> Void in
+            
+            let quest = Quest()
+            quest.id = snapshot.key
+            
+            if self.questsJaEscolhidas.contains(quest.id) {
+                return
+            }
+            
+            for child in snapshot.children.allObjects as? [DataSnapshot] ?? [] {
+                switch child.key {
+                    case "latitude":
+                        quest.latitude = child.value as! NSNumber
+                    case "longitude":
+                        quest.longitude = child.value as! NSNumber
+                    case "titulo":
+                        quest.titulo = child.value as! String
+                    case "subtitulo":
+                        quest.subtitulo = child.value as! String
+                    default:
+                        return
+                    
+                }
+            }
+            
+            self.quests.append(quest)
+            
+            let annotation = MKPointAnnotation()
+            annotation.coordinate.latitude = CLLocationDegrees(truncating: quest.latitude)
+            annotation.coordinate.longitude = CLLocationDegrees(truncating: quest.longitude)
+            annotation.title = quest.titulo
+            annotation.subtitle = quest.subtitulo
+            self.mapView.addAnnotation(annotation)
+        })
         
-        let wallig = MKPointAnnotation()
-        wallig.coordinate.latitude = -30.011935009172884
-        wallig.coordinate.longitude = -51.160768899999994
-        wallig.title = "shopping"
-        wallig.subtitle = "quest"
-        mapView.addAnnotation(wallig)
-        
-        // Pubs -> Taverns
-        let barbarosPub = MKPointAnnotation()
-        barbarosPub.coordinate.latitude = -30.034759509181324
-        barbarosPub.coordinate.longitude = -51.20823429999996
-        barbarosPub.title = "pubs"
-        barbarosPub.subtitle = "barbarosPub"
-        mapView.addAnnotation(barbarosPub)
-        
-        let spoilerPub = MKPointAnnotation()
-        spoilerPub.coordinate.latitude = -30.041415209183807
-        spoilerPub.coordinate.longitude = -51.21807910000001
-        spoilerPub.title = "pubs"
-        spoilerPub.subtitle = "spoilerPub"
-        mapView.addAnnotation(spoilerPub)
-        
-        let dublinPub = MKPointAnnotation()
-        dublinPub.coordinate.latitude = -30.02409220917742
-        dublinPub.coordinate.longitude = -51.2026444
-        dublinPub.title = "pubs"
-        dublinPub.subtitle = "dublinPub"
-        mapView.addAnnotation(dublinPub)
-        
-        // Squares -> Squares (OHH YEAH!!)
-        let germaniaSquare = MKPointAnnotation()
-        germaniaSquare.coordinate.latitude = -30.022529409176798
-        germaniaSquare.coordinate.longitude = -51.158572549999974
-        germaniaSquare.title = "squares"
-        germaniaSquare.subtitle = "battle"
-        mapView.addAnnotation(germaniaSquare)
-        
-        let redencaoSquare = MKPointAnnotation()
-        redencaoSquare.coordinate.latitude = -30.03873580918278
-        redencaoSquare.coordinate.longitude = -51.21850610000001
-        redencaoSquare.title = "squares"
-        redencaoSquare.subtitle = "battle"
-        mapView.addAnnotation(redencaoSquare)
-        
-        let marinhaSquare = MKPointAnnotation()
-        marinhaSquare.coordinate.latitude = -30.03949890918311
-        marinhaSquare.coordinate.longitude = -51.22856200000001
-        marinhaSquare.title = "squares"
-        marinhaSquare.subtitle = "battle"
-        mapView.addAnnotation(marinhaSquare)
+//        // Pubs -> Taverns
+//        let barbarosPub = MKPointAnnotation()
+//        barbarosPub.coordinate.latitude = -30.034759509181324
+//        barbarosPub.coordinate.longitude = -51.20823429999996
+//        barbarosPub.title = "pubs"
+//        barbarosPub.subtitle = "barbarosPub"
+//        mapView.addAnnotation(barbarosPub)
+//
+//        let spoilerPub = MKPointAnnotation()
+//        spoilerPub.coordinate.latitude = -30.041415209183807
+//        spoilerPub.coordinate.longitude = -51.21807910000001
+//        spoilerPub.title = "pubs"
+//        spoilerPub.subtitle = "spoilerPub"
+//        mapView.addAnnotation(spoilerPub)
+//
+//        let dublinPub = MKPointAnnotation()
+//        dublinPub.coordinate.latitude = -30.02409220917742
+//        dublinPub.coordinate.longitude = -51.2026444
+//        dublinPub.title = "pubs"
+//        dublinPub.subtitle = "dublinPub"
+//        mapView.addAnnotation(dublinPub)
     }
     
     
