@@ -81,15 +81,25 @@ extension ViewController: FBSDKLoginButtonDelegate {
                     }
                     // Logou!
                     
-                    let usuario = [
-                        "nome": user?.user.displayName,
-                        "foto": user?.user.photoURL?.absoluteString]
-                    
-                    self.ref.child("usuarios")
-                        .child((user?.user.uid)!)
-                        .setValue(usuario)
-                    
-                    self.navegar(uid: (user?.user.uid)!)
+                    self.ref.child("usuarios").child((user?.user.uid)!).observeSingleEvent(of: .value, with: { (snapshot) in
+                        let value = snapshot.value as? NSDictionary
+                        let nome = value?["nome"] as? String
+                        
+                        if nome == nil {
+                            let usuario = [
+                                "nome": user?.user.displayName,
+                                "foto": user?.user.photoURL?.absoluteString]
+                            
+                            self.ref.child("usuarios")
+                                .child((user?.user.uid)!)
+                                .setValue(usuario)
+                        }
+                        
+                        self.navegar(uid: (user?.user.uid)!)
+                        
+                    }) { (error) in
+                        print(error.localizedDescription)
+                    }
                 }
             }
         }
