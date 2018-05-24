@@ -30,6 +30,11 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         addAnnotations()
     }
     
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        tabBarItem = UITabBarItem(title: "Map", image: UIImage(named: "_TAB_MAP"), tag: 2)
+    }
+    
     func showCircle(coordinate: CLLocationCoordinate2D, radius: CLLocationDistance) {
         mapView.removeOverlays(mapView.overlays)
         let circle = MKCircle(center: coordinate, radius: radius)

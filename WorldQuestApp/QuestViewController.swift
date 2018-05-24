@@ -17,6 +17,7 @@ class QuestViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
@@ -48,6 +49,11 @@ class QuestViewController: UIViewController, UITableViewDataSource, UITableViewD
 //        q1.id = "museu"
 //        q1.subtitulo = "battle"
 //        self.quests.append(q1)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        tabBarItem = UITabBarItem(title: "Quests", image: UIImage(named: "_TAB_QUEST"), tag: 2)
     }
    
     //MARK: - DataSource
