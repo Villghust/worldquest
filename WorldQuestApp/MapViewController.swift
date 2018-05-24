@@ -125,7 +125,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         
         if(view.annotation?.subtitle == "quest"){
             calloutView.imgBack.image = UIImage(named: "QuestCallout")
-            calloutView.descLabel.text = "Mate 5 Goblins em 2 dias"
+            calloutView.descLabel.text = "Mate 5 Goblins"
             calloutView.rewarddescLabel.text = "5 XP"
         }
         
@@ -161,6 +161,13 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                 .setValue(quests)
             
         })
+        
+        for annotation in mapView.annotations{
+            if annotation.coordinate.latitude == CLLocationDegrees(truncating: quest.latitude) &&
+                annotation.coordinate.longitude == CLLocationDegrees(truncating: quest.longitude) {
+                mapView.removeAnnotation(annotation)
+            }
+        }
     }
     
     func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
