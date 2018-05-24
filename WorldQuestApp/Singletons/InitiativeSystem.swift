@@ -75,6 +75,7 @@ class InitiativeSystem {
     
     func endCombat () {
         initiativeOrder.removeAll() // temp
+        combatVC?.goToMap()
     }
     
     // Mark: - Comparators
@@ -114,6 +115,7 @@ class InitiativeSystem {
             } else if losingSide().count == 1 && losingSide()[0] == Side.B {
                 print ("Side A Won")
             }
+            endCombat()
         } else {
             next()
         }

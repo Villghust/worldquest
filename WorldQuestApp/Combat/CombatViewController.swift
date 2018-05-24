@@ -7,8 +7,12 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseDatabase
 
 class CombatViewController: UIViewController, UICollectionViewDelegate, UIScrollViewDelegate {
+    
+    var ref: DatabaseReference!
     
     @IBOutlet weak var enemyCollectionView: ScalingCarouselView!
     @IBOutlet weak var abilityCollectionView: ScalingCarouselView!
@@ -25,27 +29,57 @@ class CombatViewController: UIViewController, UICollectionViewDelegate, UIScroll
     lazy var enemyDatasource = EnemyCollectionViewDatasource(enemies: enemies)
     lazy var abilityDatasource = AbilityCollectionViewDatasource(playerCharacter: playerCharacter)
     
-    let goblin = Enemy(stats: GameData.goblinData, initiative: Int.randomBetween(min: 4, max: 12), maxHealth: 10)
-    
+    let goblin1 = Enemy(stats: GameData.goblinData, initiative: Int.randomBetween(min: 4, max: 12), maxHealth: 10)
+    let goblin2 = Enemy(stats: GameData.goblinData, initiative: Int.randomBetween(min: 4, max: 12), maxHealth: 10)
+    let goblin3 = Enemy(stats: GameData.goblinData, initiative: Int.randomBetween(min: 4, max: 12), maxHealth: 10)
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        ref = Database.database().reference()
         
-        allies.append(playerCharacter) // temporario
-        enemies.append(goblin) // temporario
-        playerCharacterNameLabel.text = playerCharacter.name
-        
-        enemyCollectionView.delegate = self
-        abilityCollectionView.delegate = self
-        
-        enemyCollectionView.dataSource = enemyDatasource
-        abilityCollectionView.dataSource = abilityDatasource
-        
-        print ("Loading Combat")
-        print ("Selected Ability: \(String(describing: selectedAbility))")
-        print ("Selected Enemy: \(String(describing: selectedEnemy))")
-        
-        InitiativeSystem.singleton.startCombat(sideA: allies, sideB: enemies, viewController: self)
-        InitiativeSystem.singleton.reloadCharacterHealth()
+        let usuarioId = Auth.auth().currentUser?.uid
+        startCombat(uid: usuarioId!)
+    }
+    
+    func startCombat(uid: String) {
+        ref.child("usuarios").child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
+            let value = snapshot.value as? NSDictionary
+            let personagem = value?["personagem"] as? NSObject
+            
+            // Se existe personagem, vai para a criação, senão vai para o mapa
+            if personagem == nil {
+                //self.goToMap()
+            } else {
+                let pc = PlayerCharacter(name: personagem!.value(forKey: "nome") as! String, str: personagem!.value(forKey: "forca") as! Int, agi: personagem!.value(forKey: "agilidade") as! Int, int: personagem!.value(forKey: "inteligencia") as! Int, vit: personagem!.value(forKey: "vitalidade") as! Int, attrPoints: 0, characterClass: GameData.classes[personagem!.value(forKey: "classe") as! String]!, player: nil)
+                self.playerCharacter = pc
+                self.allies.append(self.playerCharacter) // temporario
+                self.enemies = [self.goblin1, self.goblin2, self.goblin3] // temporario
+                
+                self.playerCharacterNameLabel.text = self.playerCharacter.name
+
+                
+                self.enemyCollectionView.delegate = self
+                self.abilityCollectionView.delegate = self
+                
+                self.abilityDatasource = AbilityCollectionViewDatasource(playerCharacter: self.playerCharacter)
+                self.enemyDatasource = EnemyCollectionViewDatasource(enemies: self.enemies)
+                self.enemyCollectionView.dataSource = self.enemyDatasource
+                self.abilityCollectionView.dataSource = self.abilityDatasource
+                
+                InitiativeSystem.singleton.startCombat(sideA: self.allies, sideB: self.enemies, viewController: self)
+                InitiativeSystem.singleton.reloadCharacterHealth()
+            }
+            
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+    }
+    
+    func goToMap() {
+        self.performSegue(
+            withIdentifier: "CombatToMap",
+            sender: nil)
+        print ("Going to map")
     }
     
     // MARK: - Scroll View delegate

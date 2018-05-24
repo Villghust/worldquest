@@ -19,6 +19,21 @@ class PlayerCharacter: UseAbilities, InitiativeMember {
     var characterClass: CharacterClass!
     var player: User?
     
+    init (name: String, str: Int, agi: Int, int: Int, vit: Int, attrPoints: Int, characterClass: CharacterClass, player: User?) {
+        self.player = player
+        self.characterClass = characterClass
+        self.agi = agi
+        self.str = str
+        self.int = int
+        self.vit = vit
+        self.attrPoints = attrPoints
+        self.maxHealth = self.vit * 3
+        self.health = maxHealth
+        self.initiative = self.agi * 3
+        self.canUseAbilities = false
+        self.debuffs = [Debuff]()
+    }
+    
     init(attrPoints: Int, player: User?, characterClass: CharacterClass) {
         self.attrPoints = attrPoints
         self.player = player
