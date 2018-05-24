@@ -19,7 +19,7 @@ class QuestCell: UITableViewCell {
             } else {
                 self.titleLabel.text = "Inimigos: 1 Goblin"
                 self.locationLabel.text = "Obtida em \(quest.id)"
-                self.rewardLabel.text = "2 XP e 1 Gold"
+                self.rewardLabel.text = "2 XP"
             }
         }
     }
