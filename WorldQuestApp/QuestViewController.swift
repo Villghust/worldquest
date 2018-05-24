@@ -21,6 +21,7 @@ class QuestViewController: UIViewController, UITableViewDataSource, UITableViewD
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
+    
         ref = Database.database().reference()
         
         self.ref.child("usuarios").child((Auth.auth().currentUser?.uid)!).observeSingleEvent(of: .value, with: {snapshot in
@@ -34,10 +35,11 @@ class QuestViewController: UIViewController, UITableViewDataSource, UITableViewD
                     q.id = nome
                     q.subtitulo = value?["subtitulo"] as! String
                     self.questsTotais.append(q)
+                    
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
                 })
-            }
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
             }
         })
         

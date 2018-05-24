@@ -9,8 +9,8 @@
 import Foundation
 
 enum Debuff {
-    case stun (Int)
-    case blind (Int)
-    case taunted (Int)
-    case poison (Int)
+    case stun (duration: Int)
+    case blind (duration: Int)
+    case taunted (at: InitiativeMember, duration: Int)
+    case poison (dmgFlat: Int, duration: Int)
 }
