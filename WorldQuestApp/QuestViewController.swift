@@ -20,6 +20,8 @@ class QuestViewController: UIViewController, UITableViewDataSource, UITableViewD
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
+        
+        
         ref = Database.database().reference()
         
         self.ref.child("usuarios").child((Auth.auth().currentUser?.uid)!).observeSingleEvent(of: .value, with: {snapshot in
