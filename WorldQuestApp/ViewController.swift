@@ -6,6 +6,8 @@ class ViewController: UIViewController {
 
     var ref: DatabaseReference!
     
+    @IBOutlet weak var viewFB: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -13,8 +15,8 @@ class ViewController: UIViewController {
         
         if (FBSDKAccessToken.current() == nil){
             let loginView : FBSDKLoginButton = FBSDKLoginButton()
-            self.view.addSubview(loginView)
-            loginView.center = self.view.center
+            viewFB.addSubview(loginView)
+//            loginView.center = viewFB.center
             loginView.readPermissions = ["public_profile", "email"]
             loginView.delegate = self
         }
