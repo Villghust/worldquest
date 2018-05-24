@@ -230,11 +230,11 @@
 		E7BD741E20A5CBC700B3337E /* WorldQuestApp */ = {
 			isa = PBXGroup;
 			children = (
+				E70115C520B5B07F007846A0 /* Main.storyboard */,
 				E7652F8A20B6EF10003BF860 /* GroupViewController.swift */,
 				E7652F8920B6EF10003BF860 /* PartyLeaderCell.swift */,
 				E7652F8720B6EF10003BF860 /* QuestCell.swift */,
 				E7652F8820B6EF10003BF860 /* QuestViewController.swift */,
-				E70115C520B5B07F007846A0 /* Main.storyboard */,
 				9A85FCAD20B5A3ED005FA3A8 /* QuestAnnotation.swift */,
 				9A85FCAC20B5A3ED005FA3A8 /* QuestAnnotationView.swift */,
 				9A85FCAF20B5A3EE005FA3A8 /* QuestCallout.xib */,
