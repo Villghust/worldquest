@@ -76,9 +76,10 @@ class CombatViewController: UIViewController, UICollectionViewDelegate, UIScroll
     }
     
     func goToMap() {
-        self.performSegue(
-            withIdentifier: "CombatToMap",
-            sender: nil)
+//        self.performSegue(
+//            withIdentifier: "CombatToMap",
+//            sender: nil)
+        self.dismiss(animated: true, completion: nil)
         print ("Going to map")
     }
     
