@@ -14,12 +14,18 @@ class ViewController: UIViewController {
         if (FBSDKAccessToken.current() == nil){
             let loginView : FBSDKLoginButton = FBSDKLoginButton()
             self.view.addSubview(loginView)
-            loginView.center = self.view.center
+            
+            let screenSize:CGRect = UIScreen.main.bounds
+            let screenHeight = screenSize.height //real screen height
+            //let's suppose we want to have 10 points bottom margin
+            let newCenterY = screenHeight - loginView.frame.height - 50
+            let newCenter = CGPoint(x: view.center.x, y: newCenterY)
+            loginView.center = newCenter
+            
             loginView.readPermissions = ["public_profile", "email"]
             loginView.delegate = self
         }
     }
-    
     
     override func viewDidAppear(_ animated: Bool) {
         if (Auth.auth().currentUser != nil){
@@ -75,15 +81,25 @@ extension ViewController: FBSDKLoginButtonDelegate {
                     }
                     // Logou!
                     
-                    let usuario = [
-                        "nome": user?.user.displayName,
-                        "foto": user?.user.photoURL?.absoluteString]
-                    
-                    self.ref.child("usuarios")
-                        .child((user?.user.uid)!)
-                        .setValue(usuario)
-                    
-                    self.navegar(uid: (user?.user.uid)!)
+                    self.ref.child("usuarios").child((user?.user.uid)!).observeSingleEvent(of: .value, with: { (snapshot) in
+                        let value = snapshot.value as? NSDictionary
+                        let nome = value?["nome"] as? String
+                        
+                        if nome == nil {
+                            let usuario = [
+                                "nome": user?.user.displayName,
+                                "foto": user?.user.photoURL?.absoluteString]
+                            
+                            self.ref.child("usuarios")
+                                .child((user?.user.uid)!)
+                                .setValue(usuario)
+                        }
+                        
+                        self.navegar(uid: (user?.user.uid)!)
+                        
+                    }) { (error) in
+                        print(error.localizedDescription)
+                    }
                 }
             }
         }

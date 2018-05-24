@@ -16,10 +16,14 @@ class InitiativeSystem {
     var actor: Int = 0
     var sideA = [InitiativeMember]() // usar tuplas e identificar tipo de jogador
     var sideB = [InitiativeMember]()
+    var combatVC: CombatViewController?
     
     
     // Mark: - Initiative Sequence
-    func startCombat (sideA: [InitiativeMember], sideB: [InitiativeMember]) {
+    func startCombat (sideA: [InitiativeMember], sideB: [InitiativeMember], viewController: CombatViewController) {
+        
+        combatVC = viewController
+        
         for var member in sideA {
             member.side = .A
             self.sideA.append(member)
@@ -71,6 +75,7 @@ class InitiativeSystem {
     
     func endCombat () {
         initiativeOrder.removeAll() // temp
+        combatVC?.goToMap()
     }
     
     // Mark: - Comparators
@@ -110,22 +115,86 @@ class InitiativeSystem {
             } else if losingSide().count == 1 && losingSide()[0] == Side.B {
                 print ("Side A Won")
             }
+            endCombat()
         } else {
             next()
         }
     }
     
-    func usedAbility (caster: InitiativeMember, ability: Ability/*, targets: [InitiativeMember]*/) {
-        if caster.side == Side.A {
-            for i in sideB {
-                i.takeDamage(amount: Int.randomBetween(min: 1, max: 10), source: ability, caster: caster)
-            }
+    func playerActed(character: InitiativeMember, ability: Ability, targets: [InitiativeMember]) {
+        (character as! UseAbilities).useAbility(ability: ability, targets: targets)
+        character.endTurn()
+    }
+    
+    func getOpposingSide(side: Side) -> [InitiativeMember] {
+        if side == .A {
+            return sideB
         } else {
-            for i in sideA {
-                i.takeDamage(amount: Int.randomBetween(min: 1, max: 10), source: ability, caster: caster)
+            return sideA
+        }
+    }
+    
+    func getSide(side: Side) -> [InitiativeMember] {
+        if side == .A {
+            return sideA
+        } else {
+            return sideB
+        }
+    }
+    
+    func usedAbility (caster: InitiativeMember, ability: Ability, targets: [InitiativeMember]) {
+        for target in targets {
+            var dmg = ability.dmgFlat
+            if let pc = caster as? PlayerCharacter {
+                switch ability.dmgAttr {
+                case .Strength:
+                    dmg += Int(Float(pc.str) * ability.dmgScaling)
+                case .Agility:
+                    dmg += Int(Float(pc.agi) * ability.dmgScaling)
+                case .Intelligence:
+                    dmg += Int(Float(pc.int) * ability.dmgScaling)
+                case .Vitality:
+                    dmg += Int(Float(pc.vit) * ability.dmgScaling)
+                case .Level:
+                    dmg += 0/*Int(Float(pc.level) * dmgScaling)*/
+                case .None:
+                    dmg += 0
+                }
+            }
+            
+            target.takeDamage(amount: dmg, source: ability, caster: caster)
+        }
+        reloadEnemies()
+        reloadCharacterHealth()
+    }
+    
+    // Mark: - Redraw
+    
+    func reloadAbilities() {
+        if combatVC != nil {
+            combatVC?.abilityCollectionView.reloadData()
+        } else {
+            print ("not in combat to update ability collection view")
+        }
+    }
+    
+    func reloadEnemies() {
+        if combatVC != nil {
+            combatVC?.enemyCollectionView.reloadData()
+        } else {
+            print ("not in combat to update enemy collection view")
+        }
+    }
+    
+    func reloadCharacterHealth() {
+        if let hp = combatVC?.playerCharacter.health {
+            if let maxhp = combatVC?.playerCharacter.maxHealth {
+                combatVC?.playerCharacterHealthLabel.text = "\(hp)/\(maxhp)"
             }
         }
     }
+    
+    
 }
 
 

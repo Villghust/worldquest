@@ -61,15 +61,3 @@ class CharacterCreationTableViewCell: UITableViewCell, UICollectionViewDelegate,
         }
     }
 }
-    
-    // MARK: - Collection view delegate
-
-extension UIResponder {
-    var viewController: UIViewController? {
-        if let vc = self as? UIViewController {
-            return vc
-        }
-        
-        return next?.viewController
-    }
-}
