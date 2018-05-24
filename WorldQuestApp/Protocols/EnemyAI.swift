@@ -11,4 +11,5 @@ import Foundation
 protocol EnemyAI {
     var aggroedOn: PlayerCharacter? { get set }
     func chooseAbility() -> Ability?
+    func chooseTarget(ability: Ability) -> [InitiativeMember]?
 }

@@ -10,5 +10,5 @@ import Foundation
 
 protocol UseAbilities {
     func availableAbilities() -> [Ability]
-    func useAbility (ability: Ability)
+    func useAbility (ability: Ability, targets: [InitiativeMember])
 }
