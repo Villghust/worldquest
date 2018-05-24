@@ -6,8 +6,6 @@ class ViewController: UIViewController {
 
     var ref: DatabaseReference!
     
-    @IBOutlet weak var viewFB: UIView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -15,13 +13,19 @@ class ViewController: UIViewController {
         
         if (FBSDKAccessToken.current() == nil){
             let loginView : FBSDKLoginButton = FBSDKLoginButton()
-            viewFB.addSubview(loginView)
-//            loginView.center = viewFB.center
+            self.view.addSubview(loginView)
+            
+            let screenSize:CGRect = UIScreen.main.bounds
+            let screenHeight = screenSize.height //real screen height
+            //let's suppose we want to have 10 points bottom margin
+            let newCenterY = screenHeight - loginView.frame.height - 50
+            let newCenter = CGPoint(x: view.center.x, y: newCenterY)
+            loginView.center = newCenter
+            
             loginView.readPermissions = ["public_profile", "email"]
             loginView.delegate = self
         }
     }
-    
     
     override func viewDidAppear(_ animated: Bool) {
         if (Auth.auth().currentUser != nil){
