@@ -48,7 +48,22 @@ class CharacterInGameViewController: UIViewController {
         })
         
     }
-   
+    
+    @IBAction func logout(_ sender: UIButton) {
+        guard Auth.auth().currentUser != nil else {
+            return
+        }
+        
+        do {
+            try Auth.auth().signOut()
+            FBSDKAccessToken.setCurrent(nil)
+            
+            self.performSegue(withIdentifier: "goToLogin", sender: nil)
+        } catch let error as NSError {
+            print(error.localizedDescription)
+        }
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
