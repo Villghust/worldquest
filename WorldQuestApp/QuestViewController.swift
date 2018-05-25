@@ -20,14 +20,19 @@ class QuestViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        
+    }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        questsTotais.removeAll()
+        
         ref = Database.database().reference()
         
         self.ref.child("usuarios").child((Auth.auth().currentUser?.uid)!).observeSingleEvent(of: .value, with: {snapshot in
             let value = snapshot.value as? NSDictionary
             guard let quests = value?["quests"] as? [String] else {return}
-        
+            
             for nome in quests {
                 self.ref.child("quests").child(nome).observeSingleEvent(of: .value, with: {snap in
                     let value = snap.value as? NSDictionary
@@ -42,15 +47,6 @@ class QuestViewController: UIViewController, UITableViewDataSource, UITableViewD
                 })
             }
         })
-        
-//        let q = Quest()
-//        q.id = "iguatemi"
-//        q.subtitulo = "quest"
-//        self.quests.append(q)
-//        let q1 = Quest()
-//        q1.id = "museu"
-//        q1.subtitulo = "battle"
-//        self.quests.append(q1)
     }
     
     required init?(coder aDecoder: NSCoder) {
